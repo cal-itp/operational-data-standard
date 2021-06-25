@@ -1,0 +1,9 @@
+# includes/excludes all rules by default
+default: true
+
+# 4-space list indentation works best with MkDocs
+MD007:
+  indent: 4
+
+# Remove line length limit - no one wants to hard wrap all their paragraphs
+MD013: false
