@@ -1,6 +1,6 @@
 // For format details, see https://aka.ms/devcontainer.json.
 {
-    "name": "mkdocs-template",
+    "name": "operational-data-standard",
     "build": {
         "dockerfile": "docs/Dockerfile",
         "context": ".",
