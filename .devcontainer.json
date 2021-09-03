@@ -2,7 +2,7 @@
 {
     "name": "operational-data-standard",
     "build": {
-        "dockerfile": "docs/Dockerfile",
+        "dockerfile": "Dockerfile",
         "context": ".",
     },
 
