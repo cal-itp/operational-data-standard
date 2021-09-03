@@ -39,6 +39,7 @@ Managed by Caltrans, the California Integrated Travel Project (Cal-ITP) is a sta
 The ODS Working Group is an initiative of the California Integrated Travel Project (Cal-ITP). It is a group of stakeholders convened for the purpose of developing and adopting ODS v1.
 
 ## Who is a stakeholder in the development of ODS?
+
 Cal-ITP is looking for a cross section of the transportation industry who represents a range of companies and organizations that would be directly impacted by the creation and adoption of ODS. These stakeholders include transit schedule firms, CAD/AVL firms, public transit providers, private transit providers, local governments and metropolitan planning organizations (MPOs), labor unions, and manufacturers of integrated on-vehicle hardware solutions (such as Automated Passenger Counting devices or LED signage).
 
 ## Why is Cal-ITP leading this effort?
@@ -71,4 +72,4 @@ If you represent a transit agency, ask your scheduling software and CAD/AVL vend
 
 ## Who should I contact for more information?
 
-The ODS Working Group is led by Scott Frazier, Cal-ITP’s Product Manager for Operations Data. Scott can be reached via email at scott@compiler.la. 
+The ODS Working Group is led by Scott Frazier, Cal-ITP’s Product Manager for Operations Data. Scott can be reached via email at scott@compiler.la.
