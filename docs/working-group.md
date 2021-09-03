@@ -1,6 +1,6 @@
 # Working Group
 
-The Operational Data Standard working group is convened by staff from the [California Integrated Travel Project](http://calitp.org) as part of its goal to provide complete, accurate, and up-to-date transit data to customers and respective agencies.  
+The Operational Data Standard working group is convened by staff from the [California Integrated Travel Project](http://calitp.org) as part of its goal to provide complete, accurate, and up-to-date transit data to customers and respective agencies.
 
 Working group members are expected to commit to supporting the adopted ODS v1 specification. Depending on the organization, supporting the ODS v1 specification may entail developing software to produce or consume the specification, or, for transit agencies, encouraging vendors to support the specification.
 
@@ -49,7 +49,7 @@ Working group members are expected to commit to supporting the adopted ODS v1 sp
 [Trapeze](https://www.trapezegroup.com/)  
 [Trillium Solutions](https://trilliumtransit.com/)  
 
-## Other
+### Other
 
 [Amalgamated Transit Union](https://www.atu.org/)  
 [California Association for Community Transportation (CALACT)](http://calact.org)  
