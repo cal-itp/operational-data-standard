@@ -7,3 +7,6 @@ MD007:
 
 # Remove line length limit - no one wants to hard wrap all their paragraphs
 MD013: false
+
+# in some cases, emphasis really is more appropriate than a heading
+MD036: false
