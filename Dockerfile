@@ -7,4 +7,4 @@ COPY . .
 
 RUN pip install -r docs/requirements.txt
 
-CMD ["mkdocs", "serve", "--dev-addr=0.0.0.0:8000"]
+CMD ["mkdocs", "serve", "--dev-addr=localhost:8000"]
