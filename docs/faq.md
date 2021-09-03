@@ -2,18 +2,19 @@
 
 ## What is the Operational Data Standard?
 
-The Operational Data Standard (ODS) is the working name for a proposed standard format to represent transit operational data. 
+The Operational Data Standard (ODS) is the working name for a proposed standard format to represent transit operational data.  
 
-“Operational data” refers to everything a transit provider needs to know “behind the scenes” in order to provide service to riders. Operational data can include the following information: 
-* Vehicle blocking (which vehicles run which routes)
-* Driver shift management (which vehicle operators work on which routes)
-* Vehicle shift start/end time and location (when and where vehicles pull in and out of service)
-* Nonrevenue vehicle service (deadheading)
-* Service disruptions
+“Operational data” refers to everything a transit provider needs to know “behind the scenes” in order to provide service to riders. Operational data can include the following information:  
+
+* Vehicle blocking (which vehicles run which routes)  
+* Driver shift management (which vehicle operators work on which routes)  
+* Vehicle shift start/end time and location (when and where vehicles pull in and out of service)  
+* Nonrevenue vehicle service (deadheading)  
+* Service disruptions  
 
 ## Why is a standard for operational data needed?
 
-Operational data is critical for transit providers, but currently it exists primarily in proprietary formats created and maintained by various scheduling and CAD/AVL companies. The use of proprietary formats leads to wide disparities in the experiences that agencies have in trying to create a schedule and then utilizing that schedule in a CAD/AVL software. Agencies often find that their CAD/AVL and scheduling vendors prepare data in different formats, or they use different nomenclature to refer to route and stop names, which results in time-consuming manual processes to align incompatible data sources. 
+Operational data is critical for transit providers, but currently it exists primarily in proprietary formats created and maintained by various scheduling and CAD/AVL companies. The use of proprietary formats leads to wide disparities in the experiences that agencies have in trying to create a schedule and then utilizing that schedule in a CAD/AVL software. Agencies often find that their CAD/AVL and scheduling vendors prepare data in different formats, or they use different nomenclature to refer to route and stop names, which results in time-consuming manual processes to align incompatible data sources.  
 
 The availability of information in the GTFS standard format has not only resulted in better information being available to riders, but it has also led to innovation in features and functionality for use by transit providers themselves. Similarly, creating a standard format for operational data will help  transit providers with  easier, less expensive, and enhanced scheduling functionality.
 
