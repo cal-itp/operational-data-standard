@@ -1,4 +1,4 @@
-site_name: "cal-itp/operational-data-standard"
+site_name: "Transit Operational Data Standard"
 site_url: https://docs.calitp.org/operational-data-standard
 repo_url: https://github.com/cal-itp/operational-data-standard
 edit_uri: edit/main/docs
@@ -10,6 +10,8 @@ theme:
   palette:
     primary: "blue"
     accent: "amber"
+  icon:
+    logo: material/bus
 
 plugins:
   - search
@@ -41,3 +43,6 @@ markdown_extensions:
       permalink: " ¶"
   - smarty
   - fontawesome_markdown
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
