@@ -30,7 +30,7 @@ Version 1 of the Operational Data Standard is expected to be finalized by Decemb
 
 | Meeting     | Date  | Description                          |
 | :---------- | :---- |:----------------------------------- |
-| Working Group Meeting #3 |  Sept. 21, 2021 | Drivers + rostering |
+| Working Group Meeting #3 |  Sept. 28, 2021 | Drivers + rostering |
 | Working Group Meeting #4 |  Oct. 2021 | Yards, vehicles, + assets |
 | Working Group Meeting #5 |  Nov. 2021 | Runcutting, layovers, +  deadheads |
 | Working Group Meeting #6 |  Dec. 2021 | Adoption of v1 |
