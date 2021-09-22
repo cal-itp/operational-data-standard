@@ -1,6 +1,6 @@
 # Operational Data Standard
 
-:material-bus: This document is intended to provide information about the forthcoming Operational Data Standard (ODS) and the [Operational Data Standard Working Group](working-group.md). The Operational Data Standard is intended to address the lack of a standard format for representing transit schedules used by drivers, dispatchers, and planners to carry out transit operations.  Developing and suppoorting standards such as ODS are critical to implementing the [Mobility Data Interoperability Principles](https://interoperable-mobility.github.io/principles/) (currently in public draft).
+:material-bus: This document is intended to provide information about the forthcoming Operational Data Standard (ODS) and the [Operational Data Standard Working Group](working-group.md). The Operational Data Standard is intended to address the lack of a standard format for representing transit schedules used by drivers, dispatchers, and planners to carry out transit operations.  Developing and supporting standards such as ODS are critical to implementing the [Mobility Data Interoperability Principles](https://interoperable-mobility.github.io/principles/) (currently in public draft).
 
 Version 1 of the Operational Data Standard is expected to be finalized by December 2021 following the [process](#process) outlined below.
 
