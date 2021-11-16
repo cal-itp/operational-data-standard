@@ -9,8 +9,8 @@ The Operational Data Standard (ODS) is assumed to exist within the context of th
 | Component     | Status | Comments |
 | :----------   | :----  |  :----   |
 | Personnel     | [Draft v0.2](https://docs.google.com/document/d/1doswkEZ2kt6ACLHQJQ3k_jBlQGppGnU1BSkbYM8Lybw) |  |
-| Facilities    | [Draft v0.1](https://docs.google.com/document/d/1bUheweHg5udmBqJIJehO9g8r_JyoU6jLuicbJ8Fgag0/edit#heading=h.nucczslcuppw) | To be discussed at Working Group Meeting #4 on October 19, 2021 |  
-| Runcutting, layovers, +  deadheads   | To be drafted | To be discussed at Working Group Meeting # 5 - November 2021 |  
+| Facilities    | [Draft v0.1](https://docs.google.com/document/d/1bUheweHg5udmBqJIJehO9g8r_JyoU6jLuicbJ8Fgag0) | To be discussed at Working Group Meeting #4 on October 19, 2021 |  
+| Runcutting, layovers, +  deadheads   |  [Draft v0.1](https://docs.google.com/document/d/1PZMmyNuxOuzx3pKLehfHs9cFcfSpbpiOoUJk0x2MqLo) | To be discussed at Working Group Meeting # 5 - November 16, 2021 |  
 
 ## Format
 
