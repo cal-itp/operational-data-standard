@@ -38,5 +38,9 @@ Version 1 of the Operational Data Standard is expected to be finalized by Decemb
 ### 3. Implementation
 
 *2022*
+
+| Meeting     | Date  | Description                          |
+| :---------- | :---- |:----------------------------------- |
 | [Working Group Meeting #7](https://docs.google.com/presentation/d/131y4sqJ4yI0YfeXVJM7s6HMsheJOEUJRbnxO7Y5RaWw/edit?usp=sharing) - [video](https://drive.google.com/file/d/1fA8a_8YoaJOS0ZqwSKzQWDy88-T2dOTd/view?usp=sharing) |  Feb. 22 2022 | Discussion of Upcoming Implementation Steps |
+
 [Working group](working-group.md) participants are committed to supporting the adopted ODS v1 specification. Depending on the organization, supporting the ODS v1 specification may entail developing software to produce or consume the specification, or, for transit agencies, encouraging vendors to support the specification through procurement requirements or other available methods.
