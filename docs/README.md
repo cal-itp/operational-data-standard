@@ -33,10 +33,10 @@ Version 1 of the Operational Data Standard is expected to be finalized by Decemb
 | [Working Group Meeting #3](https://docs.google.com/presentation/d/19TKTKTW54Vs8EeQ76kN8xAO-qFMUUTlj-LT9bYlJQXQ) - [notes](https://docs.google.com/document/d/1w2y7aHPlQ-A1ls3LDfYqolM9vhd3Z05fiNqec5Jxxd4) |  Sept. 28, 2021 | [Personnel Proposal](https://docs.google.com/document/d/1doswkEZ2kt6ACLHQJQ3k_jBlQGppGnU1BSkbYM8Lybw)  |
 | [Working Group Meeting #4](https://docs.google.com/presentation/d/17aNfY1duDNa_fX3ByUqarzsvHhuRsybbvaGxwCZEMZg) |  Oct. 19, 2021 | [Facilities Proposal](https://docs.google.com/document/d/1bUheweHg5udmBqJIJehO9g8r_JyoU6jLuicbJ8Fgag0) |
 | Working Group Meeting #5 |  Nov. 16 2021 | [Runcutting, Layovers, +  Deadheads Proposal](https://docs.google.com/document/d/1PZMmyNuxOuzx3pKLehfHs9cFcfSpbpiOoUJk0x2MqLo) |
-| Working Group Meeting #6 |  Dec. 2021 | Adoption of v1 |
+| Working Group Meeting #6 - [video](https://drive.google.com/file/d/1P5BymBL2xXCH-sTfAwYKzUOGHqrQSjn2/view?usp=sharing) |  Dec. 21 2021 | Adoption of v1 |
 
 ### 3. Implementation
 
 *2022*
-
+| [Working Group Meeting #7](https://docs.google.com/presentation/d/131y4sqJ4yI0YfeXVJM7s6HMsheJOEUJRbnxO7Y5RaWw/edit?usp=sharing) - [video](https://drive.google.com/file/d/1fA8a_8YoaJOS0ZqwSKzQWDy88-T2dOTd/view?usp=sharing) |  Feb. 22 2022 | Discussion of Upcoming Implementation Steps |
 [Working group](working-group.md) participants are committed to supporting the adopted ODS v1 specification. Depending on the organization, supporting the ODS v1 specification may entail developing software to produce or consume the specification, or, for transit agencies, encouraging vendors to support the specification through procurement requirements or other available methods.
