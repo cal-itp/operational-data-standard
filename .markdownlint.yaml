@@ -8,5 +8,11 @@ MD007:
 # Remove line length limit - no one wants to hard wrap all their paragraphs
 MD013: false
 
+# allow duplicate sub-headings
+MD024: false
+
+# allow inline HTML
+MD033: false
+
 # in some cases, emphasis really is more appropriate than a heading
 MD036: false

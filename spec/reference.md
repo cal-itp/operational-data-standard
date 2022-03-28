@@ -1,15 +1,19 @@
 # Operational Data Standard
+
 Standardized data for providers of scheduled mobility services.
 
 ## Overview
+
 Providers of scheduled transit service have scheduling needs that extend beyond the capabilities of the General Transit Feed Specification (GTFS), which was designed to meet the needs of the public. Creating, maintaining, updating, and implementing a transit schedule requires providers to have a more complete view of daily vehicle operations and personnel schedules. The Operational Data Standard (ODS) is a proposal for a new open standard to define deadheads and runs. ODS is based on, and ties back to, GTFS-static files. ODS is proposed as a standard separate from GTFS in order to preserve the privacy of internal operations data.
 
 ## Deadheads
 
 ### Module Description
+
 Deadheads are vehicle movements during which a transit vehicle is not in service. The Deadheads module of ODS contains three new files in addition to the files in GTFS. This module provides for the creation of scheduled deadheads tied to an existing GTFS feed and linked to significant locations (such as points where pull in, pull out, and layovers occur) in the service area.
 
 ### Files
+
 | **File Name** | **Description** |
 | --- | --- |
 | deadheads.txt | Defines scheduled deadheads contained in a transit feed. (This file is analogous to trips.txt for non-revenue operations.) |
@@ -17,6 +21,7 @@ Deadheads are vehicle movements during which a transit vehicle is not in service
 | deadhead_times.txt | Times that a vehicle arrives at and departs from operational locations for each deadhead. (This file is analogous to stop_times.txt for non-revenue operations.) |
 
 #### deadheads.txt
+
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | deadhead_id | ID | Required | Identifies a deadhead. |
@@ -29,6 +34,7 @@ Deadheads are vehicle movements during which a transit vehicle is not in service
 | to_deadhead_id | ID referencing **deadheads.deadhead_id** | Conditionally Required | Identifies the deadhead scheduled immediately prior to the deadhead within the block_id. |
 
 #### ops_locations.txt
+
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | ops_location_id | ID | Required | Identifies an operational location. |
@@ -39,6 +45,7 @@ Deadheads are vehicle movements during which a transit vehicle is not in service
 | ops_location_lon | Longitude | Required | The longitude of the operational location. |
 
 #### deadhead_times.txt
+
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | deadhead_id | ID referencing **deadheads.deadhead_id** | Required | Identifies a deadhead. |
@@ -51,9 +58,11 @@ Deadheads are vehicle movements during which a transit vehicle is not in service
 ## Runs
 
 ### Module Description
+
 Runs are representations of the daily work schedule for transit agency personnel. The Runs module of ODS contains three new files in addition to the files in GTFS and the Deadheads module. This module provides for the creation of scheduled runs tied to an existing GTFS feed and to the files from the Deadheads module.
 
-### Files 
+### Files
+
 | **File Name** | **Description** |
 | --- | --- |
 | runs.txt | Defines runs (personnel schedules) within a feed. |
@@ -61,6 +70,7 @@ Runs are representations of the daily work schedule for transit agency personnel
 | event_alias.txt | Allows for values in the **run_events.event_name** field to be globally relabeled within a feed based on local terminology. |
 
 #### runs.txt
+
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | run_id | ID | Required | Identifies a run. |
@@ -75,6 +85,7 @@ Runs are representations of the daily work schedule for transit agency personnel
 | end_trip_position | Non-negative Integer referencing **deadhead_times.ops_location_sequence** or **stop_times.stop_sequence** | Optional | Identifies the last operational location or stop to be serviced in the last trip of the piece. This field should only be filled out if the piece does not end at the last stop of the last trip. |
 
 #### run_events.txt
+
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | run_event_id | ID | Required | Identifies a run event. |
@@ -86,8 +97,8 @@ Runs are representations of the daily work schedule for transit agency personnel
 | event_location_id | ID referencing **ops_locations.ops_location_id** or **stops.stop_id** | Optional | Identifies the operational location or stop at which the event is scheduled to take place. |
 
 #### event_alias.txt
+
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | event_name | Non-negative Integer | Required | The value of the event name which is to be renamed within the feed. |
 | event_alias | String | Required | The name which is to be used in place of the standard event name within the feed. |
-
