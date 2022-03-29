@@ -16,9 +16,9 @@ Deadheads are vehicle movements during which a transit vehicle is not in service
 
 | **File Name** | **Description** |
 | --- | --- |
-| deadheads.txt | Defines scheduled deadheads contained in a transit feed. (This file is analogous to trips.txt for non-revenue operations.) |
-| ops_locations.txt | Significant operational locations relevant to the performance of vehicle deadheads. (This file is analogous to stops.txt for non-revenue operations.) |
-| deadhead_times.txt | Times that a vehicle arrives at and departs from operational locations for each deadhead. (This file is analogous to stop_times.txt for non-revenue operations.) |
+| deadheads.txt | Defines scheduled deadheads contained in a transit feed. (This file is analogous to [trips.txt](https://developers.google.com/transit/gtfs/reference#tripstxt) for non-revenue operations.) |
+| ops_locations.txt | Significant operational locations relevant to the performance of vehicle deadheads. (This file is analogous to [stops.txt](https://developers.google.com/transit/gtfs/reference#stopstxt) for non-revenue operations.) |
+| deadhead_times.txt | Times that a vehicle arrives at and departs from operational locations for each deadhead. (This file is analogous to [stop_times.txt](https://developers.google.com/transit/gtfs/reference#stop_timestxt) for non-revenue operations.) |
 
 ### deadheads.txt
 
@@ -29,7 +29,7 @@ Deadheads are vehicle movements during which a transit vehicle is not in service
 | block_id | ID | Required | Identifies a set of dates when the deadhead is scheduled to take place. |
 | shape_id | ID referencing [**shapes.shape_id**](https://developers.google.com/transit/gtfs/reference#shapestxt) | Optional | Identifies a geospatial shape that describes the vehicle travel path for a deadhead. |
 | to_trip_id | ID referencing [**trips.trip_id**](https://developers.google.com/transit/gtfs/reference#tripstxt) | Conditionally Required | Identifies the trip scheduled immediately following to the deadhead within the block_id. |
-| from_trip_id | ID referencing **trips.trip_id** | Conditionally Required | Identifies the trip scheduled immediately prior to the deadhead within the block_id. |
+| from_trip_id | ID referencing [**trips.trip_id**](https://developers.google.com/transit/gtfs/reference#tripstxt) | Conditionally Required | Identifies the trip scheduled immediately prior to the deadhead within the block_id. |
 | to_deadhead_id | ID referencing **deadheads.deadhead_id** | Conditionally Required | Identifies the deadhead scheduled immediately following the deadhead within the block_id. |
 | to_deadhead_id | ID referencing **deadheads.deadhead_id** | Conditionally Required | Identifies the deadhead scheduled immediately prior to the deadhead within the block_id. |
 
@@ -78,7 +78,7 @@ Runs are representations of the daily work schedule for transit agency personnel
 | start_trip_position | Non-negative Integer referencing **deadhead_times.ops_location_sequence** or [**stop_times.stop_sequence**](https://developers.google.com/transit/gtfs/reference#stop_timestxt) | Optional | Identifies the first operational location or stop to be serviced in the first trip of the piece. This field should only be filled out if the piece does not begin at the first stop of the start trip. |
 | end_type | Enum | Required | Indicates whether the piece ends with a deadhead, a revenue trip, or an event. <br /><br />**0** - Deadhead <br />**1** - Trip <br />**2** - Event |
 | end_trip_id | ID referencing **deadheads.deadhead_id** or [**trips.trip_id**](https://developers.google.com/transit/gtfs/reference#tripstxt) | Required | Identifies the deadhead or trip with which the piece ends. |
-| end_trip_position | Non-negative Integer referencing **deadhead_times.ops_location_sequence** or **stop_times.stop_sequence** | Optional | Identifies the last operational location or stop to be serviced in the last trip of the piece. This field should only be filled out if the piece does not end at the last stop of the end trip. |
+| end_trip_position | Non-negative Integer referencing **deadhead_times.ops_location_sequence** or [**stop_times.stop_sequence**](https://developers.google.com/transit/gtfs/reference#stop_timestxt) | Optional | Identifies the last operational location or stop to be serviced in the last trip of the piece. This field should only be filled out if the piece does not end at the last stop of the end trip. |
 
 ### run_events.txt
 
