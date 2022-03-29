@@ -1,6 +1,6 @@
 # Operational Data Standard
 
-Standardized data for providers of scheduled mobility services.
+The Operational Data Standard (ODS) is an open standard for describing scheduled transit operations. ODS leverages the existing GTFS specification and extends it to include information about personnel and non-revenue service. These concepts, which are not included in the rider-oriented GTFS spec, are necessary for transit operators to be able to run a scheduled service.
 
 ## Overview
 
