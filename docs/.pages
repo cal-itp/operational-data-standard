@@ -1,6 +1,6 @@
 nav:
   - Home: index.md
-  - Specification: spec.md
+  - Specification: spec
   - Frequently Asked Questions: faq.md
   - Working Group: working-group.md
   - About: about.md

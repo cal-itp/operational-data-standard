@@ -1,6 +1,6 @@
-# Specification
+# Reference
 
-The Operational Data Standard was last updated on April 14, 2022 (v1.0). View the full [revision history](revision-history.md).
+The Operational Data Standard was last updated on April 14, 2022 (v1.0). View the full [revision history](./revision-history.md).
 
 ## Dataset Files
 

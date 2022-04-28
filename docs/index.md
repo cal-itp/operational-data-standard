@@ -15,4 +15,4 @@ ODS is a proposal for a new open standard to define deadheads and runs. ODS is b
 GTFS-static files. ODS is proposed as a standard separate from GTFS in order to preserve the privacy of internal operations
 data.
 
-View the [full ODS specification](spec.md).
+View the [full ODS specification](./spec/index.md).
