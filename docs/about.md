@@ -1,17 +1,11 @@
-# Operational Data Standard
+# About
 
-## Framing
+This website and the Operational Data Standard are maintained by [Cal-ITP](https://dot.ca.gov/cal-itp), a project of the
+California Department of Transportation. ODS was originally developed as a product of the Operational Data Standard Working
+Group, which was convened by Cal-ITP in 2021.
 
-The Operational Data Standard (ODS) is assumed to exist within the context of the [General Transit Feed Specification](http://gtfs.mobilitydata.org) (GTFS) and align with its existing terms, definitions, and schema in alignment with the [Mobility Data Interoperability Principles](https://interoperable-mobility.github.io/principles/).  
+For information about how the Operational Data Standard was originally developed, visit [Spec Development](./spec/development.md).
 
-## Components
+To see videos of past meetings or presentations regarding the Operational Data Standard, go to the [Resources page](resources.md).
 
-| Component     | Status | Comments |
-| :----------   | :----  |  :----   |
-| Personnel     | [Draft v0.2](https://docs.google.com/document/d/1doswkEZ2kt6ACLHQJQ3k_jBlQGppGnU1BSkbYM8Lybw) |  |
-| Facilities    | [Draft v0.1](https://docs.google.com/document/d/1bUheweHg5udmBqJIJehO9g8r_JyoU6jLuicbJ8Fgag0) | To be discussed at Working Group Meeting #4 on October 19, 2021 |  
-| Runcutting, layovers, +  deadheads   |  [Draft v0.1](https://docs.google.com/document/d/1PZMmyNuxOuzx3pKLehfHs9cFcfSpbpiOoUJk0x2MqLo) | To be discussed at Working Group Meeting # 5 - November 16, 2021 |  
-
-## Format
-
-To be discussed / determined.
+For information about the Operational Data Standard Working Group, go to the [Working Group page](working-group.md).
