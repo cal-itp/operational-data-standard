@@ -1,24 +1,23 @@
-# Operational Data Standard
+# Specification
 
-The Operational Data Standard (ODS) is an open standard for describing scheduled transit operations. ODS leverages the existing General Transit Feed Specification (GTFS) and extends it to include information about personnel and non-revenue service. These concepts, which are not included in the rider-oriented GTFS spec, are necessary for transit operators to be able to run a scheduled service.
+The Operational Data Standard was last updated on April 14, 2022 (v1.0). View the full [revision history](revision-history.md).
 
-## Overview
+## Dataset Files
 
-Transit providers need the systems they use to schedule and operate their service to be [interoperable](https://www.interoperablemobility.org/). Interoperability is best achieved through open standards. While GTFS is a very successful existing open standard, it is designed for giving information to transit riders, and, thus, is missing key concepts that are necessary for transit providers.
-
-ODS is a proposal for a new open standard to define deadheads and runs. ODS is based on, and includes references to, GTFS-static files. ODS is proposed as a standard separate from GTFS in order to preserve the privacy of internal operations data.
-
-ODS consists of a set of .txt files arranged into distinct modules. These modules identify the major new concepts supported within ODS that are not defined in GTFS. The two modules in ODS v1.0 are **Deadheads** and **Runs**.
-
-## Deadheads
-
-Deadheads are vehicle movements during which a transit vehicle is not in service. The Deadheads module of ODS contains three new files in addition to the files in GTFS. This module provides for the creation of scheduled deadheads tied to an existing GTFS feed and linked to significant locations (such as points where pull in, pull out, and layovers occur) in the service area.
+The following files are defined within the ODS specification. All files are required.
 
 | **File Name** | **Description** |
 | --- | --- |
 | deadheads.txt | Defines scheduled deadheads contained in a transit feed. (This file is analogous to [trips.txt](https://developers.google.com/transit/gtfs/reference#tripstxt) for non-revenue operations.) |
 | ops_locations.txt | Significant operational locations relevant to the performance of vehicle deadheads. (This file is analogous to [stops.txt](https://developers.google.com/transit/gtfs/reference#stopstxt) for non-revenue operations.) |
 | deadhead_times.txt | Times that a vehicle arrives at and departs from operational locations for each deadhead. (This file is analogous to [stop_times.txt](https://developers.google.com/transit/gtfs/reference#stop_timestxt) for non-revenue operations.) |
+| runs.txt | Defines runs (personnel schedules) within a feed. |
+| run_events.txt | Other scheduled activities to be performed by a member of personnel during a run. |
+| event_alias.txt | Allows for values in the **run_events.event_name** field to be globally relabeled within a feed based on local terminology. |
+
+## Field Definitions
+
+ODS files consist of the following fields:
 
 ### deadheads.txt
 
@@ -54,16 +53,6 @@ Deadheads are vehicle movements during which a transit vehicle is not in service
 | ops_location_id | ID referencing **ops_locations.ops_location_id** | Required | Identifies the operational location specified by this record. |
 | ops_location_sequence | Non-negative Integer | Required | Order of operational locations for a particular deadhead. The values must increase along the trip but do not need to be consecutive. |
 | shape_dist_traveled | Non-negative Float | Optional | Actual distance traveled along the associated shape, from the first operational location to the operational location specified in this record. |
-
-## Runs
-
-Runs are representations of the daily work schedule for transit agency personnel. The Runs module of ODS contains three new files in addition to the files in GTFS and the Deadheads module. This module provides for the creation of scheduled runs tied to an existing GTFS feed and to the files from the Deadheads module.
-
-| **File Name** | **Description** |
-| --- | --- |
-| runs.txt | Defines runs (personnel schedules) within a feed. |
-| run_events.txt | Other scheduled activities to be performed by a member of personnel during a run. |
-| event_alias.txt | Allows for values in the **run_events.event_name** field to be globally relabeled within a feed based on local terminology. |
 
 ### runs.txt
 
