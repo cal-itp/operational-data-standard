@@ -4,7 +4,7 @@ This website and the Operational Data Standard are maintained by [Cal-ITP](https
 California Department of Transportation. ODS was originally developed as a product of the Operational Data Standard Working
 Group, which was convened by Cal-ITP in 2021.
 
-For information about how the Operational Data Standard was originally developed, visit [Spec Development](../spec/development.md).
+For information about how the Operational Data Standard was originally developed, read about the [Spec Development Process](./spec-development.md).
 
 To see videos of past meetings or presentations regarding the Operational Data Standard, go to the [Resources page](./resources.md).
 
