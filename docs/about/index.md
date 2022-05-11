@@ -8,4 +8,4 @@ For information about how the Operational Data Standard was originally developed
 
 To see videos of past meetings or presentations regarding the Operational Data Standard, go to the [Resources page](./resources.md).
 
-For information about the Operational Data Standard Working Group, go to the [Working Group page](../working-group.md).
+For information about the Operational Data Standard Working Group, go to the [Working Group page](./working-group.md).
