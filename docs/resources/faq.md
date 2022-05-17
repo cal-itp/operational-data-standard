@@ -1,22 +1,20 @@
 # Frequently Asked Questions
 
-## What is the Operational Data Standard?
+## What is "operational data?"
 
-The Operational Data Standard (ODS) is the working name for a proposed standard format to represent transit operational data.  
+Operational data refers to everything a transit provider needs to know “behind the scenes” in order to provide service to riders. Operational data can include the following information:
 
-“Operational data” refers to everything a transit provider needs to know “behind the scenes” in order to provide service to riders. Operational data can include the following information:  
-
-* Vehicle blocking (which vehicles run which routes)  
-* Driver shift management (which vehicle operators work on which routes)  
-* Vehicle shift start/end time and location (when and where vehicles pull in and out of service)  
-* Nonrevenue vehicle service (deadheading)  
-* Service disruptions  
+* Vehicle blocking (which vehicles run which routes)
+* Driver shift management (which vehicle operators work on which routes)
+* Vehicle shift start/end time and location (when and where vehicles pull in and out of service)
+* Nonrevenue vehicle service (deadheading)
+* Service disruptions
 
 ## Why is a standard for operational data needed?
 
-Operational data is critical for transit providers, but currently it exists primarily in proprietary formats created and maintained by various scheduling and CAD/AVL companies. The use of proprietary formats leads to wide disparities in the experiences that agencies have in trying to create a schedule and then utilizing that schedule in a CAD/AVL software. Agencies often find that their CAD/AVL and scheduling vendors prepare data in different formats, or they use different nomenclature to refer to route and stop names, which results in time-consuming manual processes to align incompatible data sources.  
+Operational data is critical for transit providers, but currently it exists primarily in proprietary formats created and maintained by various scheduling and CAD/AVL companies. The use of proprietary formats leads to wide disparities in the experiences that agencies have in trying to create a schedule and then utilizing that schedule in a CAD/AVL software. Agencies often find that their CAD/AVL and scheduling vendors prepare data in different formats, or they use different nomenclature to refer to route and stop names, which results in time-consuming manual processes to align incompatible data sources.
 
-The availability of information in the GTFS standard format has not only resulted in better information being available to riders, but it has also led to innovation in features and functionality for use by transit providers themselves. Similarly, creating a standard format for operational data will help  transit providers with  easier, less expensive, and enhanced scheduling functionality.
+The availability of information in the GTFS standard format has not only resulted in better information being available to riders, but it has also led to innovation in features and functionality for use by transit providers themselves. Similarly, creating a standard format for operational data will help transit providers with easier, less expensive, and enhanced scheduling functionality.
 
 ## Isn’t operational data already covered by … GTFS?
 
@@ -32,44 +30,16 @@ Yes. The Transit Communications Interface Profiles (TCIP) is a standard develope
 
 ## What is Cal-ITP?
 
-Managed by Caltrans, the California Integrated Travel Project (Cal-ITP) is a statewide initiative designed to unify transit in California with a common fare payment system, real-time data standard, and seamless verification of eligibility for transit discounts.
+Cal-ITP is a statewide initiative of the California State Transportation Agency (CalSTA) and the California Department of Transportation (Caltrans) to simplify travel by increasing access to public transportation—including easier, faster payments via contactless credit/debit/prepaid cards and mobile wallets on smart devices, high-quality data standards, and seamless verification of eligibility for transit discounts. Learn more at [calitp.org](https://www.calitp.org/). And visit Cal-ITP's [CAMobilityMarketplace.org](https://www.camobilitymarketplace.org/) for a catalog of code-compliant products and services for transit agencies.
 
 ## What is the ODS Working Group?
 
-The ODS Working Group is an initiative of the California Integrated Travel Project (Cal-ITP). It is a group of stakeholders convened for the purpose of developing and adopting ODS v1.
-
-## Who is a stakeholder in the development of ODS?
-
-Cal-ITP is looking for a cross section of the transportation industry who represents a range of companies and organizations that would be directly impacted by the creation and adoption of ODS. These stakeholders include transit schedule firms, CAD/AVL firms, public transit providers, private transit providers, local governments and metropolitan planning organizations (MPOs), labor unions, and manufacturers of integrated on-vehicle hardware solutions (such as Automated Passenger Counting devices or LED signage).
+The Operational Data Standard working group was convened by staff from the California Integrated Travel Project (Cal-ITP) as part of its goal to provide complete, accurate, and up-to-date transit data to customers and respective agencies. Working group members include major transit agencies across the United States and many of the largest transit software companies in North America. Visit our [Working Group page](../about/working-group.md) for a full list of members.
 
 ## Why is Cal-ITP leading this effort?
 
 Cal-ITP developed the ODS initiative in response to feedback from local transit providers and vendors. As Cal-ITP has as its core a mission to improve the quality of mobility data and increase the efficiency of transportation service delivery in the state of California, we have conducted research and conversations with an eye toward identifying existing pain points. The gap that exists between scheduling software and CAD/AVL software was identified by respondents as a major source of friction. Even as GTFS has seen increasingly widespread adoption, operational data is subject to proprietary formats, overlapping use cases, and manual processes that inefficiently transfer data from one system to another. Cal-ITP’s conversations with partners have demonstrated that there is a clear desire among vendors and transit providers to come together around a standard representation of operational data built in the GTFS model.
 
-## Is ODS going to be applicable for agencies outside of the state of California?
+## Have more questions?
 
-Yes. The working group will be focusing on solutions that meet the needs of transit providers irrespective of where they are located. While Cal-ITP is leading the initiative to develop ODS v1, it is doing so with a working group that includes major scheduling and CAD/AVL vendors in the North American market and beyond. When the ODS Working Group winds down, ownership of ODS is intended to transition to a geographically neutral organization.
-
-## When will ODS v1 be released?
-
-Cal-ITP intends for the working group to conclude activities before the end of 2021, coinciding with the release of ODS v1. Upon release, ODS is intended to be transferred to a neutral organization for ownership and ongoing maintenance.
-
-## Does the development of ODS mean my company/transit agency is going to be asked to support another new spec?
-
-The decision as to whether ODS should extend an existing specification or stand on its own will ultimately be made by the ODS Working Group as a whole. However, Cal-ITP and ODS Working Group members will take into account steps that the group can take to facilitate implementation of ODS after the release/publication of ODS v1.
-
-## How will my transit agency benefit from using ODS-supporting products?
-
-ODS-supporting products will enable faster, more efficient and seamless data integration from your scheduling software to your CAD/AVL software. ODS will improve the quality of data in both scheduling and CAD/AVL applications by integrating them more closely together. ODS will encourage the development of more sophisticated and user-friendly tools for operators and riders by making operational data easier for application developers to parse.
-
-## Which products or technology components should support ODS?
-
-While the boundaries for ODS v1 will be finalized by the ODS Working Group, it is expected that a range of products and on-vehicle hardware will benefit from supporting ODS. Among these are scheduling software, service planning and analysis software, CAD/AVL software, onboard fareboxes, automated passenger counting (APC) devices, headsign and internal LED displays, and on-board public announcement (PA) or voice annunciation systems.
-
-## How can my transit agency support ODS?
-
-If you represent a transit agency, ask your scheduling software and CAD/AVL vendors if they are participating in the ODS Working Group. Let them know that you are interested in receiving the benefits of ODS, and encourage them to begin planning to implement ODS v1 upon release at the end of 2021.
-
-## Who should I contact for more information?
-
-The ODS Working Group is led by Scott Frazier, Cal-ITP’s Product Manager for Operations Data. Scott can be reached via email at scott@compiler.la.
+For additional information, please email [hello@calitp.org Attn: Scott Frazier / ODS](mailto:hello@calitp.org?subject=Scott Frazier / ODS).
