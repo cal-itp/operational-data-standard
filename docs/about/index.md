@@ -6,6 +6,6 @@ Group, which was convened by Cal-ITP in 2021.
 
 For information about how the Operational Data Standard was originally developed, read about the [Spec Development Process](./spec-development.md).
 
-To see videos of past meetings or presentations regarding the Operational Data Standard, go to the [Resources page](./resources.md).
+To see videos of past meetings or presentations regarding the Operational Data Standard, go to the [Resources page](../resources/index.md)
 
 For information about the Operational Data Standard Working Group, go to the [Working Group page](./working-group.md).

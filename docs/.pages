@@ -1,5 +1,6 @@
 nav:
   - Home: index.md
   - Specification: spec
+  - Resources: resources
   - Frequently Asked Questions: faq.md
   - About: about
