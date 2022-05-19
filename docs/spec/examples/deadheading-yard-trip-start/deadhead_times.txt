@@ -1,0 +1,6 @@
+deadhead_id,arrival_time,departure_time,ops_location_id,stop_id,location_sequence,shape_dist_traveled
+test-deadhead,09:45:00,09:45:00,yard,,0,
+test-deadhead,09:46:00,09:46:00,yard-pull-out,,1,
+test-deadhead,09:50:00,09:50:00,,8506,2,
+test-deadhead,09:55:00,09:55:00,,8507,3,
+test-deadhead,10:00:00,10:00:00,,8500,4,

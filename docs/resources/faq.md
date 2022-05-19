@@ -2,7 +2,7 @@
 
 ## What is "operational data?"
 
-Operational data refers to everything a transit provider needs to know “behind the scenes” in order to provide service to riders. Operational data can include the following information:
+Operational data refers to everything a transit provider needs to know "behind the scenes" in order to provide service to riders. Operational data can include the following information:
 
 * Vehicle blocking (which vehicles run which routes)
 * Driver shift management (which vehicle operators work on which routes)

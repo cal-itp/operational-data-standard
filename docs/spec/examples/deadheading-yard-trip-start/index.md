@@ -4,21 +4,21 @@
 
 ## Data
 
-### `stops.txt`
+### [`stops.txt`](stops.txt)
 
 ```csv
 stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,stop_timezone,wheelchair_boarding,level_id,platform_code
-8500,8500,“First Stop”,,33.000,-153.000,,,,,,,,,
-8501,8501,“Second Stop”,,33.000,-153.000,,,,,,,,,
-8502,8502,“Third Stop”,,33.000,-153.000,,,,,,,,,
-8503,8503,“Fourth Stop”,,33.000,-153.000,,,,,,,,,
-8504,8504,“Fifth Stop”,,33.000,-153.000,,,,,,,,,
-8505,8505,“Sixth Stop”,,33.000,-153.000,,,,,,,,,
-8506,8506,“Seventh Stop”,,33.000,-153.000,,,,,,,,,
-8507,8507,“Eighth Stop”,,33.000,-153.000,,,,,,,,,
+8500,8500,"First Stop",,33.000,-153.000,,,,,,,,,
+8501,8501,"Second Stop",,33.000,-153.000,,,,,,,,,
+8502,8502,"Third Stop",,33.000,-153.000,,,,,,,,,
+8503,8503,"Fourth Stop",,33.000,-153.000,,,,,,,,,
+8504,8504,"Fifth Stop",,33.000,-153.000,,,,,,,,,
+8505,8505,"Sixth Stop",,33.000,-153.000,,,,,,,,,
+8506,8506,"Seventh Stop",,33.000,-153.000,,,,,,,,,
+8507,8507,"Eighth Stop",,33.000,-153.000,,,,,,,,,
 ```
 
-### `stop_times.txt`
+### [`stop_times.txt`](stop_times.txt)
 
 ```csv
 trip_id,arrival_time,departure_time,stop_id,stop_sequence,stop_headsign,pickup_type,drop_off_type,continuous_pickup,continuous_drop_off,shape_dist_traveled,timepoint
@@ -32,14 +32,14 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,stop_headsign,pickup_t
 101,11:10:00,11:11:00,5497,8,,,,,,
 ```
 
-### `deadheads.txt`
+### [`deadheads.txt`](deadheads.txt)
 
 ```csv
 deadhead_id,service_id,block_id,shape_id,to_trip_id,from_trip_id,to_deadhead_id,from_deadhead_id
 test-deadhead,daily,BLOCK-A,,101,,,
 ```
 
-### `deadhead_times.txt`
+### [`deadhead_times.txt`](deadhead_times.txt)
 
 ```csv
 deadhead_id,arrival_time,departure_time,ops_location_id,stop_id,location_sequence,shape_dist_traveled
@@ -50,10 +50,10 @@ test-deadhead,09:55:00,09:55:00,,8507,3,
 test-deadhead,10:00:00,10:00:00,,8500,4,
 ```
 
-### `ops_locations.txt`
+### [`ops_locations.txt`](ops_locations.txt)
 
 ```csv
 ops_location_id,ops_location_code,ops_location_name,ops_location_desc,ops_location_lat,ops_location_lon
-yard,,“Main Yard”,,34.000,-115.00
-yard-pull-out,,“Yard Pull Out”,,34.000,-115.00
+yard,,"Main Yard",,34.000,-115.00
+yard-pull-out,,"Yard Pull Out",,34.000,-115.00
 ```
