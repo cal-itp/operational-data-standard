@@ -6,6 +6,7 @@ edit_uri: edit/main/docs
 theme:
   name: material
   features:
+    - navigation.expand
     - navigation.tabs
   palette:
     primary: "blue"
