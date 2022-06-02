@@ -1,0 +1,4 @@
+run_event_id,piece_id,event_type,event_name,event_time,event_duration,event_to_location_type,event_to_location_id,event_from_location_type,event_from_location_id
+af0d9802,10000-1,0,,05:50:00,0,0,yard,0,yard
+ebc02834,10000-1,1,"pre-trip inspection",06:07:00,600,0,yard,0,yard
+1f4da873,10000-1,7,"pull-out from yard",06:20:00,0,0,pull-out-point,0,pull-out-point
