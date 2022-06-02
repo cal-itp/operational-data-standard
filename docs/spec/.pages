@@ -1,0 +1,11 @@
+nav:
+  - Reference: index.md
+  - Revision History: revision-history.md
+  - Examples:
+    - Introduction: examples.md
+    - Single run single piece: spec/examples/single-run-single-piece
+    - Single run multiple pieces: spec/examples/single-run-multiple-pieces
+    - Multiple runs single block (no mid-trip relief): spec/examples/multiple-runs-single-block
+    - Multiple runs single block (with mid-trip relief): spec/examples/multiple-runs-single-block-midtrip-relief
+    - Pretripping and pull-out: spec/examples/pretripping-pull-out
+    - Deadheading from yard to start of trip: spec/examples/deadheading-yard-trip-start

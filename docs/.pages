@@ -1,6 +1,5 @@
 nav:
-  - Home: README.md
-  - Specification: spec.md
-  - Frequently Asked Questions: faq.md
-  - Working Group: working-group.md
-  - About: about.md
+  - Home: index.md
+  - Specification: spec
+  - Resources: resources
+  - About: about

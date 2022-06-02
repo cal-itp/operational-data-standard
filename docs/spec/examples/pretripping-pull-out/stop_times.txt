@@ -1,0 +1,5 @@
+trip_id,arrival_time,departure_time,stop_id,stop_sequence,stop_headsign,pickup_type,drop_off_type,continuous_pickup,continuous_drop_off,shape_dist_traveled,timepoint
+101,06:28:00,06:30:00,5490,0,,,,,,
+101,06:40:00,06:40:00,5491,1,,,,,,
+101,06:50:00,06:50:00,5492,2,,,,,,
+101,07:00:00,07:00:00,5493,3,,,,,,
