@@ -25,7 +25,7 @@ The Operational Data Standard was last updated on April 14, 2022 (v1.0). View th
 | to_trip_id | ID referencing [**trips.trip_id**](https://developers.google.com/transit/gtfs/reference#tripstxt) | Conditionally Required | Identifies the trip scheduled immediately following to the deadhead within the block_id. |
 | from_trip_id | ID referencing [**trips.trip_id**](https://developers.google.com/transit/gtfs/reference#tripstxt) | Conditionally Required | Identifies the trip scheduled immediately prior to the deadhead within the block_id. |
 | to_deadhead_id | ID referencing **deadheads.deadhead_id** | Conditionally Required | Identifies the deadhead scheduled immediately following the deadhead within the block_id. |
-| to_deadhead_id | ID referencing **deadheads.deadhead_id** | Conditionally Required | Identifies the deadhead scheduled immediately prior to the deadhead within the block_id. |
+| from_deadhead_id | ID referencing **deadheads.deadhead_id** | Conditionally Required | Identifies the deadhead scheduled immediately prior to the deadhead within the block_id. |
 
 ### ops_locations.txt
 
