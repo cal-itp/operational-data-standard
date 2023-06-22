@@ -8,6 +8,7 @@ theme:
   features:
     - navigation.expand
     - navigation.tabs
+    - toc.integrate
   palette:
     primary: "blue"
     accent: "amber"
