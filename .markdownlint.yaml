@@ -14,5 +14,8 @@ MD024: false
 # allow inline HTML
 MD033: false
 
+# throwing a false positive on the email link
+MD034: false
+
 # in some cases, emphasis really is more appropriate than a heading
 MD036: false
