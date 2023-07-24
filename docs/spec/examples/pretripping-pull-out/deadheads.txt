@@ -1,0 +1,2 @@
+deadhead_id,service_id,block_id,shape_id,to_trip_id,from_trip_id,to_deadhead_id,from_deadhead_id
+daily-deadhead-1,daily,BLOCK-A,,101,,,
