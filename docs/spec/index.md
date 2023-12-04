@@ -71,8 +71,10 @@ The Operational Data Standard was last updated on April 14, 2022 (v1.0). View th
 | piece_id | ID referencing **runs_pieces.piece_id** | Required | Identifies the piece during which the run event takes place. |
 | event_type | Enum | Required | Indicates which event is scheduled in this entry.<br /><br />**0** - Report Time<br />**1** - Pre-Trip Activity<br />**2** - Post-Trip Activity<br />**3** - Fueling<br />**4** - Break<br />**5** - Availability<br />**6** - Activity<br />**7** - Other |
 | event_name | String | Optional | The name for the event that is being used. |
-| event_time | Time | Required | The time at which the event begins. |
-| event_duration | Non-negative Integer | Required | The scheduled duration of the event from the event_time in seconds. |
+| start_time | Time | Required | The time at which the event begins. |
+| end_time | Time | Required | The time at which the event ends. |
+| duration_type | Enum | Required | Indicates whether the piece begins with a deadhead, a revenue trip, or an event.<br /><br />**0** - End on Time <br />**1** - Fixed Duration <br />**2** - Minimum Duration |
+| minimum_duration | Time | Conditionally Required | The shortest duration, in seconds, that should be allotted for an event if the event does not begin early enough to end on time. This field is required for events with a duration_type of 2. |
 | event_from_location_type | Enum | Optional | Indicates whether the event is scheduled to begin at an operational location or a stop.<br /><br />**0** - Operational Location<br />**1** - Stop |
 | event_from_location_id | ID referencing **ops_locations.ops_location_id** or [**stops.stop_id**](https://developers.google.com/transit/gtfs/reference#stopstxt) | Optional | Identifies the operational location or stop at which the event is scheduled to begin. |
 | event_to_location_type | Enum | Optional | Indicates whether the event is scheduled to end at an operational location or a stop.<br /><br />**0** - Operational Location<br />**1** - Stop |
