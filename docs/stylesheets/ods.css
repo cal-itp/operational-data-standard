@@ -3,7 +3,7 @@
 /* Palette source: https://coolors.co/palette/f4f1de-e07a5f-3d405b-81b29a-f2cc8f*/
 :root {
     --md-primary-fg-color:        #3d405bff;/*delft-blue*/
-    --md-accent-fg-color:         #81b29aff; /*cambridge-blue*/ 
+    --md-accent-fg-color:         #81b29aff; /*cambridge-blue*/
     --md-primary-bg-color:        #f4f1deff;  /*eggshell*/
     --text-color:                 #3d405bff; /*delft-blue:*/
     --md-code-hl-color:            #e07a5fff; /*burnt-sienna*/
@@ -62,4 +62,4 @@ th {
 background-color: var(--md-primary-fg-color);
 color: var(--md-default-bg-color);
 }
-  
+
