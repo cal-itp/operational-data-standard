@@ -8,7 +8,7 @@ View the [full ODS specification](./spec/index.md).
 graph LR
     subgraph Scheduling
         I[Schedules]
-        M[Run Cutting] 
+        M[Run Cutting]
         N[Bidding/Driver Assignment]
         M --> N
     end
