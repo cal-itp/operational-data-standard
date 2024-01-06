@@ -8,6 +8,8 @@ MD007:
 # Remove line length limit - no one wants to hard wrap all their paragraphs
 MD013: false
 
+MD046: false
+
 # allow duplicate sub-headings
 MD024: false
 
