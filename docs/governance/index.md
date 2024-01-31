@@ -23,7 +23,7 @@ The ODS Governance is designed with the following principles in mind:
 
 - Change-making process should be simple for simple changes.
 - Complex changes should be made with careful consideration.
-- Streamlined, purpose-driven change management should be applied to maximize stakeholder efficiency . 
+- Streamlined, purpose-driven change management should be applied to maximize stakeholder efficiency .
 - Changes should be straightforward to incorporate by existing ODS Stakeholders.
 - Significant changes, especially those which are not backwards compatible with existing datasets, should be limited in number and in frequency in order to limit the number of times existing processes and tools need to be re-engineered.
 - A significant change merits a new version number.

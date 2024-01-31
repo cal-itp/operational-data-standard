@@ -10,7 +10,7 @@
 
 !!! tip
 
-    Definitions of various roles such as ODS Board, ODS Manager and ODS Contributor refer to their respective definitions in the [ODS Governance][ODS-governance]. 
+    Definitions of various roles such as ODS Board, ODS Manager and ODS Contributor refer to their respective definitions in the [ODS Governance][ODS-governance].
 
 The following definitions build on the overall ODS Governance definitions and exist within the purpose of the ODS Versioning and Change Management Policy.
 
@@ -57,7 +57,7 @@ Initiated when Any ODS Contributor identifies a need that should be addressed in
 
 Actions:
 
-* An ODS Contributor submits an issue to the ODS Repository which identifies the need that they would like addressed and a rough assessment of its addressable audience. 
+* An ODS Contributor submits an issue to the ODS Repository which identifies the need that they would like addressed and a rough assessment of its addressable audience.
 * An ODS Manager triages issue and asks for more detail from the Contributor if needed.
 * An ODS Manager determines if issue resolution would require a normative change.
 
@@ -83,7 +83,7 @@ Actions:
 
 * ODS Manager convenes an Issue Working Group to develop a resolution to the issue.
 Working Group members document discussion points about approach in the relevant github issue.
-* While consensus will be sought, if the Working Group members cannot come to a unanimous agreement about the solution, the ODS * Manager may ask the ODS  Board to make a decision after hearing feedback from various perspectives. 
+* While consensus will be sought, if the Working Group members cannot come to a unanimous agreement about the solution, the ODS * Manager may ask the ODS  Board to make a decision after hearing feedback from various perspectives.
 * Working Group members update the schema and documentation according to the proposal on a feature branch.
 
 Resolution: Working Group submits a pull request to the develop branch.
@@ -96,7 +96,7 @@ Actions:
 
 * The ODS Manager MUST invite people outside of the Working Group to review and comment on the proposal for a minimum of two weeks, making sure ODS Contributors with different roles and backgrounds have had a chance to consider it.
 * The ODS Manager MUST review the proposal for consistency with the Open Standards Definition maintained by the Mobility Data Interoperability Principles.
-* The ODS Manager MUST offer tools, services and  assistance to any ODS  Contributor who is unable to fluidly interact with the tooling used in the review process. 
+* The ODS Manager MUST offer tools, services and  assistance to any ODS  Contributor who is unable to fluidly interact with the tooling used in the review process.
 * A minimum of three ODS Contributors outside the Working Group MUST publicly comment on each proposal for it to move forward  and indicate a score of:
     * Accepted;
     * Accepted with minor changes; or
@@ -108,7 +108,7 @@ Actions:
 * If any reviewer requests substantial changes, they must also agree to work with the working group on developing an alternative solution to the need.
 * If the working group believes the substantial change request is invalid or without merit, they may appeal to the ODS  Board to make a final decision about if revisions are necessary.
 
-Resolution: Change as represented in the pull request from the feature branch is approved and merged into the develop branch. 
+Resolution: Change as represented in the pull request from the feature branch is approved and merged into the develop branch.
 
 ### Full Implementation
 
@@ -147,7 +147,7 @@ This section outlines an expedited process for implementing changes in response 
     * If the ODS Board fails to respond within 48 hours, the Urgent Working Group MAY proceed with their implicit approval.
 3. **Solution Identification**: The Urgent Working Group, managed by the ODS Manager, MUST identify a solution that meets the urgent need and document it as a PR to the main repository branch – outside the normal release cycle.  
 4. **Decision-Making**: A supermajority (two-thirds) of the Urgent Working Group members MUST approve the proposed change to meet the urgent need.  If the decision is deadlocked, the decision is escalated to the ODS Board.
-5. **Implementation**: The rest of the implementation and release cycle mirrors the main change-making process. 
+5. **Implementation**: The rest of the implementation and release cycle mirrors the main change-making process.
 
 ## Versions and Release Management
 
@@ -173,7 +173,7 @@ Pre-releases MAY be made in order to evaluate and work on incrementally-approved
 * Each pre-release MUST contain one or more changes to normative content which have been approved through the change-making * process.
 * Each pre-release MUST be reviewed and approved in GitHub by 1+ members of the board – or their designees – for accuracy and * consistency with the changes’ intent.
 * Pre-releases MUST be tagged with an appropriate pre-release version number:
-* Pre-releases that have incorporated all the normative changes for the target-release MUST have a beta version number; 
+* Pre-releases that have incorporated all the normative changes for the target-release MUST have a beta version number;
 * otherwise, they MUST receive an alpha version number.
 * Each pre-release MUST have documentation available.
 * Each pre-release MUST have an entry in CHANGELOG.md.
