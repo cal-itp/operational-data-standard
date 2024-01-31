@@ -1,0 +1,11 @@
+nav:
+  - Governance: index.md
+  - Board Actions: actions.md
+  - Board Meetings: meetings.md
+  - Change Management: policies/change-management-versioning.md
+  - Other Policies: 
+    - Board Composition: policies/board-composition.md
+    - Board Decision Making: policies/board-decision-making.md
+    - Code of conduct: policies/code-of-conduct.md
+    - Contributor license agreement: policies/CLA.md
+    - Repository Access: policies/repository-organization-access.md
