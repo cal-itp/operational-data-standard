@@ -61,7 +61,7 @@ ODS is used by transit agencies and the software which supports them including:
 
 :material-check-circle: [The Master Scheduler](https://themasterscheduler.com/)
 
-:material-check-circle: [Remix bu Via](https://www.remix.com/)
+:material-check-circle: [Remix by Via](https://www.remix.com/)
 
 :material-check-circle-outline: [Giro Hastus](https://www.giro.com/) (on request)
 

@@ -42,7 +42,7 @@ Working group members are expected to commit to supporting the adopted ODS v1 sp
 [MV Transit](https://www.mvtransit.com/)  
 [Optibus](https://www.optibus.com/)  
 [Passio](https://passiotech.com/)  
-[Remix / Via](https://www.remix.com/)  :material-check-circle:
+[Remix by Via](https://www.remix.com/)  :material-check-circle:
 [Routematch / Uber](https://www.routematch.com/)  
 [Swiftly](https://www.goswift.ly/) :material-check-circle:  
 [The Master Scheduler](https://themasterscheduler.com/) :material-check-circle:  
