@@ -29,6 +29,7 @@ graph LR
     style R fill:#81b29aff,stroke:#333,stroke-width:2px
 
     I --> P
+    P --> R
     I -->|Vehicle Blocks| M
     N --> S
     S --> R
