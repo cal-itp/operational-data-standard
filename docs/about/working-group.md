@@ -1,11 +1,8 @@
 # Working Group
 
-The Operational Data Standard working group is convened by staff from the [California Integrated Travel Project](http://calitp.org)
-as part of its goal to provide complete, accurate, and up-to-date transit data to customers and respective agencies.
+The Operational Data Standard working group is convened by staff from the [California Integrated Travel Project](http://calitp.org) as part of its goal to provide complete, accurate, and up-to-date transit data to customers and respective agencies.
 
-Working group members are expected to commit to supporting the adopted ODS v1 specification. Depending on the organization,
-supporting the ODS v1 specification may entail developing software to produce or consume the specification, or, for transit
-agencies, encouraging vendors to support the specification.
+Working group members are expected to commit to supporting the adopted ODS v1 specification. Depending on the organization,supporting the ODS v1 specification may entail developing software to produce or consume the specification, or, for transit agencies, encouraging vendors to support the specification.
 
 ## Membership
 
@@ -19,7 +16,7 @@ agencies, encouraging vendors to support the specification.
 [Kings Area Rural Transit (KART), CA](https://www.kartbus.org/)  
 [Los Angeles DOT, CA](https://www.ladottransit.com/dash/)  
 [Marin Transit, CA](https://marintransit.org/)  
-[Massachussets Bay Transit Authority (MBTA), MA](http://mbta.com)  
+[Massachussets Bay Transit Authority (MBTA), MA](http://mbta.com) :material-check-circle-outline:  
 [Metrolink, CA](https://metrolinktrains.com/)  
 [Metro Transit, MN](https://www.metrotransit.org)  
 [Nevada County Connects, CA](https://www.mynevadacounty.com/2257/Transit-Services)  
@@ -38,17 +35,17 @@ agencies, encouraging vendors to support the specification.
 [Cubic](https://www.cubic.com/)  
 [Dilax](https://www.dilax.com/)  
 [Engie](https://www.engie.com/en)  
-[Giro](https://www.giro.com/)  
+[Giro](https://www.giro.com/)  :material-check-circle:   (on-request)  
 [GMV Syncromatics](https://gmvsyncromatics.com/)  
 [Init](https://www.initse.com/enus/start/)  
 [Keolis](https://www.keolisna.com/)  
 [MV Transit](https://www.mvtransit.com/)  
 [Optibus](https://www.optibus.com/)  
 [Passio](https://passiotech.com/)  
-[Remix / Via](https://www.remix.com/)  
+[Remix by Via](https://www.remix.com/)  :material-check-circle:
 [Routematch / Uber](https://www.routematch.com/)  
-[Swiftly](https://www.goswift.ly/)  
-[The Master Scheduler](https://themasterscheduler.com/)  
+[Swiftly](https://www.goswift.ly/) :material-check-circle:  
+[The Master Scheduler](https://themasterscheduler.com/) :material-check-circle:  
 [Trapeze](https://www.trapezegroup.com/)  
 [Trillium Solutions](https://trilliumtransit.com/)  
 
@@ -58,3 +55,9 @@ agencies, encouraging vendors to support the specification.
 [California Association for Community Transportation (CALACT)](http://calact.org)  
 [California Integrated Travel Project (Cal-ITP)](http://calitp.org)  
 [Metropolitan Transportation Commission/511.org](http://mtc.ca.gov)  
+
+!!! Note "Implementers"
+
+    :material-check-circle: denotes an organization who has implemented ODS
+
+    :material-check-circle-outline: denotes an organization in the process of implementing ODS
