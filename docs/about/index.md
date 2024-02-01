@@ -1,8 +1,12 @@
 # About ODS
 
-This website and the Operational Data Standard are maintained by [Cal-ITP](https://dot.ca.gov/cal-itp), a project of the
-California Department of Transportation. ODS was originally developed as a product of the Operational Data Standard Working
-Group, which was convened by Cal-ITP in 2021.
+The Operational Data Standard is maintained by MobilityData under the authority of the ODS Board.
+
+ODS was [developed](spec-development.md) with the following goals in mind:
+
+1. Create a common standard for transit operational data
+2. Improve efficiency in dispatching, planning, scheduling, driver shift management, and other back-end transit operations
+3. Reduce the burden of generating data for reporting (FTA and other)
 
 For information about how the Operational Data Standard was originally developed, read about the [Spec Development Process](./spec-development.md).
 
