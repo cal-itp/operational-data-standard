@@ -57,7 +57,15 @@ ODS is used by transit agencies and the software which supports them including:
 
 :material-check-circle: [Swiftly](https://www.goswift.ly/)
 
-:material-check-circle-outline: [MBTA](http://mbta.com)
+:material-check-circle: [Equans Navineo](https://navineo.co/about-navineo/)
+
+:material-check-circle: [The Master Scheduler](https://themasterscheduler.com/)
+
+:material-check-circle: [Remix bu Via](https://www.remix.com/)
+
+:material-check-circle-outline: [Giro Hastus](https://www.giro.com/) (on request)
+
+:material-check-circle-outline: [MBTA](http://mbta.com) (in process)
 
 ## How do I implement ODS?
 

@@ -35,17 +35,17 @@ Working group members are expected to commit to supporting the adopted ODS v1 sp
 [Cubic](https://www.cubic.com/)  
 [Dilax](https://www.dilax.com/)  
 [Engie](https://www.engie.com/en)  
-[Giro](https://www.giro.com/)  
+[Giro](https://www.giro.com/)  :material-check-circle:   (on-request)  
 [GMV Syncromatics](https://gmvsyncromatics.com/)  
 [Init](https://www.initse.com/enus/start/)  
 [Keolis](https://www.keolisna.com/)  
 [MV Transit](https://www.mvtransit.com/)  
 [Optibus](https://www.optibus.com/)  
 [Passio](https://passiotech.com/)  
-[Remix / Via](https://www.remix.com/)  
+[Remix / Via](https://www.remix.com/)  :material-check-circle:
 [Routematch / Uber](https://www.routematch.com/)  
 [Swiftly](https://www.goswift.ly/) :material-check-circle:  
-[The Master Scheduler](https://themasterscheduler.com/)  
+[The Master Scheduler](https://themasterscheduler.com/) :material-check-circle:  
 [Trapeze](https://www.trapezegroup.com/)  
 [Trillium Solutions](https://trilliumtransit.com/)  
 
