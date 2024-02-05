@@ -1,5 +1,7 @@
 nav:
   - Home: index.md
-  - Specification: spec
-  - Resources: resources
   - About: about
+  - Specification: spec
+  - Governance: governance
+  - Resources: resources
+  

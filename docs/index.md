@@ -81,3 +81,9 @@ If you are vendor:
 2. Create an development roadmap to adopting it.
 
 Most vendors already read and write to GTFS, so this should be a marginal lift to implement.
+
+## Citation
+
+If you use the transit Operational Data Standard in a report or article, please cite it as follows:
+
+> Operational Data Standard Working Group. 2022. Transit Operational Data Standard. Operational Data Standard Board of Directors. https://ods.calitp.org.

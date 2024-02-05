@@ -1,6 +1,12 @@
-# Resources
+# Contributor Meetings
 
-## Past Meetings
+## ODS 2.0
+
+| Meeting     | Date  | Description                          |
+| :---------- | :---- |:----------------------------------- |
+| TBD | TBD | TBD |
+
+## ODS 1.0
 
 | Meeting     | Date  | Description                          |
 | :---------- | :---- |:----------------------------------- |
