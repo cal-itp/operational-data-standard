@@ -102,10 +102,10 @@ Responsibility for the governance of the ODS Project is divided among the follow
 | -------- | ----- |
 | [ODS Board](#ods-board-of-directors) | TBD |
 | [ODS Board Coordinator](#ods-board-coordinator) | TBD |
-| [ODS Manager](#ods-manager) | TBD |
-| [ODS Program Manager](#ods-program-manager) | TBD |
-| [ODS Contributor](#ods-contributor) |  TBD |
-| [ODS Stakeholder](#ods-stakeholder) | Anyone interested in or could be directly affected by the ODS Project. |
+| [ODS Manager](#ods-manager) | [MobilityData](https://mobilitydata.org) |
+| [ODS Program Manager](#ods-program-manager) | [Cristhian Hellion](https://github.com/Cristhian-HA), [MobilityData](https://mobilitydata.org) |
+| [ODS Contributors](#ods-contributor) |  TBD |
+| [ODS Stakeholders](#ods-stakeholder) | Anyone interested in or could be directly affected by the ODS Project. |
 
 ## ODS Owner
 
