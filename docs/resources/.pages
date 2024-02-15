@@ -1,3 +1,4 @@
 nav:
-  - Resources: index.md
+  - Handouts + Presentations: resources.md
   - Frequently Asked Questions: faq.md
+  - Implementation Guide: implementation-guide.md

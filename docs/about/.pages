@@ -1,5 +1,5 @@
 nav:
-  - About ODS: index.md
-  - Working Group: working-group.md
-  - Spec Development Process: spec-development.md
+  - About ODS: about.md
+  - Initial Spec Development Process: spec-development.md
+  - Contributors: contributors.md
   - Attribution: attribution.md
