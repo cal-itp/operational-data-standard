@@ -43,8 +43,17 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_PREVIEW_APP_SITE_ID }}
 
+      - name: Find existing comment
+        uses: peter-evans/find-comment@v3
+        id: find-comment
+        with:
+          issue-number: ${{ github.event.number }}
+          comment-author: "github-actions[bot]"
+          body-includes: "Preview url: https://"
+
       - name: Add Netlify link PR comment
         uses: actions/github-script@v3
+        if: steps.find-comment.outputs.comment-id == ''
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
