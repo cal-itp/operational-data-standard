@@ -15,7 +15,7 @@ There are two types of files used in the TODS standard:
 
 
 ### Files
-  
+
 | **File Name** | **Type** | **Description** |
 | --- | --- | --- |
 | trips_supplement.txt | Supplement | Supplements and modifies GTFS [trips.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt) with deadheads and other non-public trip information.|
