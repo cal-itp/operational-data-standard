@@ -42,6 +42,10 @@ Each row in a `_supplement` file is used to modify the corresponding file in GTF
 
 In other words, where a primary key matches, the row is either removed or any non-empty values in the row are used to *update* the corresponding GTFS values. Where a primary key match does not exist, the entire row is added.
 
+> _**Implications and Guidance:**_
+> - To explicitely blank a field, delete the row entirely using the `TODS_delete` field and then re-add the row with the desired values subsequent thereto.
+> - If a row contains defined values besides the Primary Key and a `TODS_delete` value of `1`, the row shall be removed and other values in that row will be ignored.
+
 ### TODS-Specific Fields
 
 In addition to the fields defined in GTFS, specific fields for use within TODS are denoted by a `TODS_` field prefix.
