@@ -3,8 +3,9 @@
 ## ODS 2.0
 
 | Meeting     | Date  | Description                          |
-| :---------- | :---- |:----------------------------------- |
-| TBD | TBD | TBD |
+| :---------- | :---- | :----------------------------------- |
+| Working Group Meeting #1 <br> <ul><li>[Video](https://drive.google.com/file/d/1KK4mZkvV-h7Epe8_5kG8AbVYAUnJ1uts/view?usp=drive_link)</li><br><li>[Notes](https://docs.google.com/document/d/1QPDs62X6Dgbe_DHxNCYhfBEh1_wD095DmskkVZLOfzs/edit)</li></ul> | 7 Feb 2024 | Review of proposed spec changes for ODS v2.0. |
+| Working Group Meeting #2 <br> <ul><li>[Video](https://drive.google.com/file/d/1pzbn3TcYFwXp4PgxcqOpq5-fAIGIrM8l/view?usp=drive_link)</li><br><li>[Notes](https://docs.google.com/document/d/1vg-B0mNEOkjlLTI-KFZWJdpQLd9JD7kG7JNtTfOVsuM/edit)</li></ul> | 27 Feb 2024 | Finalizing structure of "GTFS-supplemental" approach for ODS v2.0. |
 
 ## ODS 1.0
 
