@@ -30,6 +30,5 @@
     }
   },
   "forwardPorts": [8000],
-  "postCreateCommand": "pip install pre-commit && pre-commit install --install-hooks",
   "postAttachCommand": "mkdocs serve --dev-addr=0.0.0.0:8000"
 }
