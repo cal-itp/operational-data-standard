@@ -10,8 +10,8 @@ The Transit Operational Data Standard was last updated on February 27, 2024 (v2.
 
 There are two types of files used in the TODS standard:
 
-- **`_supplement` files**, used to add, modify, and delete information from public GTFS files to model the operational service for internal purposes.
-- **TODS-specific files**, used to model operational elements not currently defined in the GTFS standard.
+- **Supplement files**, used to add, modify, and delete information from public GTFS files to model the operational service for internal purposes (with a `_supplement` filename suffix).
+- **TODS-Specific files**, used to model operational elements not currently defined in the GTFS standard.
 
 
 ### Files
@@ -25,19 +25,19 @@ There are two types of files used in the TODS standard:
 | runs_pieces.txt | TODS-Specific | Defines daily personnel schedules within a feed. |
 | run_events.txt | TODS-Specific | Defines other scheduled activities to be performed by a member of personnel during a run. |
 
-The use of the `_supplement` standard to modify other GTFS files remains experimental at this time.
+The use of the Supplement standard to modify other GTFS files remains experimental at this time.
 
 
-## `_supplement` Files
+## Supplement Files
 
 ### Structure & Evaluation
 
-The fields in all `_supplement` files match those defined in the corresponding file's [GTFS specification](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md).
+The fields in all Supplement files match those defined in the corresponding file's [GTFS specification](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md).
 
-Each row in a `_supplement` file is used to modify the corresponding file in GTFS and should be evaluated as follows:
+Each row in a Supplement file is used to modify the corresponding file in GTFS and should be evaluated as follows:
 
 1. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is equal to `1`, remove the row from the GTFS file.
-2. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is not defined or not equal to `1`, set or update (in the corresponding GTFS file) the value of any non-blank fields defined in the `_supplement` file's row to the `_supplement`'s value.
+2. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is not defined or not equal to `1`, set or update (in the corresponding GTFS file) the value of any non-blank fields defined in the Supplement file's row to the Supplement's value.
 3. If the row's Primary Key is NOT defined in the corresponding GTFS file, add the row to the corresponding GTFS file.
 
 In other words, where a Primary Key matches, the row is either removed or any non-empty values in the row are used to *update* the corresponding GTFS values. Where a Primary Key match does not exist, the entire row is added.
@@ -52,7 +52,7 @@ In addition to the fields defined in GTFS, specific fields for use within TODS a
 
 | **File** | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- | --- |
-| Any `_supplement` file | `TODS_delete` | Enum | Optional | (blank) - Update other fields; do not delete.<br>`1` - Deletes the GTFS row in the corresponding file whose Primary Key matches the value in the `_supplement` file's row. |
+| Any Supplement file | `TODS_delete` | Enum | Optional | (blank) - Update other fields; do not delete.<br>`1` - Deletes the GTFS row in the corresponding file whose Primary Key matches the value in the Supplement file's row. |
 | `trips_supplement.txt` | `TODS_trip_type` | Text | Optional | Defines the type of the trip if distinct from a standard revenue trip. |
 | `stops_supplement.txt` | `TODS_location_type` | Text | Optional | Defines the type of the location if distinct from a standard GTFS location type. Where defined, the GTFS `location_type` shall be ignored. |
 
