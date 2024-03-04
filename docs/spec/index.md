@@ -18,12 +18,12 @@ There are two types of files used in the TODS standard:
 
 | **File Name** | **Type** | **Description** |
 | --- | --- | --- |
-| trips_supplement.txt | Supplement | Supplements and modifies GTFS [trips.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt) with deadheads and other non-public trip information.|
+| trips_supplement.txt | Supplement | Supplements and modifies GTFS [trips.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt) with deadheads and other non-public trip information. |
 | stops_supplement.txt | Supplement | Supplements and modifies GTFS [stops.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) with internal stop locations, waypoints, and other non-public stop information.|
-| stop_times_supplement.txt | Supplement | Supplements and modifies GTFS [stop_times.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) with non-public times that trips stop at locations, and related information. |
-| routes.txt | Supplement | Supplements and modifies GTFS [routes.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt) with internal route identifiers and other non-public route identification. |
+| stop_times_supplement.txt | Supplement | Supplements and modifies GTFS [stop_times.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) with non-public times at which trips stop at locations, and related information. |
+| routes_supplement.txt | Supplement | Supplements and modifies GTFS [routes.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt) with internal route identifiers and other non-public route identification. |
 | runs_pieces.txt | TODS-Specific | Defines daily personnel schedules within a feed. |
-| run_events.txt | TODS-Specific| Defines other scheduled activities to be performed by a member of personnel during a run. |
+| run_events.txt | TODS-Specific | Defines other scheduled activities to be performed by a member of personnel during a run. |
 
 The use of the `_supplement` standard to modify other GTFS files remains experimental at this time.
 
@@ -38,9 +38,9 @@ Each row in a `_supplement` file is used to modify the corresponding file in GTF
 
 1. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is equal to `1`, remove the row from the GTFS file.
 2. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is not defined or not equal to `1`, set or update (in the corresponding GTFS file) the value of any non-blank fields defined in the `_supplement` file's row to the `_supplement`'s value.
-3. If the row's Primary key is NOT defined in the corresponding GTFS file, add the row to the corresponding GTFS file.
+3. If the row's Primary Key is NOT defined in the corresponding GTFS file, add the row to the corresponding GTFS file.
 
-In other words, where a primary key matches, the row is either removed or any non-empty values in the row are used to *update* the corresponding GTFS values. Where a primary key match does not exist, the entire row is added.
+In other words, where a Primary Key matches, the row is either removed or any non-empty values in the row are used to *update* the corresponding GTFS values. Where a Primary Key match does not exist, the entire row is added.
 
 > _**Implications and Guidance:**_
 > - To explicitely blank a field, delete the row entirely using the `TODS_delete` field and then re-add the row with the desired values subsequent thereto.
@@ -52,7 +52,7 @@ In addition to the fields defined in GTFS, specific fields for use within TODS a
 
 | **File** | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- | --- |
-| Any `_supplement` file | `TODS_delete` | Enum | Optional | (blank) - Update other fields; do not delete.<br>`1` - Deletes the GTFS row in the corresponding file whose primary key matches the value in the `_supplement` file's row. |
+| Any `_supplement` file | `TODS_delete` | Enum | Optional | (blank) - Update other fields; do not delete.<br>`1` - Deletes the GTFS row in the corresponding file whose Primary Key matches the value in the `_supplement` file's row. |
 | `trips_supplement.txt` | `TODS_trip_type` | Text | Optional | Defines the type of the trip if distinct from a standard revenue trip. |
 | `stops_supplement.txt` | `TODS_location_type` | Text | Optional | Defines the type of the location if distinct from a standard GTFS location type. Where defined, the GTFS `location_type` shall be ignored. |
 
