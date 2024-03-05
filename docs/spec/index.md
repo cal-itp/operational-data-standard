@@ -1,7 +1,7 @@
 
 # Reference
 
-The Transit Operational Data Standard was last updated on February 27, 2024 (v2.0). View the full [revision history](./revision-history.md).
+The Transit Operational Data Standard was last updated on March 4, 2024 (v2.0). View the full [revision history](./revision-history.md).
 
 
 ## Dataset Files
@@ -12,7 +12,6 @@ There are two types of files used in the TODS standard:
 
 - **Supplement files**, used to add, modify, and delete information from public GTFS files to model the operational service for internal purposes (with a `_supplement` filename suffix).
 - **TODS-Specific files**, used to model operational elements not currently defined in the GTFS standard.
-
 
 ### Files
 
@@ -25,26 +24,73 @@ There are two types of files used in the TODS standard:
 | runs_pieces.txt | TODS-Specific | Defines daily personnel schedules within a feed. |
 | run_events.txt | TODS-Specific | Defines other scheduled activities to be performed by a member of personnel during a run. |
 
-The use of the Supplement standard to modify other GTFS files remains experimental at this time.
+_The use of the Supplement standard to modify other GTFS files is not yet formally adopted into the specification and remains subject to change. Other files may be formally adopted in the future._
+
 
 
 ## Supplement Files
 
-### Structure & Evaluation
+### Structure
 
 The fields in all Supplement files match those defined in the corresponding file's [GTFS specification](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md).
 
-Each row in a Supplement file is used to modify the corresponding file in GTFS and should be evaluated as follows:
+The overall premise is to update and add data to GTFS, which is accomplished by either updating matching values or adding rows entirely.
 
-1. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is equal to `1`, remove the row from the GTFS file.
-2. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is not defined or not equal to `1`, set or update (in the corresponding GTFS file) the value of any non-blank fields defined in the Supplement file's row to the Supplement's value.
+Each entry in a Supplement file is paired with its matching entry in the corresponding GTFS file using the [GTFS file's Primary Key](https://gtfs.org/schedule/reference/#dataset-attributes), i.e. the fields that uniquely identify the row. If no match is found, the Supplement file's entry is added to the GTFS file in its entirety.
+
+The standard also supports the removal of rows in their entirety.
+
+### Evaluation
+
+Each row in a Supplement file shall be evaluated as follows:
+
+1. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is defined and equal to `1`, remove the corresponding row from the GTFS file.
+2. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is not defined or not equal to `1`, set or update any fields with defined values in the Supplement file to those values in the corresponding GTFS file.
 3. If the row's Primary Key is NOT defined in the corresponding GTFS file, add the row to the corresponding GTFS file.
 
 In other words, where a Primary Key matches, the row is either removed or any non-empty values in the row are used to *update* the corresponding GTFS values. Where a Primary Key match does not exist, the entire row is added.
 
-> _**Implications and Guidance:**_
-> - To explicitely blank a field, delete the row entirely using the `TODS_delete` field and then re-add the row with the desired values subsequent thereto.
-> - If a row contains defined values besides the Primary Key and a `TODS_delete` value of `1`, the row shall be removed and other values in that row will be ignored.
+### Example
+
+GTFS `stops.txt`:
+
+```
+stop_id,stop_name,stop_desc,stop_url
+1,One,Unmodified in TODS,example.com/1
+2,Two,Deleted in TODS,example.com/2
+3,Three,Will be modified in TODS,example.com/3
+```
+
+TODS `stops_supplement.txt`:
+
+```
+stop_id,stop_name,stop_desc,TODS_delete
+2,,,1
+3,,Has been modified by TODS,
+4,Four,New in TODS,
+```
+
+Effective `stops.txt` after merging the supplement file:
+
+```
+stop_id,stop_name,stop_desc,stop_url
+1,One,Unmodified in TODS,example.com/1
+3,Three,Has been modified by TODS,example.com/3
+4,Four,New in TODS,
+```
+
+_Note that the station name "Three" was not modified, and the whole column stop_url was omitted and not modified._
+
+### Implications and Guidance
+
+- As blank fields are ignored, data to be removed should either be overwritten with a new value or have their entire row deleted using the `TODS_delete` field.
+- As processing of files is non-sequential, it is prohibited to both delete and re-add a row with identical Primary Keys in the same Supplement file.
+- If a row contains defined values besides the Primary Key and a `TODS_delete` value of `1`, the row shall be removed and other values in that row will be ignored.
+- When adding rows and updating values, be certain to ensure the values are being updated based on their column values (e.g. if GTFS has fields of `trip_id,route_id,trip_short_name` and the TODS Supplement file has fields of `trip_id,trip_short_name`, be certain that values are mapping to the correct fields without assuming column headers are identical).
+- When deleting a row in a file, any references to that field/value shall be ignored. Thus, it is important to ensure references to that row are either redefined or are being intentionally omitted. For example:
+  - When deleting a trip via `trips_supplement.txt`, all of that trip's entires in `stop_times.txt` will not be associated with a valid trip and would thus be ignored.
+  - When deleting a route via `routes_supplement.txt`, all trips using that route would not be associated with a valid route and would thus be ignored _UNLESS_ the `route_id` on the affected trips is updated via the `trips_supplement.txt` file.
+
 
 ### TODS-Specific Fields
 
