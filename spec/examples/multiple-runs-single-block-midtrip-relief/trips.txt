@@ -1,0 +1,5 @@
+route_id,service_id,trip_id,trip_headsign,trip_short_name,direction_id,block_id,shape_id,wheelchair_accessible,bikes_allowed
+12,daily,101,,,0,BLOCK-A,,,,
+12,daily,102,,,1,BLOCK-A,,,,
+12,daily,103,,,0,BLOCK-A,,,,
+12,daily,104,,,1,BLOCK-A,,,,
