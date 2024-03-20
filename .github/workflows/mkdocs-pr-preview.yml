@@ -30,7 +30,7 @@ jobs:
           mkdocs build
 
       - name: Install Netlify CLI
-        run: npm install -g netlify-cli
+        run: npm install -g netlify-cli@17.x.x
 
       # Don't expose secrets to any other process other than the `netlify` cli;
       # don't risk rogue dependencies pulling our secrets
