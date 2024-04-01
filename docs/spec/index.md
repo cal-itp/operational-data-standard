@@ -3,7 +3,6 @@
 
 The Transit Operational Data Standard was last updated on March 4, 2024 (v2.0). View the full [revision history](./revision-history.md).
 
-
 ## Dataset Files
 
 ### Structure
@@ -26,8 +25,6 @@ There are two types of files used in the TODS standard:
 
 _The use of the Supplement standard to modify other GTFS files is not yet formally adopted into the specification and remains subject to change. Other files may be formally adopted in the future._
 
-
-
 ## Supplement Files
 
 ### Structure
@@ -48,13 +45,13 @@ Each row in a Supplement file shall be evaluated as follows:
 2. If the row's Primary Key is defined in the corresponding GTFS file, and the `TODS_delete` field is not defined or not equal to `1`, set or update any fields with defined values in the Supplement file to those values in the corresponding GTFS file.
 3. If the row's Primary Key is NOT defined in the corresponding GTFS file, add the row to the corresponding GTFS file.
 
-In other words, where a Primary Key matches, the row is either removed or any non-empty values in the row are used to *update* the corresponding GTFS values. Where a Primary Key match does not exist, the entire row is added.
+In other words, where a Primary Key matches, the row is either removed or any non-empty values in the row are used to _update_ the corresponding GTFS values. Where a Primary Key match does not exist, the entire row is added.
 
 ### Example
 
 GTFS `stops.txt`:
 
-```
+```csv
 stop_id,stop_name,stop_desc,stop_url
 1,One,Unmodified in TODS,example.com/1
 2,Two,Deleted in TODS,example.com/2
@@ -63,7 +60,7 @@ stop_id,stop_name,stop_desc,stop_url
 
 TODS `stops_supplement.txt`:
 
-```
+```CSV
 stop_id,stop_name,stop_desc,TODS_delete
 2,,,1
 3,,Has been modified by TODS,
@@ -72,7 +69,7 @@ stop_id,stop_name,stop_desc,TODS_delete
 
 Effective `stops.txt` after merging the supplement file:
 
-```
+```CSV
 stop_id,stop_name,stop_desc,stop_url
 1,One,Unmodified in TODS,example.com/1
 3,Three,Has been modified by TODS,example.com/3
@@ -88,9 +85,8 @@ _Note that the station name "Three" was not modified, and the whole column stop_
 - If a row contains defined values besides the Primary Key and a `TODS_delete` value of `1`, the row shall be removed and other values in that row will be ignored.
 - When adding rows and updating values, be certain to ensure the values are being updated based on their column values (e.g. if GTFS has fields of `trip_id,route_id,trip_short_name` and the TODS Supplement file has fields of `trip_id,trip_short_name`, be certain that values are mapping to the correct fields without assuming column headers are identical).
 - When deleting a row in a file, any references to that field/value shall be ignored. Thus, it is important to ensure references to that row are either redefined or are being intentionally omitted. For example:
-  - When deleting a trip via `trips_supplement.txt`, all of that trip's entires in `stop_times.txt` will not be associated with a valid trip and would thus be ignored.
-  - When deleting a route via `routes_supplement.txt`, all trips using that route would not be associated with a valid route and would thus be ignored _UNLESS_ the `route_id` on the affected trips is updated via the `trips_supplement.txt` file.
-
+    - When deleting a trip via `trips_supplement.txt`, all of that trip's entires in `stop_times.txt` will not be associated with a valid trip and would thus be ignored.
+    - When deleting a route via `routes_supplement.txt`, all trips using that route would not be associated with a valid route and would thus be ignored _UNLESS_ the `route_id` on the affected trips is updated via the `trips_supplement.txt` file.
 
 ### TODS-Specific Fields
 
@@ -102,12 +98,7 @@ In addition to the fields defined in GTFS, specific fields for use within TODS a
 | `trips_supplement.txt` | `TODS_trip_type` | Text | Optional | Defines the type of the trip if distinct from a standard revenue trip. |
 | `stops_supplement.txt` | `TODS_location_type` | Text | Optional | Defines the type of the location if distinct from a standard GTFS location type. Where defined, the GTFS `location_type` shall be ignored. |
 
-
-
-
-
 ## TODS-Specific File Definitions
-
 
 ### runs_pieces.txt
 
@@ -135,4 +126,4 @@ In addition to the fields defined in GTFS, specific fields for use within TODS a
 | event_from_location_type | Enum | Optional | Indicates whether the event is scheduled to begin at an operational location or a stop.<br /><br />**0** - Operational Location<br />**1** - Stop |
 | event_from_location_id | ID referencing **ops_locations.ops_location_id** or [**stops.stop_id**](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) | Optional | Identifies the operational location or stop at which the event is scheduled to begin. |
 | event_to_location_type | Enum | Optional | Indicates whether the event is scheduled to end at an operational location or a stop.<br /><br />**0** - Operational Location<br />**1** - Stop |
-| event_to_location_id | ID referencing **ops_locations.ops_location_id** or [**stops.stop_id**](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) | Optional | Identifies the operational location or stop at which the event is scheduled to end. |# Reference
+| event_to_location_id | ID referencing **ops_locations.ops_location_id** or [**stops.stop_id**](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) | Optional | Identifies the operational location or stop at which the event is scheduled to end. |
