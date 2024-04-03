@@ -1,7 +1,7 @@
 
 # Reference
 
-The Transit Operational Data Standard was last updated on March 4, 2024 (v2.0). View the full [revision history](./revision-history.md).
+The Transit Operational Data Standard was last updated on April 3, 2024 (v2.0 DRAFT). View the full [revision history](./revision-history.md).
 
 ## Dataset Files
 
@@ -18,7 +18,7 @@ There are two types of files used in the TODS standard:
 | --- | --- | --- |
 | trips_supplement.txt | Supplement | Supplements and modifies GTFS [trips.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt) with deadheads and other non-public trip information. |
 | stops_supplement.txt | Supplement | Supplements and modifies GTFS [stops.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) with internal stop locations, waypoints, and other non-public stop information.|
-| stop_times_supplement.txt | Supplement | Supplements and modifies GTFS [stop_times.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) with non-public times at which trips stop at locations, and related information. |
+| stop_times_supplement.txt | Supplement | Supplements and modifies GTFS [stop_times.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) with non-public times at which trips stop at locations, `stop_times` entries for non-public trips, and related information. |
 | routes_supplement.txt | Supplement | Supplements and modifies GTFS [routes.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt) with internal route identifiers and other non-public route identification. |
 | runs_pieces.txt | TODS-Specific | Defines daily personnel schedules within a feed. |
 | run_events.txt | TODS-Specific | Defines other scheduled activities to be performed by a member of personnel during a run. |
@@ -87,6 +87,7 @@ _Note that the station name "Three" was not modified, and the whole column stop_
 - When deleting a row in a file, any references to that field/value shall be ignored. Thus, it is important to ensure references to that row are either redefined or are being intentionally omitted. For example:
     - When deleting a trip via `trips_supplement.txt`, all of that trip's entires in `stop_times.txt` will not be associated with a valid trip and would thus be ignored.
     - When deleting a route via `routes_supplement.txt`, all trips using that route would not be associated with a valid route and would thus be ignored _UNLESS_ the `route_id` on the affected trips is updated via the `trips_supplement.txt` file.
+- After modifying static GTFS content to incorporate the TODS Supplement modifications, the resulting data ("TODS-Supplemented GTFS") should form a valid GTFS dataset, with the limited exception of missing data that should be ignored per the above.
 
 ### TODS-Specific Fields
 
