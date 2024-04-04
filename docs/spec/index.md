@@ -106,20 +106,20 @@ Primary Key: (`service_id`, `run_id`, `event_sequence`)
 
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
-| `service_id` | ID referencing `calendar.service_id` | Required | Identifies a set of dates when the run is scheduled to take place. |
+| `service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Required | Identifies a set of dates when the run is scheduled to take place. |
 | `run_id` | ID | Required | |
 | `event_sequence` | Non-negative integer | Required | The order of this event within a run. Must be unique within one (`service_id`, `run_id`). See [more detail below](#event_sequence) about how order is defined. |
-| `piece_id` | ID | Optional | Identifies the piece within the run that the event takes place.<br /><br />May be blank if the event takes place out of a piece, like a break, or if the agency does not use piece ids. |
-| `block_id` | ID referencing `trips.block_id` | Optional | Identifies the block to which the run row belongs. If `block_id` exists, `trip_id` exists, and that trip's entry in `trips.txt` has a `block_id`, then the two `block_id`s must match. May exist even if `trip_id` does not (e.g. if an event represents a run-as-directed block with no scheduled trips). |
+| `piece_id` | ID | Optional | Identifies the piece within the run that the event takes place.<br /><br />May be blank if the event takes place out of a piece, like a break, or if the agency does not use piece IDs. |
+| `block_id` | ID referencing `trips.block_id` | Optional | Identifies the block to which the run event belongs. If `block_id` exists, `trip_id` exists, and that trip's entry in `trips.txt` has a `block_id`, then the two `block_id`s must match. May exist even if `trip_id` does not (e.g. if an event represents a run-as-directed block with no scheduled trips). |
 | `job_type` | Text | Optional | The type of job that the employee is doing, in a human-readable format. e.g. "Assistant Conductor". Producers may use any values, but should be consistent.<br /><br />A single run may include more than one `job_type` throughout the day if the employee has multiple responsibilities, e.g. an "Operator" in the morning and a "Shifter" in the afternoon. |
 | `event_type` | Text | Required | The type of event that the employee is doing, in a human-readable format. e.g. "Sign-in". Producers may use any values, but should be consistent. Consumers may ignore events with an `event_type` that they don't recognize. |
 | `trip_id` | ID referencing `trips.trip_id` | Optional | If this run event corresponds to working on a trip, identifies that trip. |
 | `start_location` | ID referencing `stops.stop_id` | Required | Identifies where the employee starts this event. If `trip_id` is set (and `mid_trip_start` is not `1`), this should be the first stop of the trip. If `start_mid_trip` is `1`, this should instead be the location where the employee starts, in the middle of the trip. |
 | `start_time` | Time | Required | Identifies the time when the employee starts this event. If `trip_id` is set (and `mid_trip_start` is not `1`), this should be the time of the first stop of the trip. If `start_mid_trip` is `1`, this should instead be the time when the employee starts, in the middle of the trip. |
-| `start_mid_trip` | Enum | Conditionally required | Indicates whether the event begins at the start of the trip or in the middle of the trip.<br /><br />`0` (or blank) - Row does not start mid-trip<br />`1` - Row starts mid-trip<br /><br />Required if the run event begins with a mid-trip relief. Optional otherwise. Recommended to leave this field blank if `trip_id` is not set. |
+| `start_mid_trip` | Enum | Conditionally required | Indicates whether the event begins at the start of the trip or in the middle of the trip.<br /><br />`0` (or blank) - Run event does not start mid-trip<br />`1` - Run event starts mid-trip<br /><br />Required if the run event begins with a mid-trip relief. Optional otherwise. Recommended to leave this field blank if `trip_id` is not set. |
 | `end_location` | ID referencing `stops.stop_id` | Required | Identifies where the employee ends this event. If `trip_id` is set (and `mid_trip_end` is not `1`), this should be the last stop of the trip. If `end_mid_trip` is `1`, this should instead be the location where the employee ends, in the middle of the trip. |
 | `end_time` | Time | Required | Identifies the time when the employee ends this event. If `trip_id` is set (and `mid_trip_end` is not `1`), this should be the time of the last stop of the trip. If `end_mid_trip` is `1`, this should instead be the time when the employee ends, in the middle of the trip. Must be greater than or equal to `start_time`. |
-| `end_mid_trip` | Enum | Conditionally required | Indicates whether the event ends at the end of the trip or in the middle of the trip.<br /><br />`0` (or blank) - Row does not end mid-trip<br />`1` - Row ends mid-trip<br /><br />Required if the run event ends with a mid-trip relief. Optional otherwise. Recommended to leave this field blank if `trip_id` is not set. |
+| `end_mid_trip` | Enum | Conditionally required | Indicates whether the event ends at the end of the trip or in the middle of the trip.<br /><br />`0` (or blank) - Run event does not end mid-trip<br />`1` - Run event ends mid-trip<br /><br />Required if the run event ends with a mid-trip relief. Optional otherwise. Recommended to leave this field blank if `trip_id` is not set. |
 
 #### `event_sequence`
 
@@ -133,12 +133,12 @@ In order to make the ordering of `event_sequence` more consistent if events over
 - If Event A and B have the same `start_time`, but Event A has an `end_time` before Event B, then event A's `event_sequence` should be less than event B's.
 - If Event A and B have the same `start_time` and `end_time`, then their `event_sequence` values can be in either order, but they must be different.
 
-Values do not have to be consecutive
+Values do not have to be consecutive.
 
 #### `run_events` Notes
 
 - Multiple `run_event`s can refer to the same `trip_id`, if multiple employees work on that trip.
-- Events may have gaps between the end time of one event and the start time of the next. E.g. if an operator's layovers aren't represented by an event.
+- Events may have gaps between the end time of one event and the start time of the next. e.g. if an operator's layovers aren't represented by an event.
 - Events may overlap in time, if an employee has multiple simultaneous responsibilities.
 - `start_time` may equal `end_time` for an event that's a single point in time (such as a report time) without any duration.
 - Recommended sort order: `service_id`, `run_id`, `event_sequence`.
