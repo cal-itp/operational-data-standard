@@ -27,6 +27,13 @@ stop-2,0
 stop-3,0
 ```
 
+#### `routes.txt`
+
+```csv
+route_id,route_short_name,route_type
+12,12,3
+```
+
 #### `trips.txt`
 
 ```csv
@@ -61,21 +68,30 @@ These are the new files that are published in TODS. In this example, the TODS fi
 
 #### `stops_supplement.txt`
 
-TODO what values to include for `TODS_location_type`?
-
 ```csv
 stop_id,location_type,TODS_location_type
-garage,<TODO>,<TODO>
-garage-waypoint,<TODO>,<TODO>
+garage,0,garage
+garage-waypoint,0,
 ```
+
+#### `routes_supplement.txt`
+
+```csv
+route_id,route_long_name
+deadheads,Deadheads
+```
+
+In this example, the agency puts all of its deadheads on this new route, though agencies may have other ways to assign deadheads to routes.
 
 #### `trips_supplement.txt`
 
 ```csv
 route_id,service_id,trip_id,block_id,TODS_trip_type
-<TODO>,daily,deadhead-1,BLOCK-A,<TODO>
-<TODO>,daily,deadhead-2,BLOCK-A,<TODO>
+deadheads,daily,deadhead-1,BLOCK-A,pull-out
+deadheads,daily,deadhead-2,BLOCK-A,pull-back
 ```
+
+In this example, consumers know that these trips aren't in revenue service because of the `route_id` and `TODS_trip_type`.
 
 #### `stop_times_supplement.txt`
 
@@ -114,7 +130,7 @@ TODO remake this diagram to reflect the data.
 
 This example uses the [exact same GTFS files as the previous example](#gtfs-files). Deadheads and nonrevenue locations are omitted in order to focus on the revenue trip assignments, so no `_supplement.txt` files are needed for this example. Only `run_events.txt` needs to change to reflect the multiple runs and mid-trip relief.
 
-#### `run_events.txt`
+### `run_events.txt`
 
 ```csv
 service_id,run_id,event_sequence,piece_id,block_id,job_type,event_type,trip_id,start_location,start_time,start_mid_trip,end_location,end_time,end_mid_trip
@@ -129,12 +145,30 @@ daily,20000,30,20000-1,BLOCK-A,Operator,Operator,104,stop-3,14:00:00,0,stop-1,14
 
 In this example (unrelated to the previous examples), a two-car train does a round trip, and requires two operators, one in the first car and one in the second car. The `event_type` field distinguishes whether an operator is in the front car or the rear car. The operators swap for the return trip.
 
-#### `run_events.txt`
+### `run_events.txt`
 
 ```csv
-service_id,run_id,event_sequence,piece_id,block_id,job_type,event_type,trip_id,start_location,start_time,start_mid_trip,end_location,end_time,end_mid_trip
-weekday,10000,10,,,Operator,Operate Lead Car    ,trip-1,stop-1,10:00:00,0,stop-2,10:58:00,0
-weekday,10000,20,,,Operator,Operate Trailing Car,trip-2,stop-2,11:00:00,0,stop-1,11:58:00,0
-weekday,20000,10,,,Operator,Operate Trailing Car,trip-1,stop-1,10:00:00,0,stop-2,10:58:00,0
-weekday,20000,20,,,Operator,Operate Lead Car    ,trip-2,stop-2,11:00:00,0,stop-1,11:58:00,0
+service_id,run_id,event_sequence,job_type,event_type,trip_id,start_location,start_time,start_mid_trip,end_location,end_time,end_mid_trip
+weekday,10000,10,Operator,Operate 1st Car,trip-1,stop-1,10:00:00,0,stop-2,10:58:00,0
+weekday,10000,20,Operator,Operate 2nd Car,trip-2,stop-2,11:00:00,0,stop-1,11:58:00,0
+weekday,20000,10,Operator,Operate 2nd Car,trip-1,stop-1,10:00:00,0,stop-2,10:58:00,0
+weekday,20000,20,Operator,Operate 1st Car,trip-2,stop-2,11:00:00,0,stop-1,11:58:00,0
+```
+
+## Run as Directed work
+
+In this example (unrelated to the previous examples), an operator signs in for their shift, pulls out, and then operates a bus for several hours. They are not scheduled to do specific trips, but instead do trips as directed to by dispatch. This approach could apply in several situations:
+
+- An agency uses `frequencies.txt` (`frequencies.trip_id` may be able to be referenced in `run_events.trip_id`).
+- An agency publishes specific times in GTFS `trips.txt`, but in practice operates the service according to a headway, or doesn't schedule operators to specific trips.
+- The operator is assigned to cover or strategic work, and is positioned somewhere where they can cover absences or gaps in service on any route throughout the day.
+
+### `run_events.txt`
+
+```csv
+service_id,run_id,event_sequence,block_id,event_type,trip_id,start_location,start_time,end_location,end_time
+weekday,10000,10,       ,sign-in        ,,garage,08:45,garage,08:50
+weekday,10000,20,BLOCK-A,deadhead       ,,garage,08:50,stop-1,09:00
+weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00,stop-1,12:00
+weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00,garage,12:10
 ```
