@@ -8,8 +8,6 @@ represented here, please feel free to [create an issue in GitHub](https://github
 
 In this example, a bus driver is assigned to run 10000, which has four revenue trips on two pieces, all on the same block. The run also includes a pull-out, a pull-back, a pre-trip inspection, and a lunch break between the two pieces.
 
-TODO remake this diagram to reflect the data.
-
 ![Diagram showing four trips, two deadheads, and other events.](single-run-diagram.png)
 
 ### GTFS Files
@@ -110,7 +108,7 @@ deadhead-2,15:00,garage,3
 ```csv
 service_id,run_id,event_sequence,piece_id,block_id,job_type,event_type,trip_id,start_location,start_time,start_mid_trip,end_location,end_time,end_mid_trip
 daily,10000,10,       ,       ,Operator,Report Time,        ,garage,09:30:00,,garage,09:30:00,
-daily,10000,20,10000-1,       ,Operator,Pre-Trip Inspection,,garage,09:35:00,,garage,09:45:00,
+daily,10000,20,       ,       ,Operator,Pre-Trip Inspection,,garage,09:35:00,,garage,09:45:00,
 daily,10000,30,10000-1,BLOCK-A,Operator,Pull-Out,deadhead-1 ,garage,09:45:00,0,stop-1,09:55:00,0
 daily,10000,40,10000-1,BLOCK-A,Operator,Operator,101        ,stop-1,10:00:00,0,stop-3,10:50:00,0
 daily,10000,50,10000-1,BLOCK-A,Operator,Operator,102        ,stop-3,11:00:00,0,stop-1,11:50:00,0
@@ -123,8 +121,6 @@ daily,10000,90,10000-2,BLOCK-A,Operator,Pull-Back,deadhead-2,stop-1,14:50:00,0,g
 ## Multiple Runs on a Single Block with Mid-Trip Relief
 
 In this example, the bus driver assigned to run 10000 pulls out a bus, does trip 101 and part of trip 102, and then ends their day at `stop-2`. A new driver on run 20000 boards the bus, completes trip 102, then does trip 103 and trip 104, and pulls back to the garage.
-
-TODO remake this diagram to reflect the data.
 
 ![Diagram showing four trips, with the second trip broken into two different assignments.](mid-trip-relief-diagram.png)
 
