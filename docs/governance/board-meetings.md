@@ -6,4 +6,5 @@ We keep a running record of [ODS Board Meeting Agendas + Minutes](https://docs.g
 
 | **Date** | **Minutes** |
 | -------- | ---------- |
-| .. | .. |
+| 11 March 2024 | -- |
+| 26 June 2024 | -- |
