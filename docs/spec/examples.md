@@ -95,12 +95,12 @@ In this example, consumers know that these trips aren't in revenue service becau
 
 ```csv
 trip_id,arrival_time,stop_id,stop_sequence
-deadhead-1,09:45,garage,1
-deadhead-1,09:50,garage-waypoint,2
-deadhead-1,09:55,stop-1,3
-deadhead-2,14:50,stop-1,1
-deadhead-2,14:55,garage-waypoint,2
-deadhead-2,15:00,garage,3
+deadhead-1,09:45:00,garage,1
+deadhead-1,09:50:00,garage-waypoint,2
+deadhead-1,09:55:00,stop-1,3
+deadhead-2,14:50:00,stop-1,1
+deadhead-2,14:55:00,garage-waypoint,2
+deadhead-2,15:00:00,garage,3
 ```
 
 #### `run_events.txt`
@@ -163,8 +163,8 @@ In this example (unrelated to the previous examples), an operator signs in for t
 
 ```csv
 service_id,run_id,event_sequence,block_id,event_type,trip_id,start_location,start_time,end_location,end_time
-weekday,10000,10,       ,sign-in        ,,garage,08:45,garage,08:50
-weekday,10000,20,BLOCK-A,deadhead       ,,garage,08:50,stop-1,09:00
-weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00,stop-1,12:00
-weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00,garage,12:10
+weekday,10000,10,       ,sign-in        ,,garage,08:45:00,garage,08:50:00
+weekday,10000,20,BLOCK-A,deadhead       ,,garage,08:50:00,stop-1,09:00:00
+weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00:00,stop-1,12:00:00
+weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 ```
