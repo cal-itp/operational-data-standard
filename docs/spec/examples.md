@@ -109,13 +109,13 @@ deadhead-2,15:00:00,garage,3
 service_id,run_id,event_sequence,piece_id,block_id,job_type,event_type,trip_id,start_location,start_time,start_mid_trip,end_location,end_time,end_mid_trip
 daily,10000,10,       ,       ,Operator,Report Time,        ,garage,09:30:00,,garage,09:30:00,
 daily,10000,20,       ,       ,Operator,Pre-Trip Inspection,,garage,09:35:00,,garage,09:45:00,
-daily,10000,30,10000-1,BLOCK-A,Operator,Pull-Out,deadhead-1 ,garage,09:45:00,0,stop-1,09:55:00,0
-daily,10000,40,10000-1,BLOCK-A,Operator,Operator,101        ,stop-1,10:00:00,0,stop-3,10:50:00,0
-daily,10000,50,10000-1,BLOCK-A,Operator,Operator,102        ,stop-3,11:00:00,0,stop-1,11:50:00,0
+daily,10000,30,10000-1,BLOCK-A,Operator,Pull-Out,deadhead-1 ,garage,09:45:00,2,stop-1,09:55:00,2
+daily,10000,40,10000-1,BLOCK-A,Operator,Operator,101        ,stop-1,10:00:00,2,stop-3,10:50:00,2
+daily,10000,50,10000-1,BLOCK-A,Operator,Operator,102        ,stop-3,11:00:00,2,stop-1,11:50:00,2
 daily,10000,60,       ,       ,Operator,Break,              ,stop-1,11:50:00,,stop-1,13:00:00,
-daily,10000,70,10000-2,BLOCK-A,Operator,Operator,103        ,stop-1,13:00:00,0,stop-3,13:50:00,0
-daily,10000,80,10000-2,BLOCK-A,Operator,Operator,104        ,stop-3,14:00:00,0,stop-1,14:50:00,0
-daily,10000,90,10000-2,BLOCK-A,Operator,Pull-Back,deadhead-2,stop-1,14:50:00,0,garage,15:00:00,0
+daily,10000,70,10000-2,BLOCK-A,Operator,Operator,103        ,stop-1,13:00:00,2,stop-3,13:50:00,2
+daily,10000,80,10000-2,BLOCK-A,Operator,Operator,104        ,stop-3,14:00:00,2,stop-1,14:50:00,2
+daily,10000,90,10000-2,BLOCK-A,Operator,Pull-Back,deadhead-2,stop-1,14:50:00,2,garage,15:00:00,2
 ```
 
 ## Multiple Runs on a Single Block with Mid-Trip Relief
@@ -130,11 +130,11 @@ This example uses the [exact same GTFS files as the previous example](#gtfs-file
 
 ```csv
 service_id,run_id,event_sequence,piece_id,block_id,job_type,event_type,trip_id,start_location,start_time,start_mid_trip,end_location,end_time,end_mid_trip
-daily,10000,10,10000-1,BLOCK-A,Operator,Operator,101,stop-1,10:00:00,0,stop-3,10:50:00,0
-daily,10000,20,10000-1,BLOCK-A,Operator,Operator,102,stop-3,11:00:00,0,stop-2,11:25:00,1
-daily,20000,10,20000-1,BLOCK-A,Operator,Operator,102,stop-2,11:25:00,1,stop-1,11:50:00,0
-daily,20000,20,20000-1,BLOCK-A,Operator,Operator,103,stop-1,13:00:00,0,stop-3,13:50:00,0
-daily,20000,30,20000-1,BLOCK-A,Operator,Operator,104,stop-3,14:00:00,0,stop-1,14:50:00,0
+daily,10000,10,10000-1,BLOCK-A,Operator,Operator,101,stop-1,10:00:00,2,stop-3,10:50:00,2
+daily,10000,20,10000-1,BLOCK-A,Operator,Operator,102,stop-3,11:00:00,2,stop-2,11:25:00,1
+daily,20000,10,20000-1,BLOCK-A,Operator,Operator,102,stop-2,11:25:00,1,stop-1,11:50:00,2
+daily,20000,20,20000-1,BLOCK-A,Operator,Operator,103,stop-1,13:00:00,2,stop-3,13:50:00,2
+daily,20000,30,20000-1,BLOCK-A,Operator,Operator,104,stop-3,14:00:00,2,stop-1,14:50:00,2
 ```
 
 ## Multiple operators on the same trip
@@ -144,11 +144,11 @@ In this example (unrelated to the previous examples), a two-car train does a rou
 ### `run_events.txt`
 
 ```csv
-service_id,run_id,event_sequence,job_type,event_type,trip_id,start_location,start_time,start_mid_trip,end_location,end_time,end_mid_trip
-weekday,10000,10,Operator,Operate 1st Car,trip-1,stop-1,10:00:00,0,stop-2,10:58:00,0
-weekday,10000,20,Operator,Operate 2nd Car,trip-2,stop-2,11:00:00,0,stop-1,11:58:00,0
-weekday,20000,10,Operator,Operate 2nd Car,trip-1,stop-1,10:00:00,0,stop-2,10:58:00,0
-weekday,20000,20,Operator,Operate 1st Car,trip-2,stop-2,11:00:00,0,stop-1,11:58:00,0
+service_id,run_id,event_sequence,job_type,event_type,trip_id,start_location,start_time,end_location,end_time
+weekday,10000,10,Operator,Operate 1st Car,trip-1,stop-1,10:00:00,stop-2,10:58:00
+weekday,10000,20,Operator,Operate 2nd Car,trip-2,stop-2,11:00:00,stop-1,11:58:00
+weekday,20000,10,Operator,Operate 2nd Car,trip-1,stop-1,10:00:00,stop-2,10:58:00
+weekday,20000,20,Operator,Operate 1st Car,trip-2,stop-2,11:00:00,stop-1,11:58:00
 ```
 
 ## Run as Directed work
