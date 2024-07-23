@@ -1,6 +1,12 @@
 # Contributor Meetings
 
-## ODS 2.0
+## TODS Q3 2024 Development Cycle
+
+| Meeting     | Date  | Agenda  | Minutes  | Video  |
+| :---------- | :---- | :------ | :------- | :----- |
+| Q3 2024 Development Priorities | 23 Jul 2024 | [Agenda](https://drive.google.com/file/d/1wY1Mp8tnYxvtGoaGzvTfeB6CaD6r_VbT/view?usp=sharing)  | [Minutes](https://drive.google.com/file/d/1DK9hDQxLyQy_f1HEhW7P-N-lAAHTT3Xa/view?usp=drive_link) | [Video](https://drive.google.com/file/d/1UpYKlSiFWJa5mmfu1q6nttWFSd4WT7hn/view?usp=sharing) |
+
+## TODS 2.0
 
 | Meeting     | Date  | Description                          |
 | :---------- | :---- | :----------------------------------- |
@@ -8,7 +14,7 @@
 | Working Group Meeting #2 <br> <ul><li>[Video](https://drive.google.com/file/d/1dG_XjNaqhL2nHK3Ewg-SNuRCZUuXKpDW/view?usp=drive_link)</li><br><li>[Notes](https://docs.google.com/document/d/1WZVbj28DThvyiV-bIl3Ds0Dxy_XgnFHSDwjx0oSG1QM/edit?usp=drive_link)</li></ul> | 27 Feb 2024 | Finalizing structure of "GTFS-supplemental" approach for ODS v2.0. |
 | Working Group Meeting #3 <br> <ul><li>[Notes](https://docs.google.com/document/d/18FsVtNnN04Dao05AFpH6McgZcf89Ct2lXNNSJeMPxbk/edit?usp=drive_link)</li></ul> | 4 Apr 2024 | Review of and feedback on Run Events proposal; decide next steps on "GTFS-supplemental" proposal. |
 
-## ODS 1.0
+## TODS 1.0
 
 | Meeting     | Date  | Description                          |
 | :---------- | :---- |:----------------------------------- |
