@@ -1,0 +1,9 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,stop_timezone,wheelchair_boarding,level_id,platform_code
+8500,8500,"First Stop",,33.000,-153.000,,,,,,,,,
+8501,8501,"Second Stop",,33.000,-153.000,,,,,,,,,
+8502,8502,"Third Stop",,33.000,-153.000,,,,,,,,,
+8503,8503,"Fourth Stop",,33.000,-153.000,,,,,,,,,
+8504,8504,"Fifth Stop",,33.000,-153.000,,,,,,,,,
+8505,8505,"Sixth Stop",,33.000,-153.000,,,,,,,,,
+8506,8506,"Seventh Stop",,33.000,-153.000,,,,,,,,,
+8507,8507,"Eighth Stop",,33.000,-153.000,,,,,,,,,
