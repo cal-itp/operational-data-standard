@@ -20,8 +20,7 @@ There are two types of files used in the TODS standard:
 | stops_supplement.txt | Supplement | Supplements and modifies GTFS [stops.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) with internal stop locations, waypoints, and other non-public stop information.|
 | stop_times_supplement.txt | Supplement | Supplements and modifies GTFS [stop_times.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) with non-public times at which trips stop at locations, `stop_times` entries for non-public trips, and related information. |
 | routes_supplement.txt | Supplement | Supplements and modifies GTFS [routes.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt) with internal route identifiers and other non-public route identification. |
-| runs_pieces.txt | TODS-Specific | Defines daily personnel schedules within a feed. |
-| run_events.txt | TODS-Specific | Defines other scheduled activities to be performed by a member of personnel during a run. |
+| run_events.txt | TODS-Specific | Lists all trips and other scheduled activities to be performed by a member of personnel during a run. |
 
 _The use of the Supplement standard to modify other GTFS files is not yet formally adopted into the specification and remains subject to change. Other files may be formally adopted in the future._
 
@@ -101,30 +100,42 @@ In addition to the fields defined in GTFS, specific fields for use within TODS a
 
 ## TODS-Specific File Definitions
 
-### runs_pieces.txt
+### `run_events.txt`
+
+Primary Key: (`service_id`, `run_id`, `event_sequence`)
 
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
-| run_id | ID | Required | Identifies a run. |
-| piece_id | ID | Required | Identifies the piece of the run. The piece_id field must be unique. |
-| start_type | Enum | Required | Indicates whether the piece begins with a deadhead, a revenue trip, or an event.<br /><br />**0** - Deadhead <br />**1** - Trip <br />**2** - Event |
-| start_trip_id | ID referencing **deadheads.deadhead_id** or [**trips.trip_id**](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt) | Required | Identifies the deadhead or trip with which the piece begins. |
-| start_trip_position | Non-negative Integer referencing **deadhead_times.location_sequence** or [**stop_times.stop_sequence**](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) | Optional | Identifies the first operational location or stop to be serviced in the first trip of the piece. This field should only be filled out if the piece does not begin at the first stop of the start trip. |
-| end_type | Enum | Required | Indicates whether the piece ends with a deadhead, a revenue trip, or an event. <br /><br />**0** - Deadhead <br />**1** - Trip <br />**2** - Event |
-| end_trip_id | ID referencing **deadheads.deadhead_id** or [**trips.trip_id**](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt) | Required | Identifies the deadhead or trip with which the piece ends. |
-| end_trip_position | Non-negative Integer referencing **deadhead_times.location_sequence** or [**stop_times.stop_sequence**](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) | Optional | Identifies the last operational location or stop to be serviced in the last trip of the piece. This field should only be filled out if the piece does not end at the last stop of the end trip. |
+| `service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Required | Identifies a set of dates when the run is scheduled to take place. |
+| `run_id` | ID | Required | A run is uniquely determined by a `service_id`, `run_id` pair. Runs with the same `run_id` on different `service_id`s are considered different runs. |
+| `event_sequence` | Non-negative integer | Required | The order of this event within a run. Must be unique within one (`service_id`, `run_id`). See [more detail below](#event_sequence-and-event-times) about how order is defined. |
+| `piece_id` | ID | Optional | Identifies the piece within the run that the event takes place.<br /><br />May be blank if the event takes place out of a piece, like a break, or if the agency does not use piece IDs. |
+| `block_id` | ID referencing `trips.block_id` | Optional | Identifies the block to which the run event belongs.<br /><br />This field is always optional. May exist even if `trip_id` does not (e.g. if an event represents a run-as-directed block with no scheduled trips). May exist even if `trip_id` exists and the associated trip in `trips.txt` doesn't have a `block_id`. May be omitted even if `trip_id` exists and the associated trip in `trips.txt` has a `block_id`.<br /><br />If `block_id` is set, `trip_id` is set, and the associated trip in `trips.txt` has a `block_id`, then the two `block_id`s must not be different. |
+| `job_type` | Text | Optional | The type of job that the employee is doing, in a human-readable format. e.g. "Assistant Conductor". Producers may use any values, but should be consistent.<br /><br />A single run may include more than one `job_type` throughout the day if the employee has multiple responsibilities, e.g. an "Operator" in the morning and a "Shifter" in the afternoon. |
+| `event_type` | Text | Required | The type of event that the employee is doing, in a human-readable format. e.g. "Sign-in". Producers may use any values, but should be consistent. Consumers may ignore events with an `event_type` that they don't recognize. |
+| `trip_id` | ID referencing `trips.trip_id` | Optional | If this run event corresponds to working on a trip, identifies that trip. |
+| `start_location` | ID referencing `stops.stop_id` | Required | Identifies where the employee starts working this event.<br /><br />If `trip_id` is set (and `mid_trip_start` is not `1`), this should be the `stop_id` of the first stop of the trip in `stop_times.txt` (after applying any trip supplement). If `start_mid_trip` is `1`, this should be the location where the employee starts working, matching a `stop_id` in the middle of the supplemented trip. |
+| `start_time` | Time | Required | Identifies the time when the employee starts working this event.<br /><br />If `trip_id` is set (and `mid_trip_start` is not `1`), this corresponds to the time of the first stop of the trip in `stop_times.txt` (after applying any trip supplement). If `start_mid_trip` is `1`, this time corresponds to a stop time in the middle of the supplemented trip, when the employee starts working on the trip. Note that this time may not exactly match `stop_times.txt` `arrival_time` or `departure_time` if the employee is considered to be working for a couple minutes before the trip departs. This field is about when the employee is working, and consumers who care about the the trip times should check `stop_times.txt` instead. |
+| `start_mid_trip` | Enum | Optional | Indicates whether the event begins at the start of the trip or in the middle of the trip (after applying any trip supplement).<br /><br />`0` (or blank) - Run event is not associated with a trip, or no information about whether the run event starts mid-trip<br />`1` - Run event starts mid-trip<br />`2` - Run event does not start mid-trip |
+| `end_location` | ID referencing `stops.stop_id` | Required | Identifies where the employee stops working this event.<br /><br />If `trip_id` is set (and `mid_trip_end` is not `1`), this should be the `stop_id` of the last stop of the trip in `stop_times.txt` (after applying any trip supplement). If `end_mid_trip` is `1`, this should be the location where the employee stops working, matching a `stop_id` in the middle of the supplemented trip. |
+| `end_time` | Time | Required | Identifies the time when the employee stops working this event.<br /><br />If `trip_id` is set (and `mid_trip_end` is not `1`), this corresponds to the time of the last stop of the trip in `stop_times.txt` (after applying any trip supplement). If `end_mid_trip` is `1`, this time corresponds to a stop time in the middle of the supplemented trip, when the employee stops working on the trip. Note that this time may not exactly match `stop_times.txt` `arrival_time` or `departure_time` if the employee is considered to be working for a couple minutes after the trip finishes. This field is about when the employee is working, and consumers who care about the the trip times should check `stop_times.txt` instead. |
+| `end_mid_trip` | Enum | Optional | Indicates whether the event ends at the end of the trip or in the middle of the trip (after applying any trip supplement).<br /><br />`0` (or blank) - Run event is not associated with a trip, or no information about whether the run event ends mid-trip<br />`1` - Run event ends mid-trip<br />`2` - Run event does not end mid-trip |
 
-### run_events.txt
+#### `event_sequence` and Event Times
 
-| **Field Name** | **Type** | **Required** | **Description** |
-| --- | --- | --- | --- |
-| run_event_id | ID | Required | Identifies a run event. |
-| piece_id | ID referencing **runs_pieces.piece_id** | Required | Identifies the piece during which the run event takes place. |
-| event_type | Enum | Required | Indicates which event is scheduled in this entry.<br /><br />**0** - Report Time<br />**1** - Pre-Trip Activity<br />**2** - Post-Trip Activity<br />**3** - Fueling<br />**4** - Break<br />**5** - Availability<br />**6** - Activity<br />**7** - Other |
-| event_name | String | Optional | The name for the event that is being used. |
-| event_time | Time | Required | The time at which the event begins. |
-| event_duration | Non-negative Integer | Required | The scheduled duration of the event from the event_time in seconds. |
-| event_from_location_type | Enum | Optional | Indicates whether the event is scheduled to begin at an operational location or a stop.<br /><br />**0** - Operational Location<br />**1** - Stop |
-| event_from_location_id | ID referencing **ops_locations.ops_location_id** or [**stops.stop_id**](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) | Optional | Identifies the operational location or stop at which the event is scheduled to begin. |
-| event_to_location_type | Enum | Optional | Indicates whether the event is scheduled to end at an operational location or a stop.<br /><br />**0** - Operational Location<br />**1** - Stop |
-| event_to_location_id | ID referencing **ops_locations.ops_location_id** or [**stops.stop_id**](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) | Optional | Identifies the operational location or stop at which the event is scheduled to end. |
+`event_sequence` is required and unique within a run so it can be used in the Primary Key to uniquely identify events.
+
+Within one run, `event_sequence` values should increase throughout the day but do not have to be consecutive.
+
+Within one run, if two events both have `trip_id` set, they must not overlap in time (based on `start_time` and `end_time`). Employees cannot be on two trips at once, or have multiple duties on the same trip at the same time. Having a zero-minute overlap is allowed, to allow consecutive trips without layovers, and to allow trips with 0-minute durations, which some agencies use for bookkeeping reasons.
+
+Events that don't have `trip_id` set may overlap in time with any other events. This is to allow events that represent a large portion of a day (such as time that an employee is available to work), regardless of what other duties or trips they have during that time.
+
+Because some events may overlap in time, it may not be possible to choose a single order for events within a run that's correct for all uses. Producers should use `event_sequence` to define a reasonable order. If a consumer cares about exactly how overlapping events are ordered, they should sort based on the time fields and `event_type` instead.
+
+#### `run_events` Notes
+
+- Multiple `run_event`s may refer to the same `trip_id`, if multiple employees work on that trip.
+- Events may have gaps between the end time of one event and the start time of the next. e.g. if an operator's layovers aren't represented by an event.
+- `start_time` may equal `end_time` for an event that's a single point in time (such as a report time) without any duration.
+- Recommended sort order: `service_id`, `run_id`, `event_sequence`.
