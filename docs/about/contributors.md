@@ -1,6 +1,6 @@
 # Contributors
 
-The Operational Data Standard Contributors Group (formerly known as the ODS Working Group) is convened by staff from the [California Integrated Travel Project](http://calitp.org) as part of its goal to provide complete, accurate, and up-to-date transit data to customers and respective agencies.
+The Transit Operational Data Standard Contributors Group (formerly known as the ODS Working Group) is convened by staff from the [California Integrated Travel Project](http://calitp.org) as part of its goal to provide complete, accurate, and up-to-date transit data to customers and respective agencies.
 
 Contributors are expected to commit to supporting the adopted ODS v1 specification. Depending on the organization,supporting the ODS v1 specification may entail developing software to produce or consume the specification, or, for transit agencies, encouraging vendors to support the specification.
 
@@ -58,6 +58,6 @@ Contributors are expected to commit to supporting the adopted ODS v1 specificati
 
 !!! Note "Implementers"
 
-    :material-check-circle: denotes an organization who has implemented ODS
+    :material-check-circle: denotes an organization who has implemented TODS
 
-    :material-check-circle-outline: denotes an organization in the process of implementing ODS
+    :material-check-circle-outline: denotes an organization in the process of implementing TODS
