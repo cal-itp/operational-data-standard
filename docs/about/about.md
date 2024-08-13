@@ -8,7 +8,7 @@ TODS was [initially developed](spec-development.md) in 2021-2022 by the [TODS Wo
 2. Improve efficiency in dispatching, planning, scheduling, driver shift management, and other back-end transit operations
 3. Reduce the burden of generating data for reporting (FTA and other)
 
-As of 2023:
+As of 2024:
 
 * TODS v1.0 is leveraged by several software vendors and transit agencies,
 * TODS v2.0 is under active development,
