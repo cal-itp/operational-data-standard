@@ -20,6 +20,8 @@ There are two types of files used in the TODS standard:
 | stops_supplement.txt | Supplement | Supplements and modifies GTFS [stops.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) with internal stop locations, waypoints, and other non-public stop information.|
 | stop_times_supplement.txt | Supplement | Supplements and modifies GTFS [stop_times.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) with non-public times at which trips stop at locations, `stop_times` entries for non-public trips, and related information. |
 | routes_supplement.txt | Supplement | Supplements and modifies GTFS [routes.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt) with internal route identifiers and other non-public route identification. |
+| calendar_supplement.txt | Supplement | Supplements and modifies GTFS [calendar.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#calendartxt) to adjust days for which existing `service_id`s are in effect, and add additional `service_id`s where crew and/or deadhead information is distinct from revenue trips. |
+| calendar_dates_supplement.txt | Supplement | Supplements and modifies GTFS [calendar_dates.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#calendar_datestxt) to adjust dates for which existing `service_id`s are in effect, and add additional `service_id`s where crew and/or deadhead information is distinct from revenue trips. |
 | run_events.txt | TODS-Specific | Lists all trips and other scheduled activities to be performed by a member of personnel during a run. |
 
 _The use of the Supplement standard to modify other GTFS files is not yet formally adopted into the specification and remains subject to change. Other files may be formally adopted in the future._
@@ -106,7 +108,8 @@ Primary Key: (`service_id`, `run_id`, `event_sequence`)
 
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
-| `service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Required | Identifies a set of dates when the run is scheduled to take place. |
+| `service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Required | Identifies a set of dates when the run is scheduled to take place. Can be distinct from `trip_service_id`. |
+| `trip_service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Optional | If an operation has distinct vehicle and crew schedules, identifies the vehicle schedule relating to the identified set of runs.<br /><br />If `trip_service_id` is not set, the `service_id` field will be used to refer to both an operation's vehicle and crew schedules. When an event's `trip_service_id` is active, its `service_id` must also be in effect. |
 | `run_id` | ID | Required | A run is uniquely determined by a `service_id`, `run_id` pair. Runs with the same `run_id` on different `service_id`s are considered different runs. |
 | `event_sequence` | Non-negative integer | Required | The order of this event within a run. Must be unique within one (`service_id`, `run_id`). See [more detail below](#event_sequence-and-event-times) about how order is defined. |
 | `piece_id` | ID | Optional | Identifies the piece within the run that the event takes place.<br /><br />May be blank if the event takes place out of a piece, like a break, or if the agency does not use piece IDs. |
@@ -120,6 +123,10 @@ Primary Key: (`service_id`, `run_id`, `event_sequence`)
 | `end_location` | ID referencing `stops.stop_id` | Required | Identifies where the employee stops working this event.<br /><br />If `trip_id` is set (and `mid_trip_end` is not `1`), this should be the `stop_id` of the last stop of the trip in `stop_times.txt` (after applying any trip supplement). If `end_mid_trip` is `1`, this should be the location where the employee stops working, matching a `stop_id` in the middle of the supplemented trip. |
 | `end_time` | Time | Required | Identifies the time when the employee stops working this event.<br /><br />If `trip_id` is set (and `mid_trip_end` is not `1`), this corresponds to the time of the last stop of the trip in `stop_times.txt` (after applying any trip supplement). If `end_mid_trip` is `1`, this time corresponds to a stop time in the middle of the supplemented trip, when the employee stops working on the trip. Note that this time may not exactly match `stop_times.txt` `arrival_time` or `departure_time` if the employee is considered to be working for a couple minutes after the trip finishes. This field is about when the employee is working, and consumers who care about the the trip times should check `stop_times.txt` instead. |
 | `end_mid_trip` | Enum | Optional | Indicates whether the event ends at the end of the trip or in the middle of the trip (after applying any trip supplement).<br /><br />`0` (or blank) - Run event is not associated with a trip, or no information about whether the run event ends mid-trip<br />`1` - Run event ends mid-trip<br />`2` - Run event does not end mid-trip |
+
+#### `service_id` and `trip_service_id`
+
+`service_id` is a required field that identifies when the corresponding run is in effect. In operations where crew schedules are uncoupled from the underlying trips (such that multiple crew schedules can apply to the same underlying sets of trips), `trip_service_id` can be used to link a run event with a trip in its specific `service_id.` Note that, in order for crew schedules and vehicle/trip schedules to be represented in a distinct fashion, the IDs used for `service_id` and `trip_service_id` must be different. Otherwise, the ID used will represent a set of trips, in addition to the runs in effect at that time, which creates an inherent conflict in use.
 
 #### `event_sequence` and Event Times
 
