@@ -173,7 +173,6 @@ weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 
 The below examples identify how to use the distinct `trip_service_id` feature of `run_events.txt` to model instances in which crew schedules may be decoupled from trips, forming a many:1 relationship of runs and trips.
 
-
 ### Extra staffing for a special event
 
 Due to a baseball game, an additional ticket collector will be assigned to supplement the existing crew on train 101, serving the ballpark.
@@ -201,7 +200,6 @@ gameday,20240821,1
 gameday,20240827,1
 gameday,20240903,1
 ```
-
 
 ### Different runs mapping to the same set of trips
 
@@ -270,7 +268,6 @@ future ,1,1,1,1,1,0,0,20240901,20241231
 Consider a commuter train line that operates three daily round-trips: two morning inbound trains from the suburbs to the city, two evening return trips from the city to the suburbs, plus one reverse-peak trip for day-trippers to the outlying village and back.
 
 Every day, the same six trips are operated from the public perspective, with the crew of the earlier morning inbound rush-hour trip always working the earlier evening outbound rush-hour trip (trains 102 and 101, respectively), and the other crew working the later of the two (trains 104 and 103, respectively). To more evenly distribute fatigue and rest, the midday round-trip (trains 191 and 192) is split between the early and late crews by day-of-week, and switching halfway through the year. Whichever crew works the midday trip takes their break in the suburban village, whereas the other crew takes their break in the city.
-
 
 #### `trips.txt`
 
@@ -352,7 +349,6 @@ A special track inspection train is being operated on a particular day, supporte
 
 _Note: The deadhead trips themselves could be defined in their own new `service_id` even without definining corresponding run data in `run_events.txt` using the `calendar_supplement.txt` or `calendar_dates_supplement.txt` files._
 
-
 #### `trips_supplement.txt`
 
 ```csv
@@ -383,14 +379,12 @@ inspection_line3_ib,centerton,16:00:00
 inspection_line3_ib,downtown,16:45:00
 ```
 
-
 #### `calendar_dates_supplement.txt`
 
 ```csv
 service_id,date,exception_type
 inspection_train,20240901
 ```
-
 
 #### `run_events.txt`
 
