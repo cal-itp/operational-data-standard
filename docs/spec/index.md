@@ -104,7 +104,7 @@ In addition to the fields defined in GTFS, specific fields for use within TODS a
 
 ### `run_events.txt`
 
-Primary Key: (`service_id`, `run_id`, `event_sequence`)
+Primary Key: (`service_id`, `trip_service_id`, `run_id`, `event_sequence`)
 
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
