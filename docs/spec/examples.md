@@ -171,7 +171,7 @@ weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 
 ## Distinct Crew and Trip schedule scenarios
 
-The below examples identify how to use the distinct `trip_service_id` feature of `run_events.txt` to model instances in which crew schedules may be decoupled from trips, forming a many:many relationship of runs and trips.
+The below examples identify how to use the distinct `trip_service_id` feature of `run_events.txt` to model instances in which crew schedules may be decoupled from trips, forming a many:1 relationship of runs and trips.
 
 
 ### Extra staffing for a special event
@@ -407,4 +407,36 @@ inspection_train ,1 ,6 ,operator ,inspection_line3_ob ,downtown      ,15:00:00 ,
 inspection_train ,1 ,7 ,operator ,inspection_line3_ib ,centerton     ,16:00:00 ,downtown      ,16:45:00
 gameday          ,1 ,8 ,signoff  ,                    ,main_terminal ,17:00:00 ,main_terminal ,17:30:00
 
+```
+
+### Activating a storm schedule
+
+Assume a public GTFS file includes a set of trips with service_id `storm_schedule`, with no normal assignment in the calendar.
+
+#### `calendar.txt`
+
+```csv
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+normal,1,1,1,1,1,0,0,20240101,20241231
+storm_schedule,0,0,0,0,0,0,0,20240101,20241231
+```
+
+#### `calendar_dates.txt`
+
+This storm schedule could be activated whenever inclement weather is encountered by updating `calendar_dates.txt` to include:
+
+```csv
+service_id,date,exception_type
+normal,20240901,2
+storm_schedule,20240901,1
+```
+
+#### `calendar_dates_supplement.txt`
+
+While waiting for the GTFS data to propagate through one's system, this could also be reflected in the TODS `calendar_dates_supplement.txt` file to activate the change in any operational systems, alongside any runs associated with the `storm_schedule` service_id.
+
+```csv
+service_id,date,exception_type
+normal,20240901,2
+storm_schedule,20240901,1
 ```
