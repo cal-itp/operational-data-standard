@@ -8,7 +8,7 @@
 
 !!! tip
 
-    Definitions of various roles such as TODS Board, TODS Manager, and TODS Contributor refer to their respective definitions in the [TODS Governance][governance].
+    Definitions of various roles such as [TODS Board][board], [TODS Manager][manager], and [TODS Contributors][contributors] refer to their respective definitions in the [TODS Governance][governance].
 
 The following definitions build on the overall [TODS Governance][governance] definitions and exist within the purpose of the TODS Versioning and Change Management Policy.
 
@@ -75,7 +75,7 @@ Resolution: [TODS Manager][manager] will create a Milestone for the next release
 
 ### Initial Proposal Development
 
-Initiated [for each need] when [TODS Manager][manager], in consultation with the [TODS Board][board] and [TODS Contributors[contributors]], convenes an Issue Working Group to address a prioritized issue or set of interrelated issues.
+Initiated [for each need] when [TODS Manager][manager], in consultation with the [TODS Board][board] and [TODS Contributors][contributors], convenes an Issue Working Group to address a prioritized issue or set of interrelated issues.
 
 Actions:
 
