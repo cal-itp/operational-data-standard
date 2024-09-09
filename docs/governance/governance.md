@@ -23,7 +23,7 @@ The TODS Governance is designed with the following principles in mind:
 
 - Change-making process should be simple for simple changes.
 - Complex changes should be made with careful consideration.
-- Streamlined, purpose-driven change management should be applied to maximize stakeholder efficiency .
+- Streamlined, purpose-driven change management should be applied to maximize stakeholder efficiency.
 - Changes should be straightforward to incorporate by existing TODS Stakeholders.
 - Significant changes, especially those which are not backwards compatible with existing datasets, should be limited in number and in frequency in order to limit the number of times existing processes and tools need to be re-engineered.
 - A significant change merits a new version number.
@@ -101,7 +101,7 @@ Responsibility for the governance of the TODS Project is divided among the follo
 | **Role** | **Who** |
 | -------- | ----- |
 | [TODS Board](#tods-board-of-directors) | <ul><li>[Joshua Fabian](https://www.linkedin.com/in/jfabi/), [MBTA](https://www.mbta.com/)</li><li>[Matthias Gruetzner](https://www.linkedin.com/in/matthias-gr%C3%BCtzner-6b469b187/), [INIT](https://www.initse.com/)</li><li>Guilhem Hammel, [Giro](https://www.giro.ca/en-us/)</li><li>[Erik Jensen](https://www.linkedin.com/in/erik-jensen), [WMATA](https://www.wmata.com/)</li><li>[Bradley Tollison](https://www.linkedin.com/in/bradley-t-0652a2124/), [Transdev](https://www.transdev.com/en/)</li></ul> |
-| [TODS Board Coordinator](#tods-board-coordinator) | TBD |
+| [TODS Board Coordinator](#tods-board-coordinator) | [Scott Frazier](https://github.com/safrazier17) |
 | [TODS Manager](#tods-manager) | [MobilityData](https://mobilitydata.org) |
 | [TODS Program Manager](#tods-program-manager) | [Cristhian Hellion](https://github.com/Cristhian-HA), [MobilityData](https://mobilitydata.org) |
 | [TODS Contributors](#tods-contributor) |  TBD |
