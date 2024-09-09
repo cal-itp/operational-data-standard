@@ -4,7 +4,7 @@ The project was initiated by the [California Integrated Travel Project](https://
 
 The project has been resourced by the [California Integrated Travel Project](https://calitp.org) and the [TODS Working Group](working-group.md).
 
-The Transit Operational Data Standard (TODS) project is the property of the TODS Board.  As of January 2024, the TODS Project will be managed by [MobilityData](https://mobilitydata.org) under the authority of the TODS Board.
+The Transit Operational Data Standard (TODS) project is the property of the TODS Board.  As of January 2024, the TODS Project is managed by [MobilityData](https://mobilitydata.org) under the authority of the TODS Board.
 
 ## Citation
 
