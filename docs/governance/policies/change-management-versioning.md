@@ -154,7 +154,7 @@ This section outlines an expedited process for implementing changes in response 
 Each change to normative content in the main branch of the TODS Repository MUST be considered a new release and assigned a version number.
 
 * Each release MUST contain one or more changes to normative content which have been approved through the change-making process.
-* Each release MUST be reviewed and approved in the TODS Repository by 2+ members of the [TODS Board][board]  – or their designees – for * accuracy and consistency with the changes’ intent.
+* Each release MUST be reviewed and approved in the TODS Repository by 2+ members of the [TODS Board][board]  – or their designees – for accuracy and consistency with the intent of the change.
 * Each release MUST be tagged with its version number.
 * Each release MUST have documentation available.
 * Each release MUST have an entry in `CHANGELOG.md``.
@@ -168,7 +168,7 @@ Each approved change to normative content in the develop branch of the TODS Repo
 
 Pre-releases MAY be made in order to evaluate and work on incrementally-approved changes.
 
-* Each pre-release MUST contain one or more changes to normative content which have been approved through the change-making * process.
+* Each pre-release MUST contain one or more changes to normative content which have been approved through the change-making process.
 * Each pre-release MUST be reviewed and approved in GitHub by 1+ members of the [TODS Board][board] – or their designees – for accuracy and * consistency with the changes’ intent.
 * Pre-releases MUST be tagged with an appropriate pre-release version number:
 * Pre-releases that have incorporated all the normative changes for the target-release MUST have a beta version number;
