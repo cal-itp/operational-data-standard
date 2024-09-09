@@ -1,6 +1,6 @@
 # TODS Governance
 
-This page outlines the policies, procedures, and structures that guide the collaborative and transparent development of the transit Operational Data Standard ("TODS"). The TODS is a critical framework enabling effective dispatching and operations management through a standardized data schema. This document is intended for all members of the TODS Community, including the TODS Board of Directors, TODS Managers, TODS Contributors, and TODS Stakeholders. By clearly defining the principles, roles, and policies, we aim to facilitate the efficient, fair, and responsible advancement of the TODS Project.
+This page outlines the policies, procedures, and structures that guide the collaborative and transparent development of the Transit Operational Data Standard ("TODS"). The TODS is a critical framework enabling effective dispatching and operations management through a standardized data schema. This document is intended for all members of the TODS Community, including the TODS Board of Directors, TODS Managers, TODS Contributors, and TODS Stakeholders. By clearly defining the principles, roles, and policies, we aim to facilitate the efficient, fair, and responsible advancement of the TODS Project.
 
 ## Principles
 
@@ -49,7 +49,7 @@ Who and how decisions are made about the scope and direction of the TODS Project
 - [TODS Code of Conduct](#tods-code-of-conduct)
 - [TODS Use License](#tods-use-license)
 
-### Operational Data Standard (TODS) Specification
+### Transit Operational Data Standard (TODS) Specification
 
 The data schema documented on the [TODS Repository](#tods-repository) and [TODS Documentation](#tods-documentation) for the purposes of representing planned transit operations for use is dispatching and operations management software.
 
@@ -130,8 +130,8 @@ TODS Board [meetings](board-meetings.md) and [actions](actions.md).
 Chosen by the TODS Board, this individual is responsible for coordinating the actions and activities of the [TODS Board](#tods-board-of-directors).
 
 - The Board Coordinator MUST schedule, agendize and arrange for Board meetings in consultation with the TODS Board Chair and [TODS Program Manager](#tods-program-manager).
-- The Board Coordinator MUST conduct votes by the [TODS Board](#tods-board-of-directors)and document results.
-- The Board Coordinator MUST communicate with the [TODS Manager](#tods-manager)r / [TODS Program Manager](#tods-program-manager)r as needed.
+- The Board Coordinator MUST conduct votes by the [TODS Board](#tods-board-of-directors) and document results.
+- The Board Coordinator MUST communicate with the [TODS Manager](#tods-manager) / [TODS Program Manager](#tods-program-manager) as needed.
 
 ## TODS Manager
 
@@ -144,7 +144,7 @@ Responsible for the daily management of the TODS Project at the direction of the
 
 - The [TODS Manager](#tods-manager) MAY be an individual or organization.
 - The [TODS Manager](#tods-manager) MUST assign an individual as the [TODS Program Manager](#tods-program-manager).
-- The [TODS Manager](#tods-manager) MUST communicate the name of the [TODS Program Manager](#tods-program-manager) to the [TODS Board](#tods-board-of-directors)in writing and notify the Board of any change in this assignment in writing.
+- The [TODS Manager](#tods-manager) MUST communicate the name of the [TODS Program Manager](#tods-program-manager) to the [TODS Board](#tods-board-of-directors) in writing and notify the Board of any change in this assignment in writing.
 - The [TODS Manager](#tods-manager) SHOULD select a new [TODS Program Manager](#tods-program-manager) if asked to do so by the TODS Board.
 
 ## TODS Program Manager
