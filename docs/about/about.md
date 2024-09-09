@@ -11,6 +11,6 @@ TODS was [initially developed](spec-development.md) in 2021-2022 by the [TODS Wo
 As of 2024:
 
 * TODS v1.0 is leveraged by several software vendors and transit agencies,
-* TODS v2.0 is under active development,
+* TODS v2.0 has been adopted and is ready for implementation,
 * [Independent governance and ownership](../governance/governance.md) has been established in order to meet the [Mobility Data Interoperability Principles'](https://interoperablemobility.org) definition of an **Open Standard**.
 * TODS is specified as a suggested requirement for Scheduling and CAD/AVL systems in the Mobility Data Interoperability Principles' [Procurement Resource](https://interoperablemobility.org/procurement)
