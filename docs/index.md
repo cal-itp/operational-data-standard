@@ -44,7 +44,7 @@ Transit providers need the systems they use to schedule and operate their servic
 
 TODS is an open standard which extends GTFS to define additional operational details necessary to operate the service such as deadheads and runs.  
 
-!!! warning "Does TODS Data have to be Open data?"
+!!! warning "Does TODS Data has to be Open data?"
 
     While GTFS data can and should be public so that riders can learn about service, TODS data is typically not published in order to preserve the privacy of internal operations data.
 
