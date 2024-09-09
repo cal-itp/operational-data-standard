@@ -86,4 +86,4 @@ Most vendors already read and write to GTFS, so this should be a marginal lift t
 
 If you use the Transit Operational Data Standard in a report or article, please cite it as follows:
 
-> Operational Data Standard Working Group. 2022. Transit Operational Data Standard. Operational Data Standard Board of Directors. https://ods.calitp.org.
+> Transit Operational Data Standard Working Group. 2022. Transit Operational Data Standard. Transit Operational Data Standard Board of Directors. https://ods.calitp.org.
