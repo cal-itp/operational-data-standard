@@ -8,7 +8,7 @@
 
 !!! tip
 
-    Definitions of various roles such as [TODS Board][board], [TODS Manager][manager] and [TODS Contributor][contributor] refer to their respective definitions in the [TODS Governance][governance].
+    Definitions of various roles such as TODS Board, TODS Manager, and TODS Contributor refer to their respective definitions in the [TODS Governance][governance].
 
 The following definitions build on the overall [TODS Governance][governance] definitions and exist within the purpose of the TODS Versioning and Change Management Policy.
 
@@ -116,7 +116,7 @@ Actions:
 
 * [TODS Manager][manager] MUST ensure the relevant accompanying documentation fleshed out.
 * [TODS Manager][manager] MUST ensure Changelog fully documented.
-* [TODS Manager][manager]MUST ensure sample datasets updated or added that support the new feature.
+* [TODS Manager][manager] MUST ensure sample datasets updated or added that support the new feature.
 * [TODS Manager][manager] MUST ensure any relevant updates to continuous integration and testing are completed.
 * [TODS Manager][manager] MAY make any number of [pre-release(s)](#pre-releases).
 * [TODS Manager][manager] MUST identify and ensure resolution of relevant conflicts among proposals as overseen by the [TODS Board][board] or their designee.
