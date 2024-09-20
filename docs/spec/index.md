@@ -22,6 +22,8 @@ There are two types of files used in the TODS standard:
 | routes_supplement.txt | Supplement | Supplements and modifies GTFS [routes.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt) with internal route identifiers and other non-public route identification. |
 | run_events.txt | TODS-Specific | Lists all trips and other scheduled activities to be performed by a member of personnel during a run. |
 
+TODO add new roster files to this list
+
 _The use of the Supplement standard to modify other GTFS files is not yet formally adopted into the specification and remains subject to change. Other files may be formally adopted in the future._
 
 ## Supplement Files
@@ -139,3 +141,73 @@ Because some events may overlap in time, it may not be possible to choose a sing
 - Events may have gaps between the end time of one event and the start time of the next. e.g. if an operator's layovers aren't represented by an event.
 - `start_time` may equal `end_time` for an event that's a single point in time (such as a report time) without any duration.
 - Recommended sort order: `service_id`, `run_id`, `event_sequence`.
+
+### `rosters.txt`
+
+TODO text description of how all 4 files fit together.
+
+Primary Key: `roster_id`
+
+| **Field Name** | **Type** | **Required** | **Description** |
+| --- | --- | --- | --- |
+| `roster_id` | Unique ID | Required | Unique within dataset |
+| `start_date` | Date | Required | |
+| `end_date` | Date | Required | |
+| `monday_service_id` | ID referencing `run_events.txt` | Conditionally Required | Identifies the run this roster does on Mondays. Runs are identified by the pair `(service_id, run_id)`. Required if and only if `monday_run_id` is present. |
+| `monday_run_id` | ID referencing `run_events.txt` | Conditionally Required | Identifies the run this roster does on Mondays. If blank, this roster does not work on Mondays. Required if and only if `monday_service_id` is present. |
+| `tuesday_service_id` | ID referencing `run_events.txt` | Conditionally Required | Identifies the run this roster does on Mondays. Runs are identified by the pair `(service_id, run_id)`. Required if and only if `monday_run_id` is present. |
+| `tuesday_service_id` | | | |
+| `tuesday_run_id` | | | |
+| `wednesday_service_id` | | | |
+| `wednesday_run_id` | | | |
+| `thursday_service_id` | | | |
+| `thursday_run_id` | | | |
+| `friday_service_id` | | | |
+| `friday_run_id` | | | |
+| `saturday_service_id` | | | |
+| `saturday_run_id` | | | |
+| `sunday_service_id` | | | |
+| `sunday_run_id` | | | |
+
+### `roster_dates.txt`
+
+Primary Key: `(roster_id, date, exception_type)`
+
+| **Field Name** | **Type** | **Required** | **Description** |
+| --- | --- | --- | --- |
+| `roster_id` | ID referencing `rosters.txt` | Required | (note: should `roster_id` have to be in `rosters.txt` (potentially on 0 days per week), or can you define new rosters in this file, like `calendar_dates.txt` does with service IDs?) |
+| `date` | Date | Required | Date when exception occurs. |
+| `exception_type` | Enum | Required | `1` - The run is added to this roster for the specified date.<br/>`2` - The roster will not work its regular run on this date. |
+| `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. Required if `run_id` is present. |
+| `run_id` | ID referencing `run_events.txt` | Conditionally Required | The run that's either added or removed from this roster. Required if `exception_type` is `1`. Optional if `exception_type` is `2`. If `exception_type` is `2` and `run_id` is not blank, then it must match the Run ID that the roster was scheduled to do on this date according to `rosters.txt` |
+
+### `employee_rosters.txt`
+
+Describes which employees are scheduled to which rosters on which dates.
+
+Primary Key: `(roster_id,start_date)`
+
+| **Field Name** | **Type** | **Required** | **Description** |
+| --- | --- | --- | --- |
+| `employee_id` | ID | Required | |
+| `roster_id` | ID referencing `rosters.txt` | Required | |
+| `start_date` | Date | Required | |
+| `end_date` | Date | Required | |
+
+Each roster can only be assigned to one employee on each date. Employees may be scheduled to more than one roster on the same date.
+
+### `employee_run_dates.txt`
+
+Describes which employees are scheduled to which runs on which dates. If `employee_rosters.txt` is used, then describes exceptions to that schedule.
+
+Primary Key: `*`
+
+| **Field Name** | **Type** | **Required** | **Description** |
+| --- | --- | --- | --- |
+| `employee_id` | ID | Required | |
+| `date` | Date | Required | |
+| `service_id` | ID referencing `run_events.txt` | Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. |
+| `run_id` | ID referencing `run_events.txt` | Required | The run that's either added or removed from this employee's schedule. If `exception_type` is `2` and `run_id` is not blank, then it must match a Run ID that the employee was scheduled to do on this date according to `employee_rosters.txt`, `rosters.txt` and `roster_dates.txt`. |
+| `exception_type` | Enum | Required | `1` - The run is assigned to this employee on the specified date.<br/>`2` - The employee will not work this run on this date. |
+
+Each run can only be assigned to one employee on each date. Employees may be scheduled to more than one run on the same date.
