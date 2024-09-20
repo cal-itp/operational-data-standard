@@ -177,7 +177,7 @@ Primary Key: `(roster_id, date, exception_type)`
 | --- | --- | --- | --- |
 | `roster_id` | ID referencing `rosters.txt` | Required | (note: should `roster_id` have to be in `rosters.txt` (potentially on 0 days per week), or can you define new rosters in this file, like `calendar_dates.txt` does with service IDs?) |
 | `date` | Date | Required | Date when exception occurs. |
-| `exception_type` | Enum | Required | `1` - The run is added to this roster for the specified date.<br/>`2` - The roster will not work its regular run on this date. |
+| `exception_type` | Enum | Required | `1` - The run is added to this roster for the specified date.<br />`2` - The roster will not work its regular run on this date. |
 | `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. Required if `run_id` is present. |
 | `run_id` | ID referencing `run_events.txt` | Conditionally Required | The run that's either added or removed from this roster. Required if `exception_type` is `1`. Optional if `exception_type` is `2`. If `exception_type` is `2` and `run_id` is not blank, then it must match the Run ID that the roster was scheduled to do on this date according to `rosters.txt` |
 
@@ -208,6 +208,8 @@ Primary Key: `*`
 | `date` | Date | Required | |
 | `service_id` | ID referencing `run_events.txt` | Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. |
 | `run_id` | ID referencing `run_events.txt` | Required | The run that's either added or removed from this employee's schedule. If `exception_type` is `2` and `run_id` is not blank, then it must match a Run ID that the employee was scheduled to do on this date according to `employee_rosters.txt`, `rosters.txt` and `roster_dates.txt`. |
-| `exception_type` | Enum | Required | `1` - The run is assigned to this employee on the specified date.<br/>`2` - The employee will not work this run on this date. |
+| `exception_type` | Enum | Optional | `1` (or blank) - The run is assigned to this employee on the specified date.<br />`2` - The employee will not work this run on this date. |
+
+If a feed doesn't represent rosters, it can still assign employees to runs by putting every run for every date in this file. In that case, the `exception_type` column can be omitted because every row would be adding a date, which is the default when the column is blank.
 
 Each run can only be assigned to one employee on each date. Employees may be scheduled to more than one run on the same date.
