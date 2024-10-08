@@ -68,7 +68,7 @@ TODS 1.0
 
 :material-check-circle: [Optibus](https://optibus.com/)
 
-:material-check-circle-outline: [Giro Hastus](https://www.giro.com/) (on request)
+:material-check-circle-outline: [Giro Hastus](https://www.giro.ca/) (on request)
 
 
 TODS 2.0
