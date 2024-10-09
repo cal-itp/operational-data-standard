@@ -54,6 +54,8 @@ ODS is an open standard which extends GTFS to define additional operational deta
 
 ODS is used by transit agencies and the software which supports them including:
 
+TODS 1.0
+
 :material-check-circle: [WETA](https://weta.sanfranciscobayferry.com/)
 
 :material-check-circle: [Swiftly](https://www.goswift.ly/)
@@ -64,9 +66,15 @@ ODS is used by transit agencies and the software which supports them including:
 
 :material-check-circle: [Remix by Via](https://www.remix.com/)
 
-:material-check-circle-outline: [Giro Hastus](https://www.giro.com/) (on request)
+:material-check-circle: [Optibus](https://optibus.com/)
 
-:material-check-circle-outline: [MBTA](http://mbta.com) (in process)
+:material-check-circle-outline: [Giro Hastus](https://www.giro.ca/) (on request)
+
+
+TODS 2.0
+
+:material-check-circle-outline: [MBTA](http://mbta.com) (in progress)
+
 
 ## How do I implement ODS?
 
