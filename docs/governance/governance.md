@@ -49,7 +49,7 @@ Who and how decisions are made about the scope and direction of the TODS Project
 - [TODS Code of Conduct](#tods-code-of-conduct)
 - [TODS Use License](#tods-use-license)
 
-### Transit Operational Data Standard (TODS) Specification
+### TODS Specification
 
 The data schema documented on the [TODS Repository](#tods-repository) and [TODS Documentation](#tods-documentation) for the purposes of representing planned transit operations for use is dispatching and operations management software.
 
