@@ -14,7 +14,7 @@ The following definitions build on the overall [TODS Governance][governance] def
 
 ### TODS Release
 
-An official version of the [TODS Specification][../governance.md#tods-specification] which can be referenced in perpetuity by a version number. The process by which a new release is made and determination of a version number is discussed below.
+An official version of the [TODS Specification](../governance.md#tods-specification) which can be referenced in perpetuity by a version number. The process by which a new release is made and determination of a version number is discussed below.
 
 Each change to normative content in the main branch of the TODS Repository MUST be considered a new release and assigned a version number.
 
