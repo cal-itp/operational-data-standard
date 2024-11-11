@@ -169,7 +169,7 @@ Each approved change to normative content in the develop branch of the TODS Repo
 Pre-releases MAY be made in order to evaluate and work on incrementally-approved changes.
 
 * Each pre-release MUST contain one or more changes to normative content which have been approved through the change-making process.
-* Each pre-release MUST be reviewed and approved in GitHub by 1+ members of the [TODS Board][board] – or their designees – for accuracy and * consistency with the changes’ intent.
+* Each pre-release MUST be reviewed and approved in GitHub by 1+ members of the [TODS Board][board] – or their designees – for accuracy and consistency with the changes’ intent.
 * Pre-releases MUST be tagged with an appropriate pre-release version number:
 * Pre-releases that have incorporated all the normative changes for the target-release MUST have a beta version number;
 * otherwise, they MUST receive an alpha version number.
