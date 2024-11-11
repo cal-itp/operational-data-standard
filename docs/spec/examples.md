@@ -169,6 +169,47 @@ weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00:00,stop-1,12:00:00
 weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 ```
 
+## Jobs of entirely nonrevenue operations
+
+A track inspection train operates once per week, with a separate crew. It's scheduled and operated separately from other service, so is given its own service ID separate from any trips in the public GTFS file. In this example, the route and stops are assumed to be defined in the public GTFS.
+
+### `calendar_supplement.txt`
+
+```csv
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+inspection_train,0,0,0,0,0,0,1,20240601,20241231
+```
+
+### `trips_supplement.txt`
+
+```csv
+route_id,service_id,trip_id,TODS_trip_type,direction_id
+line1,inspection_train,inspection_line1_ob,deadhead,0
+line1,inspection_train,inspection_line1_ib,deadhead,1
+```
+
+### `stop_times_supplement.txt`
+
+```csv
+trip_id,stop_id,arrival_time
+inspection_line1_ob,downtown,01:00:00
+inspection_line1_ob,anytown,01:45:00
+inspection_line1_ib,anytown,02:00:00
+inspection_line1_ib,downtown,02:45:00
+```
+
+### `run_events.txt`
+
+This file references the service ID and trip ID defined in the other supplement files.
+
+```csv
+service_id,run_id,event_sequence,event_type,trip_id,start_location,start_time,end_location,end_time
+inspection_train ,1 ,1 ,sign-in  ,                    ,main_terminal ,00:45:00 ,main_terminal ,00:45:00
+inspection_train ,1 ,2 ,operator ,inspection_line1_ob ,downtown      ,01:00:00 ,anytown       ,01:45:00
+inspection_train ,1 ,3 ,operator ,inspection_line1_ib ,anytown       ,02:00:00 ,downtown      ,02:45:00
+inspection_train ,1 ,4 ,sign-off ,                    ,main_terminal ,03:00:00 ,main_terminal ,03:00:00
+```
+
 ## Distinct Crew and Trip schedule scenarios
 
 These examples show situations where the crew schedules in `run_events.txt` use different service IDs than the trips they work on, as is allowed by [the spec](/docs/spec/#service_id-crew-schedules-and-trip-schedules). Most agencies will not need to model a situation like this.
