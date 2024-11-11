@@ -149,6 +149,7 @@ Because some events may overlap in time, it may not be possible to choose a sing
 
 #### `run_events` Notes
 
+- Run IDs may be reused between different service IDs. A run is uniquely determined by a `service_id`, `run_id` pair. Runs with the same `run_id` on different `service_id`s are considered different unrelated runs.
 - Multiple `run_event`s may refer to the same `trip_id`, if multiple employees work on that trip.
 - Events may have gaps between the end time of one event and the start time of the next. e.g. if an operator's layovers aren't represented by an event.
 - `start_time` may equal `end_time` for an event that's a single point in time (such as a report time) without any duration.
