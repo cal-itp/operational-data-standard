@@ -67,7 +67,7 @@ Initiated when the [TODS Manager][manager] starts a development cycle after or n
 
 Actions:
 
-* [TODS Manager][manager]to solicit feedback from TODS Contributors on which needs to prioritize.
+* [TODS Manager][manager] to solicit feedback from TODS Contributors on which needs to prioritize.
 * [TODS Manager][manager] to propose a set of needs that the community will focus on resolving based on feedback and available community capacity.
 * [TODS Board][board] will approve a set of needs to focus on based on [TODS Manager][manager]’s proposal and TODS Contributors’ feedback.
 
