@@ -161,7 +161,7 @@ Individuals apply to become Contributors by acknowledging and agreeing to the [T
 
 ## TODS Stakeholder
 
-Anyone interested in or could be directly affected by the TODS Project. Interested parties may register for the [TODS distribution list](https://groups.google.com/g/tods-stakeholders).
+Anyone interested in or could be directly affected by the TODS Project. Interested parties may register for the [TODS distribution list](https://groups.google.com/g/ods-working-group).
 
 ## Document History
 
