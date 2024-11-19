@@ -15,7 +15,7 @@ The ODS Governance is designed with the following principles in mind:
 **Openness + Transparency**
 
 - Discussion and decisions about changes should be publicly noticed and accessible.
-- Change-making process should be straight-forward and easy to follow.
+- The change-making process should be straight-forward and easy to follow.
 - Change proposals should have a reliable timeline for being decided on and incorporated.
 - Each change (or bundled set of changes) should be identified by assigning a new version number.
 
@@ -130,8 +130,8 @@ ODS Board [meetings](board-meetings.md) and [actions](actions.md).
 Chosen by the ODS Board, this individual is responsible for coordinating the actions and activities of the [ODS Board](#ods-board-of-directors).
 
 - The Board Coordinator MUST schedule, agendize and arrange for Board meetings in consultation with the ODS Board Chair and [ODS Program Manager](#ods-program-manager).
-- The Board Coordinator MUST conduct votes by the [ODS Board](#ods-board-of-directors)and document results.
-- The Board Coordinator MUST communicate with the [ODS Manager](#ods-manager)r / [ODS Program Manager](#ods-program-manager)r as needed.
+- The Board Coordinator MUST conduct votes by the [ODS Board](#ods-board-of-directors) and document results.
+- The Board Coordinator MUST communicate with the [ODS Manager](#ods-manager)r / [ODS Program Manager](#ods-program-manager) as needed.
 
 ## ODS Manager
 
