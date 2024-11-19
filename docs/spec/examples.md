@@ -168,3 +168,20 @@ weekday,10000,20,BLOCK-A,deadhead       ,,garage,08:50:00,stop-1,09:00:00
 weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00:00,stop-1,12:00:00
 weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 ```
+
+## Crew/Roster
+
+TODO I haven't written examples yet, but here are ones I think would be good:
+
+- UK scheduling (employees rotate per week)
+- North American scheduling (pick one roster for the whole rating. I don't think there'll be a big difference between roster-style and cafeteria-style in the data? )
+- A holiday
+- Scheduled track work one day, times/service_id are slightly changed, but substantially the same.
+  - `roster_dates.txt`: `roster_id,date,old_service_id,2;...new_service_id,1`
+- Vacation that's part of the roster.
+  - `roster_dates.txt`: remove old one. assign spare_roster_id (which has no regular assignment) to it on that date. Maybe `spare_roster_id` still needs to be in `rosters.txt` for comprehensive listing reasons, for start/end date, and for (doesn't exist yet) metadata like label
+- Vacation that's not part of the roster, and done by assigning a different employee to that run that date.
+  - `employee_dates`, remove the employee from the roster, add the spare employee.
+- Producer that doesn't use rosters, just uses `employee_dates` for everything.
+
+(There's enough of them that they should be on a separate page.)
