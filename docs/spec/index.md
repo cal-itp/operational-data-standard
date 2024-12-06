@@ -213,3 +213,45 @@ Primary Key: `*`
 If a feed doesn't represent rosters, it can still assign employees to runs by putting every run for every date in this file. In that case, the `exception_type` column can be omitted because every row would be adding a date, which is the default when the column is blank.
 
 Each run can only be assigned to one employee on each date. Employees may be scheduled to more than one run on the same date.
+
+### `vehicle_assignments.txt`
+
+Primary Key: `*`
+
+| Field Name | Type | Required | Description |
+|---|---|---|---|
+| `date` | Date | Required |  |
+| `service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Optional | Identifies a set of dates when the run is scheduled to take place. Required if `block_id`s are repeated between different `service_id`s. |
+| `block_id`		  | ID referencing `trips.block_id` | Conditionally required | Identifies the block. Either `trip_id` or `block_id` must be specified. |
+| `trip_id` | ID referencing `trips.trip_id` | Conditionally required | Either `trip_id` or `block_id` must be specified. In the case where both are supplied, `trip_id` overrides `block_id`. Note: multiple vehicles are allowed on the same block+date, but this is not recommended. |
+| `vehicle_id` | ID referencing `vehicles.vehicle_id` | Conditionally required | Refers to a specific vehicle in the transit fleet. Either `vehicle_id` or `vehicle_category_id` MUST be supplied. |
+| `vehicle_category_id` | ID referencing `vehicle_categories.vehicle_category_id` | Conditionally required | Refers to a category of vehicle in the transit fleet if there is no specific vehicle assignment. Either `vehicle_id` or `vehicle_category_id` MUST be supplied. |
+
+Not every trip or block and date combo needs to have a vehicle specified.
+
+### `vehicle_categories.txt`
+
+Primary Key: `vehicle_category_id`
+
+| Field Name | Type | Required | Description |
+|---|---|---|---|
+| `vehicle_category_id` | ID, primary key | Required | Defines an ID for a vehicle category. |
+| `vehicle_category_name` | Text | Optional | The vehicle_category_name field defines the name of the vehicle category.   E.g. “MR73” in Montréal, “TGV Duplex” in France or “8-car Waratah Train” in Sydney. |
+| `fuel_type` | Enum | Optional | 0 or empty - unknown propulsion <br />1 - Gasoline <br /> 2 - Diesel <br /> 3 - LPG auto <br /> 4 - Mixture <br /> 5 - Biodiesel <br /> 6 - Electricity <br /> 7 - Hybrid <br /> 8 - Natural Gas <br /> 9 - Other |
+| `wheelchair_accessible` | Enum | Optional | Wheelchair accessible. <br />0 or empty - no <br />1 - yes |
+| `seating_capacity` | Non-negative Integer | Optional | This number denotes the number of seats dedicated to riders, excluding folding seats. A seat is considered accommodating only one rider in a seated position. |
+| `max_capacity` | Non-negative Integer | Optional | This number denotes the maximum number of riders that the vehicle can carry. |
+| `wheelchair_capacity` | Non-negative Integer | Optional | This number denotes the maximum number of riders in a wheelchair that the vehicle can carry. |
+
+### `vehicles.txt`
+
+Primary Key: `vehicle_id`
+
+| Field Name | Type | Required | Description |
+|---|---|---|---|
+| `vehicle_id` | ID, primary key | Required | Defines an ID for a vehicle. |
+| `vehicle_ category_id` | ID referencing `vehicle_categories.vehicle_category_id` | Optional |  |
+| `vehicle_description` | Text | Optional |  |
+| `registration_date` | Date | Optional |  |
+| `license_plate` | Text | Optional | License number of the vehicle for identification, e.g. “E898656” |
+| `owner` | Text | Optional | Registered owner, e.g “City of Arcata” |
