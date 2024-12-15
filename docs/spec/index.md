@@ -216,7 +216,7 @@ Each run can only be assigned to one employee on each date. Employees may be sch
 
 ### `vehicle_assignments.txt`
 
-Primary Key: `*`
+Primary Key: `(date, block_id, service_id)`
 
 | Field Name | Type | Required | Description |
 |---|---|---|---|
