@@ -224,7 +224,7 @@ Primary Key: `(date, block_id, service_id)`
 | `service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Optional | Identifies a set of dates when the trip is scheduled to take place. Required if `block_id`s are repeated between different `service_id`s. |
 | `block_id`		  | ID referencing `trips.block_id` | Required | Identifies the block. |
 | `vehicle_id` | ID referencing `vehicles.vehicle_id` | Conditionally required | Refers to a specific vehicle in the transit fleet. Either `vehicle_id` or `vehicle_type_id` MUST be supplied. |
-| `vehicle_type_id` | ID referencing `vehicle_types.vehicle_type_id` | Conditionally required | Refers to a type of vehicle in the transit fleet if there is no specific vehicle assignment. Either `vehicle_id` or `vehicle_type_id` MUST be supplied. |
+| `vehicle_type_id` | ID referencing `vehicle_types.vehicle_type_id` | Conditionally required | Refers to a type of vehicle in the transit fleet if there is no specific vehicle assignment. Either `vehicle_id` or `vehicle_type_id` MUST be supplied. If both are supplied, then the supplied `vehicle_type_id` must match the row referenced in `vehicles.txt`. |
 
 Not every trip or block and date combo needs to have a vehicle specified.
 
