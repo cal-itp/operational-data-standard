@@ -168,3 +168,27 @@ weekday,10000,20,BLOCK-A,deadhead       ,,garage,08:50:00,stop-1,09:00:00
 weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00:00,stop-1,12:00:00
 weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 ```
+
+## Vehicle assignments by service date
+
+service_id: daily
+block_id: BLOCK-A
+
+### `vehicles.txt`
+
+```csv
+vehicle_id,vehicle_label,license_plate
+bus-1,Old Reliable,OR-E285104
+bus-2,Buster,OR-E251432
+```
+
+### `vehicle_assignments.txt`
+
+In this example, vehicle assignments are provided for 3 consecutive days from February 5 through 7.
+
+```csv
+date,service_id,block_id,vehicle_id
+20250205,daily,BLOCK-A,bus-1
+20250206,daily,BLOCK-A,bus-2
+20250207,daily,BLOCK-A,bus-1
+```
