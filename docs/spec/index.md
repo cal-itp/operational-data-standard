@@ -147,7 +147,7 @@ Primary Key: `(date, block_id, service_id)`
 | Field Name | Type | Required | Description |
 |---|---|---|---|
 | `date` | Date | Required |  |
-| `service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Optional | Identifies a set of dates when the trip is scheduled to take place. Required if `block_id`s are repeated between different `service_id`s. |
+| `service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Optional | Identifies a set of *service days* when the trip is scheduled to take place. Note the [https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#term-definitions](GTFS definition) of *service day* is invoked here. Required if `block_id`s are repeated between different `service_id`s. |
 | `block_id`		  | ID referencing `trips.block_id` | Required | Identifies the block. |
 | `vehicle_id` | ID referencing `vehicles.vehicle_id` | Required | Refers to a specific vehicle in the transit fleet. |
 
