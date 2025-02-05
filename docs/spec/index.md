@@ -153,7 +153,7 @@ Primary Key: `(date, block_id, service_id)`
 
 Not every trip or block and date combo needs to have a vehicle specified.
 
-*Note for future-compatibility:* `vehicle_id` field may change to *conditionally required* in a future version where either `vehicle_id` OR `vehicle_type_id` MUST be supplied. `vehicle_type_id` would reference `vehicle_types.txt`, describing vehicle type attributes. This field would be used to assign the type of vehicle in the transit fleet if there is no specific vehicle assignment.
+*Note for future-compatibility:* `vehicle_id` field may change to conditionally required in a future version where assignments may be made to either an individual vehicle OR a grouping of vehicles. See [GTFS-Vehicles](http://bit.ly/gtfs-vehicles) for how vehicle categories (types) might be incorporated.
 
 ### `vehicles.txt`
 
