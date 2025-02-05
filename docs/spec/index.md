@@ -149,27 +149,11 @@ Primary Key: `(date, block_id, service_id)`
 | `date` | Date | Required |  |
 | `service_id` | ID referencing `calendar.service_id` or `calendar_dates.service_id` | Optional | Identifies a set of dates when the trip is scheduled to take place. Required if `block_id`s are repeated between different `service_id`s. |
 | `block_id`		  | ID referencing `trips.block_id` | Required | Identifies the block. |
-| `vehicle_id` | ID referencing `vehicles.vehicle_id` | Conditionally required | Refers to a specific vehicle in the transit fleet. Either `vehicle_id` or `vehicle_type_id` MUST be supplied. |
-| `vehicle_type_id` | ID referencing `vehicle_types.vehicle_type_id` | Conditionally required | Refers to a type of vehicle in the transit fleet if there is no specific vehicle assignment. Either `vehicle_id` or `vehicle_type_id` MUST be supplied. If both are supplied, then the supplied `vehicle_type_id` must match the row referenced in `vehicles.txt`. |
+| `vehicle_id` | ID referencing `vehicles.vehicle_id` | Required | Refers to a specific vehicle in the transit fleet. |
 
 Not every trip or block and date combo needs to have a vehicle specified.
 
-### `vehicle_types.txt`
-
-Primary Key: `vehicle_type_id`
-
-_Note:_ Fields to describe vehicle and vehicle type attributes are under discussion during this draft and will likely change significantly.
-
-
-| Field Name | Type | Required | Description |
-|---|---|---|---|
-| `vehicle_type_id` | ID, primary key | Required | Defines an ID for a vehicle type. |
-| `vehicle_type_name` | Text | Optional | Brief plain-language description of the vehicle. E.g. “MR73” in Montréal, “TGV Duplex” in France or “8-car Waratah Train” in Sydney. |
-| `fuel_type` | Enum | Optional | 0 or empty - unknown propulsion <br />1 - Gasoline <br /> 2 - Diesel <br /> 3 - LPG auto <br /> 4 - Mixture <br /> 5 - Biodiesel <br /> 6 - Electricity <br /> 7 - Hybrid <br /> 8 - Natural Gas <br /> 9 - Other |
-| `wheelchair_accessible` | Enum | Optional | Wheelchair accessible. <br />0 or empty - no <br />1 - yes |
-| `seating_capacity` | Non-negative Integer | Optional | This number denotes the number of seats dedicated to riders, excluding folding seats. A seat is considered accommodating only one rider in a seated position. |
-| `max_capacity` | Non-negative Integer | Optional | This number denotes the maximum number of riders that the vehicle can carry. |
-| `wheelchair_capacity` | Non-negative Integer | Optional | This number denotes the maximum number of riders in a wheelchair that the vehicle can carry. |
+*Note for future-compatibility:* `vehicle_id` field may change to *conditionally required* in a future version where either `vehicle_id` OR `vehicle_type_id` MUST be supplied. `vehicle_type_id` would reference `vehicle_types.txt`, describing vehicle type attributes. This field would be used to assign the type of vehicle in the transit fleet if there is no specific vehicle assignment.
 
 ### `vehicles.txt`
 
@@ -177,9 +161,8 @@ Primary Key: `vehicle_id`
 
 | Field Name | Type | Required | Description |
 |---|---|---|---|
-| `vehicle_id` | ID, primary key | Required | Defines an ID for a vehicle. |
-| `vehicle_type_id` | ID referencing `vehicle_types.vehicle_type_id` | Optional |  |
-| `vehicle_description` | Text | Optional |  |
-| `registration_date` | Date | Optional |  |
-| `license_plate` | Text | Optional | License number of the vehicle for identification, e.g. “E898656” |
-| `owner` | Text | Optional | Registered owner, e.g “City of Arcata” |
+| `vehicle_id` | ID, primary key | Required | Defines an ID for a vehicle. It is *recommended* but not required to match the `vehicle_id` in GTFS-realtime feeds. |
+| `vehicle_label` | Text | Optional | Free text label for a vehicle, e.g. vessel name. |
+| `license_plate` | Text | Optional | License number or global identifier for the vehicle, e.g. “E898656”. The field name was chosen to align with the `license_plate` field in GTFS-Realtime. It may specify a different global identifier, particularly for non-road vehicle types without license plates, e.g. Maritime Mobile Service Identity (MMSI) for ferries. |
+
+*Note for future-compatibility:* Future TODS versions may support vehicle couplings: specifically, train cars (individual vehicles) that comprise a train set. Such a proposal is described by the [GTFS-VehicleCouplings draft extension](http://bit.ly/gtfs-vehicles).
