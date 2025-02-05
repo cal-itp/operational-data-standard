@@ -171,9 +171,6 @@ weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 
 ## Vehicle assignments by service date
 
-service_id: daily
-block_id: BLOCK-A
-
 ### `vehicles.txt`
 
 ```csv
