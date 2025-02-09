@@ -151,7 +151,7 @@ Primary Key: `(date, block_id, service_id)`
 | `block_id`		  | ID referencing `trips.block_id` | Required | Identifies the block. |
 | `vehicle_id` | ID referencing `vehicles.vehicle_id` | Required | Refers to a specific vehicle in the transit fleet. |
 
-Not every trip or block and date combo needs to have a vehicle specified.
+Not every block and date combo needs to have a vehicle specified.
 
 *Note for future-compatibility:* `vehicle_id` field may change to conditionally required in a future version where assignments may be made to either an individual vehicle OR a grouping of vehicles. See [GTFS-Vehicles](http://bit.ly/gtfs-vehicles) for how vehicle categories (types) might be incorporated.
 
