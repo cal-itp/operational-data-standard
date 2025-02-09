@@ -162,7 +162,7 @@ Primary Key: `vehicle_id`
 | Field Name | Type | Required | Description |
 |---|---|---|---|
 | `vehicle_id` | ID, primary key | Required | Defines an ID for a vehicle. It is *recommended* but not required to match the `vehicle_id` in GTFS-realtime feeds. |
-| `vehicle_label` | Text | Optional | Free text label for a vehicle, e.g. vessel name. |
+| `vehicle_label` | Text | Optional | Free text label for a vehicle, e.g. bus number or vessel name. |
 | `license_plate` | Text | Optional | License number or global identifier for the vehicle, e.g. “E898656”. The field name was chosen to align with the `license_plate` field in GTFS-Realtime. It may specify a different global identifier, particularly for non-road vehicle types without license plates, e.g. Maritime Mobile Service Identity (MMSI) for ferries. |
 
 *Note for future-compatibility:* Future TODS versions may support vehicle couplings: specifically, train cars (individual vehicles) that comprise a train set. Such a proposal is described by the [GTFS-VehicleCouplings draft extension](http://bit.ly/gtfs-vehicles).
