@@ -152,7 +152,7 @@ This file defines roster positions, groupings of work across multiple runs on mu
 
 Exceptions to these dates may be listed in [`roster_dates.txt`](#roster_datestxt).
 
-Employees are assigned to these roster positions in [`employee_roster.txt](#employee_rostertxt).
+Employees are assigned to these roster positions in [`employee_roster.txt`](#employee_rostertxt).
 
 Primary Key: `roster_position_id`
 
