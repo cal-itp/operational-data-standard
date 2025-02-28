@@ -184,7 +184,7 @@ If a Run ID is included but a Service ID isn't, then the roster position or empl
 
 This is allowed as a shortcut for producers to reduce the level of duplication in the roster file if a roster position works runs with the same ID on different days. For example, if there's a minor schedule change one day due to track work, that day must be on a different Service ID to give new trip and run times. But if a roster position works "Run 100" on both the regular and modified service, and the roster file leaves the Service ID field blank, then the roster file doesn't need an exception for that day because it refers to "Run 100" on whichever service is happening.
 
-More in-depth examples and instructions on how to look up which run an employee is doing are given in [the examples](./examples.md).
+More in-depth examples and instructions on how to look up which run an employee is doing are given in [the examples](./examples.md). (TODO link directly to relevant example page.)
 
 ### `roster_dates.txt`
 
@@ -196,7 +196,7 @@ Dates may be added before the `start_date` or after the `end_date` defined in [`
 
 After evaluating [`roster.txt`](#rostertxt) and `roster_dates.txt`, each run can only be assigned to one roster position on each date. A roster position may be scheduled to do multiple runs on the same date.
 
-This file may be used even when [`roster.txt`](#rostertxt) is not defined, in which case each roster position is made up of the dates added in this file. This may be useful for agencies whose rosters are very irregular. In this case, the `exception_type` column can be omitted because every row is adding a date, which is the default when the column is blank.
+This file may be used even when [`roster.txt`](#rostertxt) is not defined, in which case each roster position is made up of the dates added in this file. This may be useful for agencies whose rosters are very irregular. In this case, the `exception_type` column can be omitted because every row is adding a date, which is the default when the column is blank. (TODO link to example.)
 
 Primary Key: `*`
 
@@ -237,6 +237,6 @@ Primary Key: `*`
 | `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. Optional and recommended. Required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-rosters). |
 | `run_id` | ID referencing `run_events.txt` | Required | The run that's either added or removed from this employee's schedule. If `exception_type` is `2` and `run_id` is not blank, then it must match a Run ID that the employee was scheduled to do on this date according to `employee_roster.txt`, `roster.txt` and `roster_dates.txt`. |
 
-If a feed doesn't represent roster positions, it can still assign employees to runs by putting every run for every date in this file. In that case, the `exception_type` column can be omitted because every row would be adding a date, which is the default when the column is blank.
+If a feed doesn't represent roster positions, it can still assign employees to runs by putting every run for every date in this file. In that case, the `exception_type` column can be omitted because every row would be adding a date, which is the default when the column is blank. (TODO link to example.)
 
 Each run can only be assigned to one employee on each date. Employees may be scheduled to more than one run on the same date.

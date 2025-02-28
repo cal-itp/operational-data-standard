@@ -184,4 +184,8 @@ TODO I haven't written examples yet, but here are ones I think would be good:
   - `employee_dates`, remove the employee from the roster, add the spare employee.
 - Producer that doesn't use rosters, just uses `employee_dates` for everything.
 
+Also instructions for:
+- Given an date and trip ID, determine which employee is working on that trip.
+- Given a date and employee, determine which trips they're doing that day.
+
 (There's enough of them that they should be on a separate page.)
