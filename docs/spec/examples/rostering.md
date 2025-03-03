@@ -35,14 +35,14 @@ TODO this is common in continental europe, right?
 
 In TODS, this can be represented by having the first and second weeks be two different roster positions, and giving an employee a new roster position assignment each week.
 
-## Rotating assignments.
+## Rotating assignments
 
 In the UK, it's common for employees to rotate among all roster positions over many weeks. In TODS, this can be represented by assigning each employee to a new roster position each week.
 
 ## Minor schedule adjustment
 
 - Scheduled track work one day, times/service_id are slightly changed, but substantially the same.
-  - `roster_dates.txt`: `roster_id,date,old_service_id,2;...new_service_id,1`
+    - `roster_dates.txt`: `roster_id,date,old_service_id,2;...new_service_id,1`
 
 ## Define each roster position day-by-day
 
