@@ -1,7 +1,7 @@
-# Examples
+f# Examples
 
-The following sections provide examples of how ODS can represent specific use cases. The inclusion of these examples should not
-be as an indication that this is the only way to represent these use cases with ODS. If you have questions about a use case not
+The following sections provide examples of how TODS can represent specific use cases. The inclusion of these examples should not
+be as an indication that this is the only way to represent these use cases with TODS. If you have questions about a use case not
 represented here, please feel free to [create an issue in GitHub](https://github.com/cal-itp/operational-data-standard/issues/new).
 
 ## Single Run with Pull-Out and Lunch Break

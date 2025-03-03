@@ -1,4 +1,4 @@
-# ODS Code of Conduct
+# TODS Code of Conduct
 
 ## Our Pledge
 
@@ -30,7 +30,7 @@ Examples of unacceptable behavior include:
 
 ## Enforcement Responsibilities
 
-The community leaders for this effort include the ODS Manager and the ODS Board.
+The community leaders for this effort include the TODS Manager and the TODS Board.
 
 Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
 
