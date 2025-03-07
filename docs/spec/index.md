@@ -231,11 +231,11 @@ Primary Key: `*`
 
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
-| `employee_id` | ID | Required | |
 | `date` | Date | Required | |
 | `exception_type` | Enum | Optional | `1` (or blank) - The run is assigned to this employee on the specified date.<br />`2` - The employee will not work this run on this date. |
 | `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. Optional and recommended. Required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-rosters). |
 | `run_id` | ID referencing `run_events.txt` | Required | The run that's either added or removed from this employee's schedule. If `exception_type` is `2` and `run_id` is not blank, then it must match a Run ID that the employee was scheduled to do on this date according to `employee_roster.txt`, `roster.txt` and `roster_dates.txt`. |
+| `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
 
 If a feed doesn't represent roster positions, it can still assign employees to runs by putting every run for every date in this file. In that case, the `exception_type` column can be omitted because every row would be adding a date, which is the default when the column is blank. [Example](./examples/rostering.md#TODO).
 
