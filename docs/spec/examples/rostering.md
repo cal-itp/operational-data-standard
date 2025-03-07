@@ -5,9 +5,81 @@ A series of examples about how to use TODS to use [roster.txt](/docs/spec.md#ros
 TODO this whole file is still being drafted. The list of which examples to include is complete, but no examples are done being drafted.
 TODO check that all links work.
 
-## Simple rostering example
+## Simplest example: employee_run_dates.txt only.
 
-(North American scheduling. pick one roster for the whole rating. I don't think there'll be a big difference between roster-style and cafeteria-style in the data?)
+The simplest way to assign employees to runs is to use `employee_run_dates.txt`. This will require one row per employee per date.
+
+In this example, `A` and `B` work Saturday Feb 1 and Wednesday Feb 5 through Friday Feb 7. `C` and `D` work Sunday Feb 2 through Tuesday Feb 4.
+
+**`calendar.txt`**
+
+```
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+weekend,0,0,0,0,0,1,1,20250201,20250207
+weekday,1,1,1,1,1,0,0,20250201,20250207
+```
+
+February 1, 2025 was a Saturday.
+
+**`run_events.txt`**
+
+For this example, the purpose of this file is just to show which runs exist. Real runs would have more interesting data.
+
+```
+service_id,run_id,event_sequence,event_type,start_location,start_time,end_location,end_time
+weekend,101,1,work,station,09:00:00,station,17:00:00
+weekend,102,1,work,station,09:00:00,station,17:00:00
+weekday,103,1,work,station,09:00:00,station,17:00:00
+weekday,104,1,work,station,09:00:00,station,17:00:00
+```
+
+**`employee_run_dates.txt`**
+
+```
+date,service_id,run_id,employee_id
+20250201,weekend,101,A
+20250201,weekend,102,B
+20250202,weekend,101,C
+20250202,weekend,102,D
+20250203,weekday,103,C
+20250203,weekday,104,D
+20250204,weekday,103,C
+20250204,weekday,104,D
+20250205,weekday,103,A
+20250205,weekday,104,B
+20250206,weekday,103,A
+20250206,weekday,104,B
+20250207,weekday,103,A
+20250207,weekday,104,B
+```
+
+## Example with Rosters
+
+This example represents the same schedule as above, but groups multiple days of work into roster positions that employees are assigned to all at once. `A` and `B` work Saturdays, Wednesdays, Thursdays, and Fridays. `C` and `D` work Sundays, Mondays, and Tuesdays.
+
+`calendar.txt` and `run_events.txt` are the same as the previous example.
+
+This example does not have any exceptions to the regular schedule, so doesn't need `roster_dates.txt` or `employee_run_dates.txt`.
+
+**`roster_positions.txt`**
+
+```
+roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_service_id,tuesday_run_id,wednesday_service_id,wednesday_run_id,thursday_service_id,thursday_run_id,friday_service_id,friday_run_id,saturday_service_id,saturday_run_id,sunday_service_id,sunday_run_id
+wed_to_sat_1,20250201,20250207,,,,,weekday,103,weekday,103,weekday,103,weekend,101,,
+wed_to_sat_2,20250201,20250207,,,,,weekday,104,weekday,104,weekday,104,weekend,102,,
+sun_to_tue_1,20250201,20250207,weekday,103,weekday,103,,,,,,,,,weekend,101
+sun_to_tue_2,20250201,20250207,weekday,104,weekday,104,,,,,,,,,weekend,102
+```
+
+**`employee_roster.txt`**
+
+```
+roster_position_id,start_date,end_date,employee_id
+wed_to_sat_1,20250201,20250207,A
+wed_to_sat_2,20250201,20250207,B
+sun_to_tue_1,20250201,20250207,C
+sun_to_tue_2,20250201,20250207,D
+```
 
 ## Given an date and trip ID, look up which employee is working on that trip
 
