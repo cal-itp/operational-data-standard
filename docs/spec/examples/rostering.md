@@ -2,7 +2,6 @@
 
 A series of examples about how to use [roster.txt](/docs/spec.md#rostertxt), [roster_dates.txt](/docs/spec.md#roster_datestxt), [employee_roster.txt](/docs/spec.md#employee_rostertxt), and [employee_run_dates.txt](/docs/spec.md#employee_run_datestxt) to assign employees to roster positions and runs.
 
-TODO some examples are still being drafted
 TODO check that all links work.
 TODO check column ordering
 
@@ -303,8 +302,8 @@ holiday,999,1,work,station,09:00:00,station,17:00:00
 
 ```
 roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_service_id,tuesday_run_id,wednesday_service_id,wednesday_run_id,thursday_service_id,thursday_run_id,friday_service_id,friday_run_id,saturday_service_id,saturday_run_id,sunday_service_id,sunday_run_id
-POSITION-A,weekday,101,weekday,101,weekday,101,weekday,101,weekday,101,,,,
-POSITION-B,weekday,102,weekday,102,weekday,102,weekday,102,weekday,102,,,,
+POSITION-A,20240701,20240714,weekday,101,weekday,101,weekday,101,weekday,101,weekday,101,,,,
+POSITION-B,20240701,20240714,weekday,102,weekday,102,weekday,102,weekday,102,weekday,102,,,,
 ```
 
 **`roster_dates.txt`**
@@ -359,8 +358,8 @@ One works Monday and Tuesady, the other works Thursday and Friday.
 
 ```
 roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_service_id,tuesday_run_id,wednesday_service_id,wednesday_run_id,thursday_service_id,thursday_run_id,friday_service_id,friday_run_id,saturday_service_id,saturday_run_id,sunday_service_id,sunday_run_id
-POSITION-A,weekday,100,weekday,100,,,,,,,,,,
-POSITION-B,,,,,,,weekday,100,weekday,100,,,,
+POSITION-A,20240701,20240721,weekday,100,weekday,100,,,,,,,,,,
+POSITION-B,20240701,20240721,,,,,,,weekday,100,weekday,100,,,,
 ```
 
 **`roster_dates.txt`**
@@ -405,8 +404,8 @@ One works Monday and Tuesady, the other works Thursday and Friday.
 
 ```
 roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_service_id,tuesday_run_id,wednesday_service_id,wednesday_run_id,thursday_service_id,thursday_run_id,friday_service_id,friday_run_id,saturday_service_id,saturday_run_id,sunday_service_id,sunday_run_id
-POSITION-A,weekday,100,weekday,100,,,,,,,,,,
-POSITION-B,,,,,,,weekday,100,weekday,100,,,,
+POSITION-A,20240701,20240721,weekday,100,weekday,100,,,,,,,,,,
+POSITION-B,20240701,20240721,,,,,,,weekday,100,weekday,100,,,,
 ```
 
 In this example, there is no `roster_dates.txt` file, because the roster positions continue reguarly. There is no 3rd roster position.
@@ -445,25 +444,139 @@ date,exception_type,service_id,run_id,employee_id
 
 ## Multi-week roster positions
 
-In this case, each roster position repeats its runs every two weeks, instead of every one week, which is standard at some agencies.
+At some agencies (especially in Europe), roster positions repeat every two weeks. In TODS, this can be represented by having the first and second weeks be two different roster positions, and using `employee_roster.txt` to assign employees to each roster position each week.
 
-TODO this is common in continental europe, right?
+In this example, there's one run per day on weekdays only. Position A works Mondays and Tuesdays. Position B works Thursdays and Fridays. They trade off on Wednesdays, so each position works an average of 2½ days per week.
 
-In TODS, this can be represented by having the first and second weeks be two different roster positions, and giving an employee a new roster position assignment each week.
+**`calendar.txt`**
+
+```
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+weekday,1,1,1,1,1,0,0,20240701,20240728
+```
+
+**`roster_positions.txt`**
+
+
+```
+roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_service_id,tuesday_run_id,wednesday_service_id,wednesday_run_id,thursday_service_id,thursday_run_id,friday_service_id,friday_run_id,saturday_service_id,saturday_run_id,sunday_service_id,sunday_run_id
+POSITION-A-WEEK-1,20240701,20240728,weekday,100,weekday,100,weekday,100,,,,,,,,
+POSITION-A-WEEK-2,20240701,20240728,weekday,100,weekday,100,,,,,,,,,,
+POSITION-B-WEEK-1,20240701,20240728,,,,,,,weekday,100,weekday,100,,,,
+POSITION-B-WEEK-2,20240701,20240728,,,,,weekday,100,weekday,100,weekday,100,,,,
+```
+
+**`employee_roster.txt`**
+
+```
+roster_position_id,start_date,end_date,employee_id
+POSITION-A-WEEK1,20240701,20240707,EMPLOYEE-A
+POSITION-B-WEEK1,20240701,20240707,EMPLOYEE-B
+POSITION-A-WEEK2,20240707,20240714,EMPLOYEE-A
+POSITION-B-WEEK2,20240707,20240714,EMPLOYEE-B
+POSITION-A-WEEK1,20240715,20240721,EMPLOYEE-A
+POSITION-B-WEEK1,20240715,20240721,EMPLOYEE-B
+POSITION-A-WEEK2,20240722,20240728,EMPLOYEE-A
+POSITION-B-WEEK2,20240722,20240728,EMPLOYEE-B
+```
 
 ## Rotating assignments
 
-In the UK, it's common for employees to rotate among all roster positions over many weeks. In TODS, this can be represented by assigning each employee to a new roster position each week.
+At some agencies (especially in the UK), employees rotate among all roster positions over many weeks. In TODS, this can be represented by assigning each employee to a new roster position each week.
+
+In this example, there are 5 employees and 5 roster positions. Over a calendar of 3 weeks, each employee will work 3 of the 5 positions.
+
+**`calendar.txt`**
+
+```
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+weekday,1,1,1,1,1,0,0,20240701,20240721
+```
+
+**`roster_positions.txt`**
+
+
+```
+roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_service_id,tuesday_run_id,wednesday_service_id,wednesday_run_id,thursday_service_id,thursday_run_id,friday_service_id,friday_run_id,saturday_service_id,saturday_run_id,sunday_service_id,sunday_run_id
+POSITION-1,20240701,20240721,weekday,101,weekday,101,weekday,101,weekday,101,weekday,101,,,,
+POSITION-2,20240701,20240721,weekday,102,weekday,102,weekday,102,weekday,102,weekday,102,,,,
+POSITION-3,20240701,20240721,weekday,103,weekday,103,weekday,103,weekday,103,weekday,103,,,,
+POSITION-4,20240701,20240721,weekday,104,weekday,104,weekday,104,weekday,104,weekday,104,,,,
+POSITION-5,20240701,20240721,weekday,105,weekday,105,weekday,105,weekday,105,weekday,105,,,,
+```
+
+**`employee_roster.txt`**
+
+```
+roster_position_id,start_date,end_date,employee_id
+POSITION-1,20240701,20240707,EMPLOYEE-A
+POSITION-2,20240701,20240707,EMPLOYEE-B
+POSITION-3,20240701,20240707,EMPLOYEE-C
+POSITION-4,20240701,20240707,EMPLOYEE-D
+POSITION-5,20240701,20240707,EMPLOYEE-E
+POSITION-1,20240708,20240714,EMPLOYEE-E
+POSITION-2,20240708,20240714,EMPLOYEE-A
+POSITION-3,20240708,20240714,EMPLOYEE-B
+POSITION-4,20240708,20240714,EMPLOYEE-C
+POSITION-5,20240708,20240714,EMPLOYEE-D
+POSITION-1,20240715,20240721,EMPLOYEE-D
+POSITION-2,20240715,20240721,EMPLOYEE-E
+POSITION-3,20240715,20240721,EMPLOYEE-A
+POSITION-4,20240715,20240721,EMPLOYEE-B
+POSITION-5,20240715,20240721,EMPLOYEE-C
+```
 
 ## Minor schedule adjustment
 
-- Scheduled track work one day, times/service_id are slightly changed, but substantially the same.
-    - `roster_dates.txt`: `roster_id,date,old_service_id,2;...new_service_id,1`
+In this example, due to track work, the schedule has been minorly changed one day. There are new trip times, trip IDs, run event times, and a new service ID.
 
-## Define each roster position day-by-day
+If the roster files specify service IDs (which is recommended), then either `roster_dates.txt` or `employee_run_dates.txt` must be used to assign the roster position or employee to the new `(service_id, run_id)` pair, i.e. `(trackwork, 100)` instead of `(weekday, 100)`.
 
-No weekly rosters / roster.txt. Just roster_dates.txt.
+However, in this example, the roster does not specify the service ID in `roster_positions.txt`. Therefore, the employee is assigned to run 100 on whichever service is active. Since both the regular and replacement runs have run ID `100`, on the day of the exception, the employee will be implicitly assigned to `(trackwork, 100)` without needing to specify that in the roster files.
 
-## No rosters, just `employee_run_dates.txt`
+The spec describes this situation in [Service IDs in Rosters](/docs/spec/index.md#service-ids-in-rosters).
 
-- Producer that doesn't use rosters, just uses `employee_dates` for everything.
+**`calendar.txt`**
+
+```
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+weekday,1,1,1,1,1,0,0,20250201,20240728
+```
+
+**`calendar_dates.txt`**
+
+The trackwork is on Friday, February 2.
+
+```
+service_id,date,exception_type
+weekday,20250207,2
+trackwork,20250207,1
+```
+
+**`run_events.txt`**
+
+Because of the track work, travel is slower and the times are adjusted.
+
+```
+service_id,run_id,event_sequence,event_type,trip_id,start_location,start_time,end_location,end_time
+weekday,100,1,Operator,1001,suburb,08:00:00,downtown,09:00:00
+weekday,100,2,Operator,1002,downtown,17:00:00,suburb,18:00:00
+trackwork,100,1,Operator,2001,suburb,08:00:00,downtown,09:30:00
+trackwork,100,2,Operator,2002,downtown,16:30:00,suburb,18:00:00
+```
+
+**`roster_positions.txt`**
+
+Note that the service ID fields are left blank.
+
+```
+roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_service_id,tuesday_run_id,wednesday_service_id,wednesday_run_id,thursday_service_id,thursday_run_id,friday_service_id,friday_run_id,saturday_service_id,saturday_run_id,sunday_service_id,sunday_run_id
+POSITION,20250201,20250228,,100,,100,,100,,100,,100,,,,,
+```
+
+**`employee_roster.txt`**
+
+```
+roster_position_id,start_date,end_date,employee_id
+POSITION,20250201,20250228,EMPLOYEE
+```
