@@ -146,6 +146,24 @@ Because some events may overlap in time, it may not be possible to choose a sing
 - `start_time` may equal `end_time` for an event that's a single point in time (such as a report time) without any duration.
 - Recommended sort order: `service_id`, `run_id`, `event_sequence`.
 
+### `employee_run_dates.txt`
+
+Describes which employees are scheduled to which runs on which dates.
+
+If [`employee_roster.txt`](#employee_rostertxt) is used, then describes exceptions to that schedule.
+
+If a feed doesn't represent roster positions, it can still assign employees to runs by putting every run for every date in this file. In that case, the `exception_type` column can be omitted because every row would be adding a date, which is the default when the column is blank. [Example](./examples/rostering.md#simplest-example-employee_run_datestxt-only).
+
+Primary Key: `*`
+
+| **Field Name** | **Type** | **Required** | **Description** |
+| --- | --- | --- | --- |
+| `date` | Date | Required | |
+| `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
+| `exception_type` | Enum | Optional | `1` or blank - The run is assigned to this employee on the specified date.<br />`2` - On this date, the employee will not work on runs assigned via the `employee_roster.txt`, `roster.txt` and `roster_dates.txt`. The employee may still have runs assigned via other rows in this file. |
+| `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`.<br /><br />If `exception_type` is `1` or blank, then `service_id` is optional and recommended. It's required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-rosters).<br />If `exception_type` is `2`, then `service_id` is forbidden. |
+| `run_id` | ID referencing `run_events.txt` | Conditionally Required | If `exception_type` is `1`, then `run_id` is required and is the run that's added to this employee's schedule.<br />If `exception_type` is `2`, then `run_id` is forbidden. |
+
 ### `roster.txt`
 
 This file defines roster positions, groupings of work across multiple runs on multiple dates that an employee can be assigned to all at once.
@@ -205,8 +223,8 @@ Primary Key: `*`
 | `roster_position_id` | ID referencing [`roster.txt`](#rostertxt) or ID | Required | If `exception_type` is `1`, then the ID does not have to appear in [`roster.txt`](#rostertxt). This file may define new roster positions. |
 | `date` | Date | Required | Date when exception occurs. |
 | `exception_type` | Enum | Optional | `1` (or blank) - The run is added to this roster for the specified date.<br />`2` - The roster will not work its regular run on this date. |
-| `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. Optional and recommended. Required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-rosters). |
-| `run_id` | ID referencing `run_events.txt` | Conditionally Required | The run that's either added or removed from this roster. Required if `exception_type` is `1`. Optional if `exception_type` is `2`. If `exception_type` is `2` and `run_id` is not blank, then it must match the Run ID that the roster was scheduled to do on this date according to [`roster.txt`](#rostertxt). |
+| `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`.<br /><br />If `exception_type` is `1` or blank, then `service_id` is optional and recommended. It's required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-rosters).<br />If `exception_type` is `2`, then `service_id` is forbidden. |
+| `run_id` | ID referencing `run_events.txt` | Conditionally Required | If `exception_type` is `1`, then `run_id` is required and is the run that's added to this roster position.<br />If `exception_type` is `2`, then `run_id` is forbidden. |
 
 ### `employee_roster.txt`
 
@@ -222,21 +240,3 @@ Primary Key: `(roster_position_id, start_date)`
 | `employee_id` | ID | Required | |
 
 Each roster position can only be assigned to one employee on each date. Employees may be scheduled to more than one roster position on the same date.
-
-### `employee_run_dates.txt`
-
-Describes which employees are scheduled to which runs on which dates. If [`employee_roster.txt`](#employee_rostertxt) is used, then describes exceptions to that schedule.
-
-Primary Key: `*`
-
-| **Field Name** | **Type** | **Required** | **Description** |
-| --- | --- | --- | --- |
-| `date` | Date | Required | |
-| `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
-| `exception_type` | Enum | Optional | `1` (or blank) - The run is assigned to this employee on the specified date.<br />`2` - The employee will not work this run on this date. |
-| `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. Optional and recommended. Required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-rosters). |
-| `run_id` | ID referencing `run_events.txt` | Required | The run that's either added or removed from this employee's schedule. If `exception_type` is `2` and `run_id` is not blank, then it must match a Run ID that the employee was scheduled to do on this date according to `employee_roster.txt`, `roster.txt` and `roster_dates.txt`. |
-
-If a feed doesn't represent roster positions, it can still assign employees to runs by putting every run for every date in this file. In that case, the `exception_type` column can be omitted because every row would be adding a date, which is the default when the column is blank. [Example](./examples/rostering.md#simplest-example-employee_run_datestxt-only).
-
-Each run can only be assigned to one employee on each date. Employees may be scheduled to more than one run on the same date.
