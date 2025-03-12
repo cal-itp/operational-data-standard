@@ -196,7 +196,7 @@ Dates may be added before the `start_date` or after the `end_date` defined in [`
 
 After evaluating [`roster.txt`](#rostertxt) and `roster_dates.txt`, each run can only be assigned to one roster position on each date. A roster position may be scheduled to do multiple runs on the same date.
 
-This file may be used even when [`roster.txt`](#rostertxt) is not defined, in which case each roster position is made up of the dates added in this file. This may be useful for agencies whose rosters are very irregular. In this case, the `exception_type` column can be omitted because every row is adding a date, which is the default when the column is blank. [Example](./examples/rostering.md#TODO).
+This file may be used even when [`roster.txt`](#rostertxt) is not defined, in which case each roster position is made up of the dates added in this file. This may be useful for agencies whose rosters are very irregular. In this case, the `exception_type` column can be omitted because every row is adding a date, which is the default when the column is blank.
 
 Primary Key: `*`
 
@@ -237,6 +237,6 @@ Primary Key: `*`
 | `run_id` | ID referencing `run_events.txt` | Required | The run that's either added or removed from this employee's schedule. If `exception_type` is `2` and `run_id` is not blank, then it must match a Run ID that the employee was scheduled to do on this date according to `employee_roster.txt`, `roster.txt` and `roster_dates.txt`. |
 | `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
 
-If a feed doesn't represent roster positions, it can still assign employees to runs by putting every run for every date in this file. In that case, the `exception_type` column can be omitted because every row would be adding a date, which is the default when the column is blank. [Example](./examples/rostering.md#TODO).
+If a feed doesn't represent roster positions, it can still assign employees to runs by putting every run for every date in this file. In that case, the `exception_type` column can be omitted because every row would be adding a date, which is the default when the column is blank. [Example](./examples/rostering.md#simplest-example-employee_run_datestxt-only).
 
 Each run can only be assigned to one employee on each date. Employees may be scheduled to more than one run on the same date.

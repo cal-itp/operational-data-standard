@@ -2,16 +2,15 @@
 
 A series of examples about how to use [roster.txt](/docs/spec.md#rostertxt), [roster_dates.txt](/docs/spec.md#roster_datestxt), [employee_roster.txt](/docs/spec.md#employee_rostertxt), and [employee_run_dates.txt](/docs/spec.md#employee_run_datestxt) to assign employees to roster positions and runs.
 
-TODO check that all links work.
 TODO check column ordering
 
 ## Simplest example: employee_run_dates.txt only.
 
-The simplest way to assign employees to runs is to use `employee_run_dates.txt`. This will require one row per employee per date.
+The simplest way to assign employees to runs is to use [`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt). This will require one row per employee per date.
 
 In this example, `A` and `B` work Saturday Feb 1 and Wednesday Feb 5 through Friday Feb 7. `C` and `D` work Sunday Feb 2 through Tuesday Feb 4.
 
-**`calendar.txt`**
+**[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```
 service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
@@ -21,7 +20,7 @@ weekday,1,1,1,1,1,0,0,20250201,20250207
 
 February 1, 2025 was a Saturday.
 
-**`run_events.txt`**
+**[`run_events.txt`](/docs/spec.md#run_eventstxt)**
 
 For this example, the purpose of this file is just to show which runs exist. Real runs would have more interesting data.
 
@@ -33,7 +32,7 @@ weekday,103,1,work,station,09:00:00,station,17:00:00
 weekday,104,1,work,station,09:00:00,station,17:00:00
 ```
 
-**`employee_run_dates.txt`**
+**[`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt)**
 
 ```
 date,service_id,run_id,employee_id
@@ -57,11 +56,11 @@ date,service_id,run_id,employee_id
 
 This example represents the same schedule of runs as above, but groups multiple days of work into roster positions that employees are assigned to all at once. Roster positions `A` and `B` work Saturdays, Wednesdays, Thursdays, and Fridays. Positions `C` and `D` work Sundays, Mondays, and Tuesdays.
 
-`calendar.txt` and `run_events.txt` are the same as the previous example.
+[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt) and [`run_events.txt`](/docs/spec.md#run_eventstxt) are the same as the previous example.
 
-This example does not have any exceptions to the regular schedule, so doesn't need `roster_dates.txt` or `employee_run_dates.txt`.
+This example does not have any exceptions to the regular schedule, so doesn't need [`roster_dates.txt`](/docs/spec.md#roster_datestxt) or [`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt).
 
-**`roster_positions.txt`**
+**[`roster_positions.txt`](/docs/spec.md#roster_positionstxt)**
 
 ```
 roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_service_id,tuesday_run_id,wednesday_service_id,wednesday_run_id,thursday_service_id,thursday_run_id,friday_service_id,friday_run_id,saturday_service_id,saturday_run_id,sunday_service_id,sunday_run_id
@@ -71,7 +70,7 @@ sun_to_tue_1,20250201,20250207,weekday,103,weekday,103,,,,,,,,,weekend,101
 sun_to_tue_2,20250201,20250207,weekday,104,weekday,104,,,,,,,,,weekend,102
 ```
 
-**`employee_roster.txt`**
+**[`employee_roster.txt`](/docs/spec.md#employee_rostertxt)**
 
 ```
 roster_position_id,start_date,end_date,employee_id
@@ -260,13 +259,13 @@ def trips_for_run(service_id, run_id, service_date):
 
 ## Holiday
 
-In this example, the roster includes holidays, which are defined as exceptions in `roster_dates.txt`.
+In this example, the roster includes holidays, which are defined as exceptions in [`roster_dates.txt`](/docs/spec.md#roster_datestxt).
 
 This agency has two workers, who work M-F. There's no service on weekends. On each holiday, the agency runs half the service, and each worker gets one holiday off.
 
-The holidays are built into the roster positions, so there's no need for `employee_run_dates.txt`.
+The holidays are built into the roster positions, so there's no need for [`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt).
 
-**`calendar.txt`**
+**[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```
 service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
@@ -275,7 +274,7 @@ weekday,1,1,1,1,1,0,0,20240701,20240714
 
 July 1, 2024 was a Monday.
 
-**`calendar_dates.txt`**
+**[`calendar_dates.txt`](https://gtfs.org/documentation/schedule/reference/#calendar_datestxt)**
 
 ```
 service_id,date,exception_type
@@ -287,7 +286,7 @@ holiday,20240711,1
 
 Holidays are Tuesday, July 2, and Thursday, July 11.
 
-**`run_events.txt`**
+**[`run_events.txt`](/docs/spec.md#run_eventstxt)**
 
 For this example, the purpose of this file is just to show which runs exist. Real runs would have more interesting data.
 
@@ -298,7 +297,7 @@ weekday,102,1,work,station,09:00:00,station,17:00:00
 holiday,999,1,work,station,09:00:00,station,17:00:00
 ```
 
-**`roster_positions.txt`**
+**[`roster_positions.txt`](/docs/spec.md#roster_positionstxt)**
 
 ```
 roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_service_id,tuesday_run_id,wednesday_service_id,wednesday_run_id,thursday_service_id,thursday_run_id,friday_service_id,friday_run_id,saturday_service_id,saturday_run_id,sunday_service_id,sunday_run_id
@@ -306,7 +305,7 @@ POSITION-A,20240701,20240714,weekday,101,weekday,101,weekday,101,weekday,101,wee
 POSITION-B,20240701,20240714,weekday,102,weekday,102,weekday,102,weekday,102,weekday,102,,,,
 ```
 
-**`roster_dates.txt`**
+**[`roster_dates.txt`](/docs/spec.md#roster_datestxt)**
 
 ```
 roster_position_id,date,exception_type,service_id,run_id
@@ -318,7 +317,7 @@ POSITION-B,20240711,2,,
 POSITION-B,20240711,1,holiday,999
 ```
 
-**`employee_roster.txt`**
+**[`employee_roster.txt`](/docs/spec.md#employee_rostertxt)**
 
 ```
 roster_position_id,start_date,end_date,employee_id
@@ -332,9 +331,9 @@ In this example, this agency runs service 4 days a week, with two employees who 
 
 These vacations are built in to the roster.
 
-The third employee has no regular work, so appears in `roster_dates.txt` but not `roster_positions.txt`.
+The third employee has no regular work, so appears in [`roster_dates.txt`](/docs/spec.md#roster_datestxt) but not [`roster_positions.txt`](/docs/spec.md#roster_positionstxt).
 
-**`calendar.txt`**
+**[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```
 service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
@@ -343,7 +342,7 @@ weekday,1,1,0,1,1,0,0,20240701,20240721
 
 July 1, 2024 was a Monday.
 
-**`run_events.txt`**
+**[`run_events.txt`](/docs/spec.md#run_eventstxt)**
 
 In this simple example, there's only one employee working per day, and they only do one run_event per day.
 
@@ -352,7 +351,7 @@ service_id,run_id,event_sequence,event_type,start_location,start_time,end_locati
 weekday,100,1,work,station,09:00:00,station,17:00:00
 ```
 
-**`roster_positions.txt`**
+**[`roster_positions.txt`](/docs/spec.md#roster_positionstxt)**
 
 One works Monday and Tuesady, the other works Thursday and Friday.
 
@@ -362,7 +361,7 @@ POSITION-A,20240701,20240721,weekday,100,weekday,100,,,,,,,,,,
 POSITION-B,20240701,20240721,,,,,,,weekday,100,weekday,100,,,,
 ```
 
-**`roster_dates.txt`**
+**[`roster_dates.txt`](/docs/spec.md#roster_datestxt)**
 
 When each roster position goes on vacation for two days, the third subsitute roster position fills in.
 
@@ -378,7 +377,7 @@ POSITION-B,20240719,2,,
 POSITION-C,20240719,1,weekday,100
 ```
 
-**`employee_roster.txt`**
+**[`employee_roster.txt`](/docs/spec.md#employee_rostertxt)**
 
 ```
 roster_position_id,start_date,end_date,employee_id
@@ -387,18 +386,18 @@ POSITION-B,20240701,20240721,EMPLOYEE-B
 POSITION-C,20240701,20240721,EMPLOYEE-C
 ```
 
-The vacations are built into the roster positions, so the employees stay assigned to the roster position the whole time. There's no need for `employee_run_dates.txt`.
+The vacations are built into the roster positions, so the employees stay assigned to the roster position the whole time. There's no need for [`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt).
 
 
 ## Vacation (not part of the roster position)
 
-In this case, the same employees work on the same days as in the previous example. But this time the roster position continue their regular assignments on the vacation day, and the employees get their vacations by being unassigned from their roster position in `employee_run_dates.txt`.
+In this case, the same employees work on the same days as in the previous example. But this time the roster position continue their regular assignments on the vacation day, and the employees get their vacations by being unassigned from their roster position in [`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt).
 
-`calendar.txt` and `run_events.txt` are the same as above.
+[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt) and [`run_events.txt`](/docs/spec.md#run_eventstxt) are the same as above.
 
-**`roster_positions.txt`**
+**[`roster_positions.txt`](/docs/spec.md#roster_positionstxt)**
 
-`roster_positions.txt` is the same as in the previous example, because the regular week is the same.
+[`roster_positions.txt`](/docs/spec.md#roster_positionstxt) is the same as in the previous example, because the regular week is the same.
 
 One works Monday and Tuesady, the other works Thursday and Friday.
 
@@ -408,9 +407,9 @@ POSITION-A,20240701,20240721,weekday,100,weekday,100,,,,,,,,,,
 POSITION-B,20240701,20240721,,,,,,,weekday,100,weekday,100,,,,
 ```
 
-In this example, there is no `roster_dates.txt` file, because the roster positions continue reguarly. There is no 3rd roster position.
+In this example, there is no [`roster_dates.txt`](/docs/spec.md#roster_datestxt) file, because the roster positions continue reguarly. There is no 3rd roster position.
 
-**`employee_roster.txt`**
+**[`employee_roster.txt`](/docs/spec.md#employee_rostertxt)**
 
 ```
 roster_position_id,start_date,end_date,employee_id
@@ -420,7 +419,7 @@ POSITION-B,20240701,20240721,EMPLOYEE-B
 
 `EMPLOYEE-C` has no roster position that they are regularly assigned to.
 
-**`employee_run_dates.txt`**
+**[`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt)**
 
 POSITION-A,20240708,2,,
 POSITION-C,20240708,1,weekday,100
@@ -444,18 +443,18 @@ date,exception_type,service_id,run_id,employee_id
 
 ## Multi-week roster positions
 
-At some agencies (especially in Europe), roster positions repeat every two weeks. In TODS, this can be represented by having the first and second weeks be two different roster positions, and using `employee_roster.txt` to assign employees to each roster position each week.
+At some agencies (especially in Europe), roster positions repeat every two weeks. In TODS, this can be represented by having the first and second weeks be two different roster positions, and using [`employee_roster.txt`](/docs/spec.md#employee_rostertxt) to assign employees to each roster position each week.
 
 In this example, there's one run per day on weekdays only. Position A works Mondays and Tuesdays. Position B works Thursdays and Fridays. They trade off on Wednesdays, so each position works an average of 2½ days per week.
 
-**`calendar.txt`**
+**[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```
 service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
 weekday,1,1,1,1,1,0,0,20240701,20240728
 ```
 
-**`roster_positions.txt`**
+**[`roster_positions.txt`](/docs/spec.md#roster_positionstxt)**
 
 
 ```
@@ -466,7 +465,7 @@ POSITION-B-WEEK-1,20240701,20240728,,,,,,,weekday,100,weekday,100,,,,
 POSITION-B-WEEK-2,20240701,20240728,,,,,weekday,100,weekday,100,weekday,100,,,,
 ```
 
-**`employee_roster.txt`**
+**[`employee_roster.txt`](/docs/spec.md#employee_rostertxt)**
 
 ```
 roster_position_id,start_date,end_date,employee_id
@@ -486,14 +485,14 @@ At some agencies (especially in the UK), employees rotate among all roster posit
 
 In this example, there are 5 employees and 5 roster positions. Over a calendar of 3 weeks, each employee will work 3 of the 5 positions.
 
-**`calendar.txt`**
+**[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```
 service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
 weekday,1,1,1,1,1,0,0,20240701,20240721
 ```
 
-**`roster_positions.txt`**
+**[`roster_positions.txt`](/docs/spec.md#roster_positionstxt)**
 
 
 ```
@@ -505,7 +504,7 @@ POSITION-4,20240701,20240721,weekday,104,weekday,104,weekday,104,weekday,104,wee
 POSITION-5,20240701,20240721,weekday,105,weekday,105,weekday,105,weekday,105,weekday,105,,,,
 ```
 
-**`employee_roster.txt`**
+**[`employee_roster.txt`](/docs/spec.md#employee_rostertxt)**
 
 ```
 roster_position_id,start_date,end_date,employee_id
@@ -530,20 +529,20 @@ POSITION-5,20240715,20240721,EMPLOYEE-C
 
 In this example, due to track work, the schedule has been minorly changed one day. There are new trip times, trip IDs, run event times, and a new service ID.
 
-If the roster files specify service IDs (which is recommended), then either `roster_dates.txt` or `employee_run_dates.txt` must be used to assign the roster position or employee to the new `(service_id, run_id)` pair, i.e. `(trackwork, 100)` instead of `(weekday, 100)`.
+If the roster files specify service IDs (which is recommended), then either [`roster_dates.txt`](/docs/spec.md#roster_datestxt) or [`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt) must be used to assign the roster position or employee to the new `(service_id, run_id)` pair, i.e. `(trackwork, 100)` instead of `(weekday, 100)`.
 
-However, in this example, the roster does not specify the service ID in `roster_positions.txt`. Therefore, the employee is assigned to run 100 on whichever service is active. Since both the regular and replacement runs have run ID `100`, on the day of the exception, the employee will be implicitly assigned to `(trackwork, 100)` without needing to specify that in the roster files.
+However, in this example, the roster does not specify the service ID in [`roster_positions.txt`](/docs/spec.md#roster_positionstxt). Therefore, the employee is assigned to run 100 on whichever service is active. Since both the regular and replacement runs have run ID `100`, on the day of the exception, the employee will be implicitly assigned to `(trackwork, 100)` without needing to specify that in the roster files.
 
 The spec describes this situation in [Service IDs in Rosters](/docs/spec/index.md#service-ids-in-rosters).
 
-**`calendar.txt`**
+**[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```
 service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
 weekday,1,1,1,1,1,0,0,20250201,20240728
 ```
 
-**`calendar_dates.txt`**
+**[`calendar_dates.txt`](https://gtfs.org/documentation/schedule/reference/#calendar_datestxt)**
 
 The trackwork is on Friday, February 2.
 
@@ -553,7 +552,7 @@ weekday,20250207,2
 trackwork,20250207,1
 ```
 
-**`run_events.txt`**
+**[`run_events.txt`](/docs/spec.md#run_eventstxt)**
 
 Because of the track work, travel is slower and the times are adjusted.
 
@@ -565,7 +564,7 @@ trackwork,100,1,Operator,2001,suburb,08:00:00,downtown,09:30:00
 trackwork,100,2,Operator,2002,downtown,16:30:00,suburb,18:00:00
 ```
 
-**`roster_positions.txt`**
+**[`roster_positions.txt`](/docs/spec.md#roster_positionstxt)**
 
 Note that the service ID fields are left blank.
 
@@ -574,7 +573,7 @@ roster_position_id,start_date,end_date,monday_service_id,monday_run_id,tuesday_s
 POSITION,20250201,20250228,,100,,100,,100,,100,,100,,,,,
 ```
 
-**`employee_roster.txt`**
+**[`employee_roster.txt`](/docs/spec.md#employee_rostertxt)**
 
 ```
 roster_position_id,start_date,end_date,employee_id
