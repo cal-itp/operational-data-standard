@@ -2,8 +2,6 @@
 
 A series of examples about how to use [roster.txt](/docs/spec.md#rostertxt), [roster_dates.txt](/docs/spec.md#roster_datestxt), [employee_roster.txt](/docs/spec.md#employee_rostertxt), and [employee_run_dates.txt](/docs/spec.md#employee_run_datestxt) to assign employees to roster positions and runs.
 
-TODO check column ordering
-
 ## Simplest example: employee_run_dates.txt only.
 
 The simplest way to assign employees to runs is to use [`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt). This will require one row per employee per date.
@@ -35,26 +33,26 @@ weekday,104,1,work,station,09:00:00,station,17:00:00
 **[`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt)**
 
 ```
-date,service_id,run_id,employee_id
-20250201,weekend,101,A
-20250201,weekend,102,B
-20250202,weekend,101,C
-20250202,weekend,102,D
-20250203,weekday,103,C
-20250203,weekday,104,D
-20250204,weekday,103,C
-20250204,weekday,104,D
-20250205,weekday,103,A
-20250205,weekday,104,B
-20250206,weekday,103,A
-20250206,weekday,104,B
-20250207,weekday,103,A
-20250207,weekday,104,B
+date,employee_id,service_id,run_id
+20250201,A,weekend,101
+20250201,B,weekend,102
+20250202,C,weekend,101
+20250202,D,weekend,102
+20250203,C,weekday,103
+20250203,D,weekday,104
+20250204,C,weekday,103
+20250204,D,weekday,104
+20250205,A,weekday,103
+20250205,B,weekday,104
+20250206,A,weekday,103
+20250206,B,weekday,104
+20250207,A,weekday,103
+20250207,B,weekday,104
 ```
 
 ## Example with Rosters
 
-This example represents the same schedule of runs as above, but groups multiple days of work into roster positions that employees are assigned to all at once. Roster positions `A` and `B` work Saturdays, Wednesdays, Thursdays, and Fridays. Positions `C` and `D` work Sundays, Mondays, and Tuesdays.
+This example represents the same schedule of runs as above, but it groups multiple days of work into roster positions that employees are assigned to all at once. Roster positions `A` and `B` work Saturdays, Wednesdays, Thursdays, and Fridays. Positions `C` and `D` work Sundays, Mondays, and Tuesdays.
 
 [`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt) and [`run_events.txt`](/docs/spec.md#run_eventstxt) are the same as the previous example.
 
@@ -86,7 +84,7 @@ Here are example algorithms (written in pseudocode) for a couple typical lookups
 
 This algorithm will cover edge cases and work for both simple and complex cases. If you know you have simpler data, you may be able to use simpler rules.
 
-### Given a date and trip ID, look up which employees are working on that trip
+### Given a trip ID and date, look up which employees are working on that trip
 
 ```
 # Returns a list of employee IDs
@@ -162,7 +160,7 @@ def employees_on_run(service_id, run_id, roster_positions_on_run, service_date):
     return result
 ```
 
-### Given an date and employee ID, look up which trips they're working on that day
+### Given an employee ID and date, look up which trips they're working on that day
 
 ```
 # Returns a list of trip IDs
@@ -421,24 +419,16 @@ POSITION-B,20240701,20240721,EMPLOYEE-B
 
 **[`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt)**
 
-POSITION-A,20240708,2,,
-POSITION-C,20240708,1,weekday,100
-POSITION-A,20240709,2,,
-POSITION-C,20240709,1,weekday,100
-POSITION-B,20240718,2,,
-POSITION-C,20240718,1,weekday,100
-POSITION-B,20240719,2,,
-POSITION-C,20240719,1,weekday,100
 ```
-date,exception_type,service_id,run_id,employee_id
-20240708,2,,EMPLOYEE-A
-20240708,1,weekday,100,EMPLOYEE-C
-20240709,2,,EMPLOYEE-A
-20240709,1,weekday,100,EMPLOYEE-C
-20240718,2,,EMPLOYEE-B
-20240718,1,weekday,100,EMPLOYEE-C
-20240719,2,,EMPLOYEE-B
-20240719,1,weekday,100,EMPLOYEE-C
+date,employee_id,exception_type,service_id,run_id
+20240708,EMPLOYEE-A,2,
+20240708,EMPLOYEE-C,1,weekday,100
+20240709,EMPLOYEE-A,2,
+20240709,EMPLOYEE-C,1,weekday,100
+20240718,EMPLOYEE-B,2,
+20240718,EMPLOYEE-C,1,weekday,100
+20240719,EMPLOYEE-B,2,
+20240719,EMPLOYEE-C,1,weekday,100
 ```
 
 ## Multi-week roster positions
