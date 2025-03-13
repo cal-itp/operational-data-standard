@@ -531,7 +531,7 @@ weekday,1,1,1,1,1,0,0,20250201,20240728
 
 **[`calendar_dates.txt`](https://gtfs.org/documentation/schedule/reference/#calendar_datestxt)**
 
-The trackwork is on Friday, February 2.
+The trackwork is on Friday, February 7.
 
 ```csv
 service_id,date,exception_type
