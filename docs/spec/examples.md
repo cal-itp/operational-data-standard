@@ -169,6 +169,66 @@ weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00:00,stop-1,12:00:00
 weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 ```
 
-## Roster Assignments
+## Employee Assignments
 
-See examples about how to do crew / roster assignments in [Rostering Examples](./rostering.md).
+This example uses [`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt) to assign employees to runs (and trips).
+
+In this example, `A` and `B` work Monday-Wednesday and Sunday. `C` and `D` work Thursday-Saturday.
+
+On Wedneday, July 3, `A` has scheduled vacation, so a substitute is assigned instead.
+
+**[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
+
+```csv
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+weekday,1,1,1,1,1,0,0,20240701,20240707
+weekend,0,0,0,0,0,1,1,20240701,20240707
+```
+
+July 1, 2024 was a Monday.
+
+**[`run_events.txt`](/docs/spec.md#run_eventstxt)**
+
+For this example, the purpose of this file is just to show which runs exist. Real runs would have more interesting data.
+
+```csv
+service_id,run_id,event_sequence,event_type,trip_id,start_location,start_time,end_location,end_time
+weekday,101,1,work,trip1,station,09:00:00,station,17:00:00
+weekday,102,1,work,trip2,station,09:00:00,station,17:00:00
+weekend,103,1,work,trip3,station,09:00:00,station,17:00:00
+weekend,104,1,work,trip4,station,09:00:00,station,17:00:00
+```
+
+**[`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt)**
+
+```csv
+date,employee_id,service_id,run_id
+20240701,A,weekday,101
+20240701,B,weekday,102
+20240702,A,weekday,101
+20240702,B,weekday,102
+20240703,E,weekday,101
+20240703,B,weekday,102
+20240704,C,weekday,101
+20240704,D,weekday,102
+20240705,C,weekday,101
+20240705,D,weekday,102
+20240706,C,weekend,103
+20240706,D,weekend,104
+20240707,A,weekend,103
+20240707,B,weekend,104
+20240701,A,weekday,101
+20240701,B,weekday,102
+20240702,A,weekday,101
+20240702,B,weekday,102
+20240703,A,weekday,101
+20240703,B,weekday,102
+20240704,C,weekday,101
+20240704,D,weekday,102
+20240705,C,weekday,101
+20240705,D,weekday,102
+20240706,C,weekend,103
+20240706,D,weekend,104
+20240707,A,weekend,103
+20240707,B,weekend,104
+```
