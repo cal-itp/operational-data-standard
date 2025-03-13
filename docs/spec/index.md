@@ -139,6 +139,10 @@ Events that don't have `trip_id` set may overlap in time with any other events. 
 
 Because some events may overlap in time, it may not be possible to choose a single order for events within a run that's correct for all uses. Producers should use `event_sequence` to define a reasonable order. If a consumer cares about exactly how overlapping events are ordered, they should sort based on the time fields and `event_type` instead.
 
+#### Run ID Uniqueness
+
+Run IDs may be non-unique. E.g. E.g. there may be a "Run 100" on both Weekday and Weekend service. There may even be a Run 100 on both `garage1-weekday` and `garage2-weekday` services, happening on the same day. Runs are uniquely referred to by a `(service_id, run_id)` pair. This is why the service ID is required on this file and other files that refer to run IDs.
+
 #### `run_events` Notes
 
 - Multiple `run_event`s may refer to the same `trip_id`, if multiple employees work on that trip.
@@ -158,15 +162,5 @@ Primary Key: `*`
 | --- | --- | --- | --- |
 | `date` | Date | Required | |
 | `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
-| `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. Optional and recommended. It's required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-runs). |
+| `service_id` | ID referencing `run_events.txt` | Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. See [Run ID Uniqueness](#run-id-uniqueness). |
 | `run_id` | ID referencing `run_events.txt` | Required | The run that's added to this employee's schedule. |
-
-#### Service IDs in Runs
-
-Run IDs may be non-unique, they may be duplicated across services. E.g. there may be a "Run 100" on both Weekday and Weekend services. So a run as described in [`run_events.txt`](#run_eventstxt) is uniquely identified by a `(service_id, run_id)` pair. It is recommeded that producers include both a Service ID and Run ID when identifying a run in `employee_run_dates.txt`.
-
-If a Run ID is included but a Service ID isn't, then the employee is assigned to work on whichever run in [`run_events.txt`](#run_eventstxt) has that Run ID and is on a service that is active that service day, according to GTFS [`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)/[`calendar_dates.txt`](https://gtfs.org/documentation/schedule/reference/#calendar_datestxt). If this would be ambiguous because there are mutliple runs with the same `run_id` active on the same day, e.g. `(garage1-weekday, 100)` and `(garage2-weekday)`, and therefore multiple `(service_id, run_id)` pairs it could refer to, then the Service ID is required in `employee_run_dates.txt`.
-
-This is allowed as a shortcut for producers to simplify creation of the file if run IDs are unique or always refer to similar work on similar days. For example, if there's a minor schedule change one day due to track work, that day must be on a different Service ID to give new trip and run times. If the producer doesn't specify service IDs in `employee_run_dates.txt`, then when adding the track work to TODS they don't have to update each date that changes service ID.
-
-More in-depth examples and instructions on how to look up which run an employee is doing are given in [the examples](./examples/rostering.md#given-an-date-and-employee-look-up-which-trips-theyre-doing-that-day).
