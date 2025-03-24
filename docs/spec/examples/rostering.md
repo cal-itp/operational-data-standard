@@ -11,7 +11,7 @@ In this example, `A` and `B` work Saturday Feb 1 and Wednesday Feb 5 through Fri
 **[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```csv
-service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
 weekend,0,0,0,0,0,1,1,20250201,20250207
 weekday,1,1,1,1,1,0,0,20250201,20250207
 ```
@@ -266,7 +266,7 @@ The holidays are built into the roster positions, so there's no need for [`emplo
 **[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```csv
-service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
 weekday,1,1,1,1,1,0,0,20240701,20240714
 ```
 
@@ -334,7 +334,7 @@ The third employee has no regular work, so appears in [`roster_dates.txt`](/docs
 **[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```csv
-service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
 weekday,1,1,0,1,1,0,0,20240701,20240721
 ```
 
@@ -439,7 +439,7 @@ In this example, there's one run per day on weekdays only. Position A works Mond
 **[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```csv
-service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
 weekday,1,1,1,1,1,0,0,20240701,20240728
 ```
 
@@ -476,7 +476,7 @@ In this example, there are 5 employees and 5 roster positions. Over a calendar o
 **[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```csv
-service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
 weekday,1,1,1,1,1,0,0,20240701,20240721
 ```
 
@@ -525,7 +525,7 @@ The spec describes this situation in [Service IDs in Rosters](/docs/spec/index.m
 **[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```csv
-service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
 weekday,1,1,1,1,1,0,0,20250201,20240728
 ```
 
