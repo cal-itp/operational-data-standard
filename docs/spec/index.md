@@ -158,8 +158,8 @@ Primary Key: `*`
 
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
-| `date` | Date | Required | |
-| `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
+| `date` | Date | Required | Service date |
+| `employee_id` | ID | Required | References an agency's external systems. |
 | `exception_type` | Enum | Optional | `1` or blank - The run is assigned to this employee on the specified date.<br />`2` - On this date, the employee will not work on runs assigned via the `employee_roster.txt`, `roster.txt` and `roster_dates.txt`. The employee may still have runs assigned via other rows in this file. |
 | `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`.<br /><br />If `exception_type` is `1` or blank, then `service_id` is optional and recommended. It's required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-rosters).<br />If `exception_type` is `2`, then `service_id` is forbidden. |
 | `run_id` | ID referencing `run_events.txt` | Conditionally Required | If `exception_type` is `1`, then `run_id` is required and is the run that's added to this employee's schedule.<br />If `exception_type` is `2`, then `run_id` is forbidden. |
@@ -178,7 +178,7 @@ Primary Key: `roster_position_id`
 | --- | --- | --- | --- |
 | `roster_position_id` | Unique ID | Required | Unique within dataset |
 | `start_date` | Date | Required | First service day that the roster position works. |
-| `end_date` | Date | Required | Last service day tha the roster position works. This day is included in the interval. |
+| `end_date` | Date | Required | Last service day that the roster position works. This day is included in the interval. |
 | `monday_service_id` | ID referencing `run_events.txt` | Conditionally Required | Identifies the run this roster does on Mondays. Runs are identified by the pair `(service_id, run_id)`. Forbidden if `monday_run_id` is blank. Optional and recommended if `monday_run_id` is present. Required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-rosters). |
 | `monday_run_id` | ID referencing `run_events.txt` | Optional | Identifies the run this roster does on Mondays. If blank, this roster does not work on Mondays. |
 | `tuesday_service_id` | ID referencing `run_events.txt` | Conditionally Required | |
@@ -221,7 +221,7 @@ Primary Key: `*`
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | `roster_position_id` | ID referencing [`roster.txt`](#rostertxt) or ID | Required | If `exception_type` is `1`, then the ID does not have to appear in [`roster.txt`](#rostertxt). This file may define new roster positions. |
-| `date` | Date | Required | Date when exception occurs. |
+| `date` | Date | Required | Service date when exception occurs. |
 | `exception_type` | Enum | Optional | `1` (or blank) - The run is added to this roster for the specified date.<br />`2` - The roster will not work its regular run on this date. |
 | `service_id` | ID referencing `run_events.txt` | Conditionally Required | Part of the Run ID, which is refered to as `(service_id, run_id)`.<br /><br />If `exception_type` is `1` or blank, then `service_id` is optional and recommended. It's required in some cases to avoid ambiguity. See [Service IDs in Rosters](#service-ids-in-rosters).<br />If `exception_type` is `2`, then `service_id` is forbidden. |
 | `run_id` | ID referencing `run_events.txt` | Conditionally Required | If `exception_type` is `1`, then `run_id` is required and is the run that's added to this roster position.<br />If `exception_type` is `2`, then `run_id` is forbidden. |
@@ -235,8 +235,8 @@ Primary Key: `(roster_position_id, start_date)`
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | `roster_position_id` | ID referencing `roster.txt` or `roster_dates.txt` | Required | |
-| `start_date` | Date | Required | |
-| `end_date` | Date | Required | Included in the interval. |
-| `employee_id` | ID | Required | |
+| `start_date` | Date | Required | Service date. |
+| `end_date` | Date | Required | Service date. Included in the interval. |
+| `employee_id` | ID | Required | References an agency's external systems. |
 
 Each roster position can only be assigned to one employee on each date. Employees may be scheduled to more than one roster position on the same date.
