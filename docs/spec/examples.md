@@ -180,7 +180,7 @@ On Wedneday, July 3, `A` has scheduled vacation, so a substitute is assigned ins
 **[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
 
 ```csv
-service_id,monday,tuesday,wednesday,thursday,friday,saturday,start_date,end_date
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
 weekday,1,1,1,1,1,0,0,20240701,20240707
 weekend,0,0,0,0,0,1,1,20240701,20240707
 ```
