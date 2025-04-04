@@ -151,13 +151,13 @@ Run IDs may be non-unique. E.g. E.g. there may be a "Run 100" on both Weekday an
 
 Describes which employees are scheduled to which runs on which dates.
 
-This file should represent the schedule after holidays, vacation, and other scheduled exceptions have been applied.
+This file should represent the schedule after holidays, vacations, and other scheduled exceptions have been applied.
 
-Primary Key: `*`
+Primary Key: (`date`, `service_id`, `run_id`)
 
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | `date` | Date | Required | Service date. |
-| `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
 | `service_id` | ID referencing `run_events.txt` | Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. See [Run ID Uniqueness](#run-id-uniqueness). |
 | `run_id` | ID referencing `run_events.txt` | Required | The run that's added to this employee's schedule. |
+| `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
