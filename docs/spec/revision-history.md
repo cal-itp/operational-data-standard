@@ -1,5 +1,9 @@
 # Revision History
 
+## 24 July 2025
+
+TODS 2.0.0 is adopted, now to be implemented.
+
 ## 20 June 2024
 
 TODS v2.0.0-alpha.1 is adopted.
