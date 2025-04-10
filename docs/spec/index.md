@@ -153,7 +153,9 @@ Describes which employees are scheduled to which runs on which dates.
 
 This file should represent the schedule after holidays, vacations, and other scheduled exceptions have been applied.
 
-Primary Key: (`date`, `service_id`, `run_id`)
+Each run and date combination may appear 0 times in this file (if there's no assigned employee), 1 time, or multiple times (if multiple employees are assigned to the same run on the same date).
+
+Primary Key: `*`
 
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
