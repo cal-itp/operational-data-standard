@@ -1,4 +1,4 @@
-f# Examples
+# Examples
 
 The following sections provide examples of how TODS can represent specific use cases. The inclusion of these examples should not
 be as an indication that this is the only way to represent these use cases with TODS. If you have questions about a use case not

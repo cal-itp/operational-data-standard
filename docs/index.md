@@ -70,11 +70,9 @@ TODS 1.0
 
 :material-check-circle-outline: [Giro Hastus](https://www.giro.ca/) (on request)
 
-
 TODS 2.0
 
 :material-check-circle-outline: [MBTA](http://mbta.com) (in progress)
-
 
 ## How do I implement TODS?
 
