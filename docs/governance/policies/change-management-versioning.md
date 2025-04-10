@@ -14,7 +14,7 @@ The following definitions build on the overall [TODS Governance][governance] def
 
 ### TODS Release
 
-An official version of the [TODS Specification](../governance.md#tods-specification) which can be referenced in perpetuity by a version number. The process by which a new release is made and determination of a version number is discussed below.
+An official version of the [TODS Specification][tods-spec] which can be referenced in perpetuity by a version number. The process by which a new release is made and determination of a version number is discussed below.
 
 Each change to normative content in the main branch of the TODS Repository MUST be considered a new release and assigned a version number.
 
@@ -28,7 +28,7 @@ Non-normative content is the non-prescriptive, or ‘descriptive’, part of a s
 
 ### Issue Working Group
 
-Tasked by the [TODS Manager][manager] with resolving a specific issue with respect to the TODS Specification.
+Tasked by the [TODS Manager][manager] with resolving a specific issue with respect to the [TODS Specification][tods-spec].
 
 ### Urgent Needs
 
@@ -36,7 +36,7 @@ Urgent needs MUST pose significant risks to security, compliance, or the operati
 
 ## Change-Making Process
 
-This change-making process covers [all normative content changes](#normative-content) to the TODS Specification and occurs in the following stages:
+This change-making process covers [all normative content changes](#normative-content) to the [TODS Specification][tods-spec] and occurs in the following stages:
 
 | Stage | When | Who (led by) |
 |-----|-----|-----|
@@ -51,7 +51,7 @@ Each of these stages is discussed in more detail below.
 
 ### Need Identification
 
-Initiated when Any TODS Contributor identifies a need that should be addressed in the TODS Specification.
+Initiated when Any TODS Contributor identifies a need that should be addressed in the [TODS Specification][tods-spec].
 
 Actions:
 
@@ -131,7 +131,7 @@ Actions:  See [Release Management](#releases).
 
 ## Expedited Change Management
 
-This section outlines an expedited process for implementing changes in response to urgent needs which are critical to maintaining the security, compliance, or operational functionality of TODS Specification balancing rapid response with informed, transparent decision-making.
+This section outlines an expedited process for implementing changes in response to urgent needs which are critical to maintaining the security, compliance, or operational functionality of [TODS Specification][tods-spec] balancing rapid response with informed, transparent decision-making.
 
 ### Process
 
@@ -199,7 +199,7 @@ Pre-release versions MUST be named with the `<MAJOR>.<MINOR>` of their target re
 Non-normative changes MUST NOT increment the TODS Version Number even though they are represented by updates in the `main` branch of the [TODS Repository][repository].
 
 [governance]: ../governance.md
-[tods-spec]: ../governance.md#operational-data-standard-tods-specification
+[tods-spec]: ../governance.md#tods-specification
 [repository]: ../governance.md#tods-repository
 [manager]: ../governance.md#tods-manager
 [board]: ../governance.md#tods-board-of-directors

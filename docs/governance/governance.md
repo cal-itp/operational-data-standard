@@ -34,7 +34,7 @@ The TODS Governance is designed with the following principles in mind:
 
 The TODS Project encompasses:
 
-- [TODS Specification](#operational-data-standard-tods-specification)
+- [TODS Specification](#tods-specification)
 - [TODS Tools](#tods-tools)
 - [TODS Repository](#tods-repository)
 - [TODS Documentation](#tods-documentation)
@@ -67,15 +67,15 @@ Agreement for behavior within the [TODS Community](#tods-community) which must b
 
 ### TODS Change Management + Versioning Policy
 
-How content of the [TODS Specification](#operational-data-standard-tods-specification) may be changed and released as an official [TODS version](policies/change-management-versioning.md#tods-release).
+How content of the [TODS Specification](#tods-specification) may be changed and released as an official [TODS version](policies/change-management-versioning.md#tods-release).
 
 ### TODS Documentation
 
-The text and website (and supporting scripts) which describe the [TODS Specification](#operational-data-standard-TODS-specification) and its purpose and usage located on the [TODS Repository](#tods-repository).
+The text and website (and supporting scripts) which describe the [TODS Specification](#tods-specification) and its purpose and usage located on the [TODS Repository](#tods-repository).
 
 ### TODS Repository
 
-The version control repository containing the [TODS Specification](#operational-data-standard-tods-specification) located at:
+The version control repository containing the [TODS Specification](#tods-specification) located at:
 <https://github.com/cal-itp/operational-data-standard>
 
 ### TODS Repository Organization
@@ -92,7 +92,7 @@ Any scripts or code released within the [TODS Repository Organization](#tods-rep
 
 ### TODS Use License
 
-The [TODS Specification](#operational-data-standard-tods-specification) is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt) (code) and [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) (sample data, specification, and documentation) as defined in [`LICENSES`](https://github.com/cal-itp/operational-data-standard/blob/main/LICENSES) file in the [GitHub repository](https://github.com/cal-itp/operational-data-standard).
+The [TODS Specification](#tods-specification) is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt) (code) and [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) (sample data, specification, and documentation) as defined in [`LICENSES`](https://github.com/cal-itp/operational-data-standard/blob/main/LICENSES) file in the [GitHub repository](https://github.com/cal-itp/operational-data-standard).
 
 ## Roles
 
@@ -109,16 +109,16 @@ Responsibility for the governance of the TODS Project is divided among the follo
 
 ## TODS Owner
 
-The TODS Project is collectively owned and overseen by the [TODS Board of Directors](#TODS-board-of-directors).
+The TODS Project is collectively owned and overseen by the [TODS Board of Directors](#tods-board-of-directors).
 
 ## TODS Board of Directors
 
 The TODS Board of Directors ("TODS Board") governs and collectively owns the [TODS Project](#tods-project).
 
-- The Board MAY select an individual or organization to serve as the [TODS Manager](#tods-manager) to handle the day-to-day management of the [TODS Specification](#operational-data-standard-tods-specification) and [TODS Project](#tods-project).
-- The [TODS Board](#tods-board-of-directors) MUST execute a memorandum of understanding with the [TODS Manager](#TODS-manager) (if one is chosen) that outlines the roles, responsibilities, and limitations of the management role.
+- The Board MAY select an individual or organization to serve as the [TODS Manager](#tods-manager) to handle the day-to-day management of the [TODS Specification](#tods-specification) and [TODS Project](#tods-project).
+- The [TODS Board](#tods-board-of-directors) MUST execute a memorandum of understanding with the [TODS Manager](#tods-manager) (if one is chosen) that outlines the roles, responsibilities, and limitations of the management role.
 - The [TODS Board](#tods-board-of-directors) MAY change the [TODS Manager](#tods-manager) at any time for any reason.
-- In the event that there is not an active agreement with an [TODS Manager](#tods-manager) the [TODS Board](#TODS-board-of-directors) MUST assume the [TODS Manager](#tods-manager) responsibilities.
+- In the event that there is not an active agreement with an [TODS Manager](#tods-manager) the [TODS Board](#tods-board-of-directors) MUST assume the [TODS Manager](#tods-manager) responsibilities.
 - The [TODS Board](#tods-board-of-directors) SHOULD ask the [TODS Manager](#tods-manager) to select a new [TODS Program Manager](#tods-program-manager) if there is continued failure to perform and meet expectations.
 - [TODS Board](#tods-board-of-directors) membership MUST be determined by the [Board Composition Policy](policies/board-composition.md).
 - [TODS Board](#tods-board-of-directors) decisionmaking should be consistent with the [Board Decisionmaking Policy](policies/board-decisionmaking.md).
