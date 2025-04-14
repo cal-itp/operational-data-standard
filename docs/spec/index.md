@@ -12,6 +12,8 @@ There are two types of files used in the TODS standard:
 - **Supplement files**, used to add, modify, and delete information from public GTFS files to model the operational service for internal purposes (with a `_supplement` filename suffix).
 - **TODS-Specific files**, used to model operational elements not currently defined in the GTFS standard.
 
+All files are optional.
+
 ### Files
 
 | **File Name** | **Type** | **Description** |
@@ -21,6 +23,7 @@ There are two types of files used in the TODS standard:
 | stop_times_supplement.txt | Supplement | Supplements and modifies GTFS [stop_times.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) with non-public times at which trips stop at locations, `stop_times` entries for non-public trips, and related information. |
 | routes_supplement.txt | Supplement | Supplements and modifies GTFS [routes.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt) with internal route identifiers and other non-public route identification. |
 | run_events.txt | TODS-Specific | Lists all trips and other scheduled activities to be performed by a member of personnel during a run. |
+| employee_run_dates.txt | TODS-Specific | Assigns employees to runs. |
 
 _The use of the Supplement standard to modify other GTFS files is not yet formally adopted into the specification and remains subject to change. Other files may be formally adopted in the future._
 
@@ -133,9 +136,30 @@ Events that don't have `trip_id` set may overlap in time with any other events. 
 
 Because some events may overlap in time, it may not be possible to choose a single order for events within a run that's correct for all uses. Producers should use `event_sequence` to define a reasonable order. If a consumer cares about exactly how overlapping events are ordered, they should sort based on the time fields and `event_type` instead.
 
+#### Run ID Uniqueness
+
+Run IDs may be non-unique. E.g. E.g. there may be a "Run 100" on both Weekday and Weekend service. There may even be a Run 100 on both `garage1-weekday` and `garage2-weekday` services, happening on the same day. Runs are uniquely referred to by a `(service_id, run_id)` pair. This is why the service ID is required on this file and other files that refer to run IDs.
+
 #### `run_events` Notes
 
 - Multiple `run_event`s may refer to the same `trip_id`, if multiple employees work on that trip.
 - Events may have gaps between the end time of one event and the start time of the next. e.g. if an operator's layovers aren't represented by an event.
 - `start_time` may equal `end_time` for an event that's a single point in time (such as a report time) without any duration.
 - Recommended sort order: `service_id`, `run_id`, `event_sequence`.
+
+### `employee_run_dates.txt`
+
+Describes which employees are scheduled to which runs on which dates.
+
+This file should represent the schedule after holidays, vacations, and other scheduled exceptions have been applied.
+
+Each run and date combination may appear 0 times in this file (if there's no assigned employee), 1 time, or multiple times (if multiple employees are assigned to the same run on the same date).
+
+Primary Key: `*`
+
+| **Field Name** | **Type** | **Required** | **Description** |
+| --- | --- | --- | --- |
+| `date` | Date | Required | Service date. |
+| `service_id` | ID referencing [`run_events.txt`](#run_eventstxt) | Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. See [Run ID Uniqueness](#run-id-uniqueness). |
+| `run_id` | ID referencing [`run_events.txt`](#run_eventstxt) | Required | The run that's added to this employee's schedule. |
+| `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
