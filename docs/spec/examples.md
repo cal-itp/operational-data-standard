@@ -171,7 +171,7 @@ weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 
 ## Employee Assignments
 
-This example uses [`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt) to assign employees to runs (and trips).
+This example uses [`employee_run_dates.txt`](/spec#employee_run_datestxt) to assign employees to runs (and trips).
 
 In this example, `A` and `B` work Monday-Wednesday and Sunday. `C` and `D` work Thursday-Saturday.
 
@@ -187,7 +187,7 @@ weekend,0,0,0,0,0,1,1,20240701,20240707
 
 July 1, 2024 was a Monday.
 
-**[`run_events.txt`](/docs/spec.md#run_eventstxt)**
+**[`run_events.txt`](/spec#run_eventstxt)**
 
 For this example, the purpose of this file is just to show which runs exist. Real runs would have more interesting data.
 
@@ -199,7 +199,7 @@ weekend,103,1,work,trip3,station,09:00:00,station,17:00:00
 weekend,104,1,work,trip4,station,09:00:00,station,17:00:00
 ```
 
-**[`employee_run_dates.txt`](/docs/spec.md#employee_run_datestxt)**
+**[`employee_run_dates.txt`](/spec#employee_run_datestxt)**
 
 ```csv
 date,service_id,run_id,employee_id

@@ -160,6 +160,6 @@ Primary Key: `*`
 | **Field Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | `date` | Date | Required | Service date. |
-| `service_id` | ID referencing `run_events.txt` | Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. See [Run ID Uniqueness](#run-id-uniqueness). |
-| `run_id` | ID referencing `run_events.txt` | Required | The run that's added to this employee's schedule. |
+| `service_id` | ID referencing [`run_events.txt`](#run_eventstxt) | Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. See [Run ID Uniqueness](#run-id-uniqueness). |
+| `run_id` | ID referencing [`run_events.txt`](#run_eventstxt) | Required | The run that's added to this employee's schedule. |
 | `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
