@@ -1,0 +1,1517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ods.calitp.org/governance/governance/">
+      
+      
+        <link rel="prev" href="../../spec/examples/">
+      
+      
+        <link rel="next" href="../actions/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Governance - Transit Operational Data Standard</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/ods.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tods-governance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Transit Operational Data Standard" class="md-header__button md-logo" aria-label="Transit Operational Data Standard" data-md-component="logo">
+      
+  <img src="../../assets/ods-small-eggshell.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Transit Operational Data Standard
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Governance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cal-itp/operational-data-standard" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/about/" class="md-tabs__link">
+          
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../spec/" class="md-tabs__link">
+          
+  
+  Specification
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/resources/" class="md-tabs__link">
+          
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Transit Operational Data Standard" class="md-nav__button md-logo" aria-label="Transit Operational Data Standard" data-md-component="logo">
+      
+  <img src="../../assets/ods-small-eggshell.png" alt="logo">
+
+    </a>
+    Transit Operational Data Standard
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cal-itp/operational-data-standard" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About TODS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/spec-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initial Spec Development Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/contributors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/attribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Specification
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Specification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/revision-history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Revision History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Governance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tods-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-governance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Governance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Specification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Community
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-contributor-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Contributor Agreement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-code-of-conduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Code of Conduct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-change-management-versioning-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Change Management + Versioning Policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-repository-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Repository Organization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-use-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Use License
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tods-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Owner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tods-board-of-directors" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Board of Directors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tods-board-coordinator" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Board Coordinator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tods-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tods-program-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Program Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tods-contributor" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Contributor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tods-stakeholder" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS Stakeholder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document History
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Document History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Board Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../board-meetings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Board Meetings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributor-meetings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributor Meetings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/change-management-versioning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Change Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/board-composition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Board Composition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/board-decisionmaking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Board Decision Making
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/code-of-conduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code of conduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/CLA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributor license agreement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/repository-organization-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repository Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Handouts + Presentations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/implementation-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="tods-governance">TODS Governance<a class="headerlink" href="#tods-governance" title="Permanent link"> ¶</a></h1>
+<p>This page outlines the policies, procedures, and structures that guide the collaborative and transparent development of the Transit Operational Data Standard (&ldquo;TODS&rdquo;). The TODS is a critical framework enabling effective dispatching and operations management through a standardized data schema. This document is intended for all members of the TODS Community, including the TODS Board of Directors, TODS Managers, TODS Contributors, and TODS Stakeholders. By clearly defining the principles, roles, and policies, we aim to facilitate the efficient, fair, and responsible advancement of the TODS Project.</p>
+<h2 id="principles">Principles<a class="headerlink" href="#principles" title="Permanent link"> ¶</a></h2>
+<p>The TODS Governance is designed with the following principles in mind:</p>
+<p><strong>Merit</strong></p>
+<ul>
+<li>Changes should have a clear purpose.</li>
+<li>Consequences of a change should be evaluated from the perspective of different affected stakeholder groups.</li>
+<li>Changes should be prioritized by the community.</li>
+</ul>
+<p><strong>Openness + Transparency</strong></p>
+<ul>
+<li>Discussion and decisions about changes should be publicly noticed and accessible.</li>
+<li>Change-making process should be straight-forward and easy to follow.</li>
+<li>Change proposals should have a reliable timeline for being decided on and incorporated.</li>
+<li>Each change (or bundled set of changes) should be identified by assigning a new version number.</li>
+</ul>
+<p><strong>Efficiency</strong></p>
+<ul>
+<li>Change-making process should be simple for simple changes.</li>
+<li>Complex changes should be made with careful consideration.</li>
+<li>Streamlined, purpose-driven change management should be applied to maximize stakeholder efficiency.</li>
+<li>Changes should be straightforward to incorporate by existing TODS Stakeholders.</li>
+<li>Significant changes, especially those which are not backwards compatible with existing datasets, should be limited in number and in frequency in order to limit the number of times existing processes and tools need to be re-engineered.</li>
+<li>A significant change merits a new version number.</li>
+</ul>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link"> ¶</a></h2>
+<h3 id="tods-project">TODS Project<a class="headerlink" href="#tods-project" title="Permanent link"> ¶</a></h3>
+<p>The TODS Project encompasses:</p>
+<ul>
+<li><a href="#tods-specification">TODS Specification</a></li>
+<li><a href="#tods-tools">TODS Tools</a></li>
+<li><a href="#tods-repository">TODS Repository</a></li>
+<li><a href="#tods-documentation">TODS Documentation</a></li>
+<li><a href="#tods-governance">TODS Governance</a></li>
+</ul>
+<h3 id="tods-governance_1">TODS Governance<a class="headerlink" href="#tods-governance_1" title="Permanent link"> ¶</a></h3>
+<p>Who and how decisions are made about the scope and direction of the TODS Project, including but not limited to the approved <a href="#roles">roles and responsibilities</a> and the following policies:</p>
+<ul>
+<li><a href="#tods-change-management--versioning-policy">TODS Change Management and Versioning Policy</a></li>
+<li><a href="#tods-contributor-agreement">TODS Contributor Agreement</a></li>
+<li><a href="#tods-code-of-conduct">TODS Code of Conduct</a></li>
+<li><a href="#tods-use-license">TODS Use License</a></li>
+</ul>
+<h3 id="tods-specification">TODS Specification<a class="headerlink" href="#tods-specification" title="Permanent link"> ¶</a></h3>
+<p>The data schema documented on the <a href="#tods-repository">TODS Repository</a> and <a href="#tods-documentation">TODS Documentation</a> for the purposes of representing planned transit operations for use is dispatching and operations management software.</p>
+<h3 id="tods-community">TODS Community<a class="headerlink" href="#tods-community" title="Permanent link"> ¶</a></h3>
+<p>The combined members of <a href="#tods-board-of-directors">TODS Board</a>, <a href="#tods-manager">TODS Manager</a>, <a href="#tods-board-coordinator">TODS Board Coordinator</a>, <a href="#tods-contributor">TODS Contributors</a> and <a href="#tods-stakeholder">TODS Stakeholders</a>.</p>
+<h3 id="tods-contributor-agreement">TODS Contributor Agreement<a class="headerlink" href="#tods-contributor-agreement" title="Permanent link"> ¶</a></h3>
+<p>Agreement contributors make when contributing to the <a href="#tods-project">TODS Project</a> as documented at: <a href="../policies/CLA/"><code>CLA.md</code></a></p>
+<h3 id="tods-code-of-conduct">TODS Code of Conduct<a class="headerlink" href="#tods-code-of-conduct" title="Permanent link"> ¶</a></h3>
+<p>Agreement for behavior within the <a href="#tods-community">TODS Community</a> which must be abided by by all of <a href="#tods-board-of-directors">TODS Board</a>, <a href="#tods-contributor">TODS Contributors</a> and the <a href="#tods-manager">TODS Manager</a> and its representatives as documented at <a href="../policies/code-of-conduct/"><code>code-of-conduct.md</code></a></p>
+<h3 id="tods-change-management-versioning-policy">TODS Change Management + Versioning Policy<a class="headerlink" href="#tods-change-management-versioning-policy" title="Permanent link"> ¶</a></h3>
+<p>How content of the <a href="#tods-specification">TODS Specification</a> may be changed and released as an official <a href="../policies/change-management-versioning/#tods-release">TODS version</a>.</p>
+<h3 id="tods-documentation">TODS Documentation<a class="headerlink" href="#tods-documentation" title="Permanent link"> ¶</a></h3>
+<p>The text and website (and supporting scripts) which describe the <a href="#tods-specification">TODS Specification</a> and its purpose and usage located on the <a href="#tods-repository">TODS Repository</a>.</p>
+<h3 id="tods-repository">TODS Repository<a class="headerlink" href="#tods-repository" title="Permanent link"> ¶</a></h3>
+<p>The version control repository containing the <a href="#tods-specification">TODS Specification</a> located at:
+<a href="https://github.com/cal-itp/operational-data-standard">https://github.com/cal-itp/operational-data-standard</a></p>
+<h3 id="tods-repository-organization">TODS Repository Organization<a class="headerlink" href="#tods-repository-organization" title="Permanent link"> ¶</a></h3>
+<p>The version control organization which contains the <a href="#tods-repository">TODS Repository</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">To be migrated</p>
+<p>The TODS Repository is currently located with the Cal-ITP GitHub organization but will be migrated as part of the process of transitioning management to MobilityData.</p>
+</div>
+<h3 id="tods-tools">TODS Tools<a class="headerlink" href="#tods-tools" title="Permanent link"> ¶</a></h3>
+<p>Any scripts or code released within the <a href="#tods-repository-organization">TODS Repository Organization</a>.</p>
+<h3 id="tods-use-license">TODS Use License<a class="headerlink" href="#tods-use-license" title="Permanent link"> ¶</a></h3>
+<p>The <a href="#tods-specification">TODS Specification</a> is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0.txt">Apache License 2.0</a> (code) and <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> (sample data, specification, and documentation) as defined in <a href="https://github.com/cal-itp/operational-data-standard/blob/main/LICENSES"><code>LICENSES</code></a> file in the <a href="https://github.com/cal-itp/operational-data-standard">GitHub repository</a>.</p>
+<h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link"> ¶</a></h2>
+<p>Responsibility for the governance of the TODS Project is divided among the following <a href="#roles">roles</a> as defined here and fulfilled by the following individuals as noted:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Role</strong></th>
+<th><strong>Who</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#tods-board-of-directors">TODS Board</a></td>
+<td><ul><li><a href="https://www.linkedin.com/in/jfabi/">Joshua Fabian</a>, <a href="https://www.mbta.com/">Massachusetts Bay Transportation Authority (MBTA)</a></li><li><a href="https://www.linkedin.com/in/matthias-gr%C3%BCtzner-6b469b187/">Matthias Gruetzner</a>, <a href="https://www.initse.com/">INIT</a></li><li><a href="https://www.linkedin.com/in/guilhemhammel/">Guilhem Hammel</a>, <a href="https://www.giro.ca/en-us/">Giro</a></li><li><a href="https://www.linkedin.com/in/erik-jensen">Erik Jensen</a>, <a href="https://www.transitchicago.com/">Chicago Transit Authority (CTA)</a></li><li><a href="https://www.linkedin.com/in/jeffkess/">Jeffrey Kessler</a>, <a href="https://www.keolisna.com/">Keolis Commuter Services</a></li></ul></td>
+</tr>
+<tr>
+<td><a href="#tods-board-coordinator">TODS Board Coordinator</a></td>
+<td><a href="https://github.com/safrazier17">Scott Frazier</a></td>
+</tr>
+<tr>
+<td><a href="#tods-manager">TODS Manager</a></td>
+<td><a href="https://mobilitydata.org">MobilityData</a></td>
+</tr>
+<tr>
+<td><a href="#tods-program-manager">TODS Program Manager</a></td>
+<td><a href="https://github.com/Cristhian-HA">Cristhian Hellion</a>, <a href="https://mobilitydata.org">MobilityData</a></td>
+</tr>
+<tr>
+<td><a href="#tods-contributor">TODS Contributors</a></td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><a href="#tods-stakeholder">TODS Stakeholders</a></td>
+<td>Anyone interested in or could be directly affected by the TODS Project.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tods-owner">TODS Owner<a class="headerlink" href="#tods-owner" title="Permanent link"> ¶</a></h2>
+<p>The TODS Project is collectively owned and overseen by the <a href="#tods-board-of-directors">TODS Board of Directors</a>.</p>
+<h2 id="tods-board-of-directors">TODS Board of Directors<a class="headerlink" href="#tods-board-of-directors" title="Permanent link"> ¶</a></h2>
+<p>The TODS Board of Directors (&ldquo;TODS Board&rdquo;) governs and collectively owns the <a href="#tods-project">TODS Project</a>.</p>
+<ul>
+<li>The Board MAY select an individual or organization to serve as the <a href="#tods-manager">TODS Manager</a> to handle the day-to-day management of the <a href="#tods-specification">TODS Specification</a> and <a href="#tods-project">TODS Project</a>.</li>
+<li>The <a href="#tods-board-of-directors">TODS Board</a> MUST execute a memorandum of understanding with the <a href="#tods-manager">TODS Manager</a> (if one is chosen) that outlines the roles, responsibilities, and limitations of the management role.</li>
+<li>The <a href="#tods-board-of-directors">TODS Board</a> MAY change the <a href="#tods-manager">TODS Manager</a> at any time for any reason.</li>
+<li>In the event that there is not an active agreement with an <a href="#tods-manager">TODS Manager</a> the <a href="#tods-board-of-directors">TODS Board</a> MUST assume the <a href="#tods-manager">TODS Manager</a> responsibilities.</li>
+<li>The <a href="#tods-board-of-directors">TODS Board</a> SHOULD ask the <a href="#tods-manager">TODS Manager</a> to select a new <a href="#tods-program-manager">TODS Program Manager</a> if there is continued failure to perform and meet expectations.</li>
+<li><a href="#tods-board-of-directors">TODS Board</a> membership MUST be determined by the <a href="../policies/board-composition/">Board Composition Policy</a>.</li>
+<li><a href="#tods-board-of-directors">TODS Board</a> decisionmaking should be consistent with the <a href="../policies/board-decisionmaking/">Board Decisionmaking Policy</a>.</li>
+</ul>
+<p>TODS Board <a href="../board-meetings/">meetings</a> and <a href="../actions/">actions</a>.</p>
+<h2 id="tods-board-coordinator">TODS Board Coordinator<a class="headerlink" href="#tods-board-coordinator" title="Permanent link"> ¶</a></h2>
+<p>Chosen by the TODS Board, this individual is responsible for coordinating the actions and activities of the <a href="#tods-board-of-directors">TODS Board</a>.</p>
+<ul>
+<li>The Board Coordinator MUST schedule, agendize and arrange for Board meetings in consultation with the TODS Board Chair and <a href="#tods-program-manager">TODS Program Manager</a>.</li>
+<li>The Board Coordinator MUST conduct votes by the <a href="#tods-board-of-directors">TODS Board</a> and document results.</li>
+<li>The Board Coordinator MUST communicate with the <a href="#tods-manager">TODS Manager</a> / <a href="#tods-program-manager">TODS Program Manager</a> as needed.</li>
+</ul>
+<h2 id="tods-manager">TODS Manager<a class="headerlink" href="#tods-manager" title="Permanent link"> ¶</a></h2>
+<p>Responsible for the daily management of the TODS Project at the direction of the <a href="#tods-board-of-directors">TODS Board</a> including the:</p>
+<ul>
+<li><a href="../policies/change-management-versioning/">TODS Change Management Process</a>,</li>
+<li><a href="#tods-repository">TODS Repository</a>,</li>
+<li>TODS Project resource management, and</li>
+<li>
+<p>Internal and external project communications.</p>
+</li>
+<li>
+<p>The <a href="#tods-manager">TODS Manager</a> MAY be an individual or organization.</p>
+</li>
+<li>The <a href="#tods-manager">TODS Manager</a> MUST assign an individual as the <a href="#tods-program-manager">TODS Program Manager</a>.</li>
+<li>The <a href="#tods-manager">TODS Manager</a> MUST communicate the name of the <a href="#tods-program-manager">TODS Program Manager</a> to the <a href="#tods-board-of-directors">TODS Board</a> in writing and notify the Board of any change in this assignment in writing.</li>
+<li>The <a href="#tods-manager">TODS Manager</a> SHOULD select a new <a href="#tods-program-manager">TODS Program Manager</a> if asked to do so by the TODS Board.</li>
+</ul>
+<h2 id="tods-program-manager">TODS Program Manager<a class="headerlink" href="#tods-program-manager" title="Permanent link"> ¶</a></h2>
+<p>Serves as the main contact between the <a href="#tods-board-of-directors">TODS Board</a> and the <a href="#tods-manager">TODS Manager</a>.</p>
+<h2 id="tods-contributor">TODS Contributor<a class="headerlink" href="#tods-contributor" title="Permanent link"> ¶</a></h2>
+<p>Individuals apply to become Contributors by acknowledging and agreeing to the <a href="#tods-contributor-agreement">TODS Contributor Agreement</a> and <a href="#tods-code-of-conduct">TODS Code of Conduct</a>.</p>
+<ul>
+<li>An TODS Contributor MUST abide by the <a href="#tods-code-of-conduct">TODS Code of Conduct</a> or face removal.</li>
+<li>An TODS Contributor MAY create issues, discussions, and pull requests in the <a href="#tods-repository">TODS Repository</a>.</li>
+<li>An TODS Contributor MAY vote in decisions on changes to the TODS spec and other aspects of TODS.</li>
+</ul>
+<h2 id="tods-stakeholder">TODS Stakeholder<a class="headerlink" href="#tods-stakeholder" title="Permanent link"> ¶</a></h2>
+<p>Anyone interested in or could be directly affected by the TODS Project. Interested parties may register for the <a href="https://groups.google.com/g/ods-working-group">TODS distribution list</a>.</p>
+<h2 id="document-history">Document History<a class="headerlink" href="#document-history" title="Permanent link"> ¶</a></h2>
+<h3 id="initial-version">Initial Version<a class="headerlink" href="#initial-version" title="Permanent link"> ¶</a></h3>
+<ul>
+<li>Initial release of the TODS Governance document.</li>
+<li>Establishment of governance principles, roles, policies, and procedures.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/cal-itp/operational-data-standard">TODS Project</a> by <span property="cc:attributionName">TODS Board of Directors</span> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

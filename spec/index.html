@@ -1,0 +1,1580 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ods.calitp.org/spec/">
+      
+      
+        <link rel="prev" href="../about/attribution/">
+      
+      
+        <link rel="next" href="revision-history/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Reference - Transit Operational Data Standard</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    
+      <link rel="stylesheet" href="../stylesheets/ods.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Transit Operational Data Standard" class="md-header__button md-logo" aria-label="Transit Operational Data Standard" data-md-component="logo">
+      
+  <img src="../assets/ods-small-eggshell.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Transit Operational Data Standard
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cal-itp/operational-data-standard" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../about/about/" class="md-tabs__link">
+          
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Specification
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../governance/governance/" class="md-tabs__link">
+          
+  
+  Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../resources/resources/" class="md-tabs__link">
+          
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Transit Operational Data Standard" class="md-nav__button md-logo" aria-label="Transit Operational Data Standard" data-md-component="logo">
+      
+  <img src="../assets/ods-small-eggshell.png" alt="logo">
+
+    </a>
+    Transit Operational Data Standard
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cal-itp/operational-data-standard" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About TODS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/spec-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initial Spec Development Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/contributors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/attribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Specification
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Specification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dataset Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supplement-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supplement Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supplement Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implications-and-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implications and Guidance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tods-specific-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS-Specific Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tods-specific-file-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODS-Specific File Definitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TODS-Specific File Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run_eventstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_events.txt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="run_events.txt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event_sequence-and-event-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      event_sequence and Event Times
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-id-uniqueness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run ID Uniqueness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_events-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_events Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#employee_run_datestxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      employee_run_dates.txt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="revision-history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Revision History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Governance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/governance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Board Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/board-meetings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Board Meetings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/contributor-meetings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributor Meetings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/policies/change-management-versioning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Change Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/policies/board-composition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Board Composition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/policies/board-decisionmaking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Board Decision Making
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/policies/code-of-conduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code of conduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/policies/CLA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributor license agreement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/policies/repository-organization-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repository Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Handouts + Presentations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/implementation-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link"> ¶</a></h1>
+<p>The Transit Operational Data Standard was last updated on April 3, 2024 (v2.0 DRAFT). View the full <a href="revision-history/">revision history</a>.</p>
+<h2 id="dataset-files">Dataset Files<a class="headerlink" href="#dataset-files" title="Permanent link"> ¶</a></h2>
+<h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link"> ¶</a></h3>
+<p>There are two types of files used in the TODS standard:</p>
+<ul>
+<li><strong>Supplement files</strong>, used to add, modify, and delete information from public GTFS files to model the operational service for internal purposes (with a <code>_supplement</code> filename suffix).</li>
+<li><strong>TODS-Specific files</strong>, used to model operational elements not currently defined in the GTFS standard.</li>
+</ul>
+<p>All files are optional.</p>
+<h3 id="files">Files<a class="headerlink" href="#files" title="Permanent link"> ¶</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>File Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trips_supplement.txt</td>
+<td>Supplement</td>
+<td>Supplements and modifies GTFS <a href="https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt">trips.txt</a> with deadheads and other non-public trip information.</td>
+</tr>
+<tr>
+<td>stops_supplement.txt</td>
+<td>Supplement</td>
+<td>Supplements and modifies GTFS <a href="https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt">stops.txt</a> with internal stop locations, waypoints, and other non-public stop information.</td>
+</tr>
+<tr>
+<td>stop_times_supplement.txt</td>
+<td>Supplement</td>
+<td>Supplements and modifies GTFS <a href="https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt">stop_times.txt</a> with non-public times at which trips stop at locations, <code>stop_times</code> entries for non-public trips, and related information.</td>
+</tr>
+<tr>
+<td>routes_supplement.txt</td>
+<td>Supplement</td>
+<td>Supplements and modifies GTFS <a href="https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt">routes.txt</a> with internal route identifiers and other non-public route identification.</td>
+</tr>
+<tr>
+<td>run_events.txt</td>
+<td>TODS-Specific</td>
+<td>Lists all trips and other scheduled activities to be performed by a member of personnel during a run.</td>
+</tr>
+<tr>
+<td>employee_run_dates.txt</td>
+<td>TODS-Specific</td>
+<td>Assigns employees to runs.</td>
+</tr>
+</tbody>
+</table>
+<p><em>The use of the Supplement standard to modify other GTFS files is not yet formally adopted into the specification and remains subject to change. Other files may be formally adopted in the future.</em></p>
+<h2 id="supplement-files">Supplement Files<a class="headerlink" href="#supplement-files" title="Permanent link"> ¶</a></h2>
+<h3 id="structure_1">Structure<a class="headerlink" href="#structure_1" title="Permanent link"> ¶</a></h3>
+<p>The fields in all Supplement files match those defined in the corresponding file&rsquo;s <a href="https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md">GTFS specification</a>.</p>
+<p>The overall premise is to update and add data to GTFS, which is accomplished by either updating matching values or adding rows entirely.</p>
+<p>Each entry in a Supplement file is paired with its matching entry in the corresponding GTFS file using the <a href="https://gtfs.org/schedule/reference/#dataset-attributes">GTFS file&rsquo;s Primary Key</a>, i.e. the fields that uniquely identify the row. If no match is found, the Supplement file&rsquo;s entry is added to the GTFS file in its entirety.</p>
+<p>The standard also supports the removal of rows in their entirety.</p>
+<h3 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link"> ¶</a></h3>
+<p>Each row in a Supplement file shall be evaluated as follows:</p>
+<ol>
+<li>If the row&rsquo;s Primary Key is defined in the corresponding GTFS file, and the <code>TODS_delete</code> field is defined and equal to <code>1</code>, remove the corresponding row from the GTFS file.</li>
+<li>If the row&rsquo;s Primary Key is defined in the corresponding GTFS file, and the <code>TODS_delete</code> field is not defined or not equal to <code>1</code>, set or update any fields with defined values in the Supplement file to those values in the corresponding GTFS file.</li>
+<li>If the row&rsquo;s Primary Key is NOT defined in the corresponding GTFS file, add the row to the corresponding GTFS file.</li>
+</ol>
+<p>In other words, where a Primary Key matches, the row is either removed or any non-empty values in the row are used to <em>update</em> the corresponding GTFS values. Where a Primary Key match does not exist, the entire row is added.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link"> ¶</a></h3>
+<p>GTFS <code>stops.txt</code>:</p>
+<div class="highlight"><pre><span></span><code>stop_id,stop_name,stop_desc,stop_url
+1,One,Unmodified in TODS,example.com/1
+2,Two,Deleted in TODS,example.com/2
+3,Three,Will be modified in TODS,example.com/3
+</code></pre></div>
+<p>TODS <code>stops_supplement.txt</code>:</p>
+<div class="highlight"><pre><span></span><code>stop_id,stop_name,stop_desc,TODS_delete
+2,,,1
+3,,Has been modified by TODS,
+4,Four,New in TODS,
+</code></pre></div>
+<p>Effective <code>stops.txt</code> after merging the supplement file:</p>
+<div class="highlight"><pre><span></span><code>stop_id,stop_name,stop_desc,stop_url
+1,One,Unmodified in TODS,example.com/1
+3,Three,Has been modified by TODS,example.com/3
+4,Four,New in TODS,
+</code></pre></div>
+<p><em>Note that the station name &ldquo;Three&rdquo; was not modified, and the whole column stop_url was omitted and not modified.</em></p>
+<h3 id="implications-and-guidance">Implications and Guidance<a class="headerlink" href="#implications-and-guidance" title="Permanent link"> ¶</a></h3>
+<ul>
+<li>As blank fields are ignored, data to be removed should either be overwritten with a new value or have their entire row deleted using the <code>TODS_delete</code> field.</li>
+<li>As processing of files is non-sequential, it is prohibited to both delete and re-add a row with identical Primary Keys in the same Supplement file.</li>
+<li>If a row contains defined values besides the Primary Key and a <code>TODS_delete</code> value of <code>1</code>, the row shall be removed and other values in that row will be ignored.</li>
+<li>When adding rows and updating values, be certain to ensure the values are being updated based on their column values (e.g. if GTFS has fields of <code>trip_id,route_id,trip_short_name</code> and the TODS Supplement file has fields of <code>trip_id,trip_short_name</code>, be certain that values are mapping to the correct fields without assuming column headers are identical).</li>
+<li>When deleting a row in a file, any references to that field/value shall be ignored. Thus, it is important to ensure references to that row are either redefined or are being intentionally omitted. For example:<ul>
+<li>When deleting a trip via <code>trips_supplement.txt</code>, all of that trip&rsquo;s entires in <code>stop_times.txt</code> will not be associated with a valid trip and would thus be ignored.</li>
+<li>When deleting a route via <code>routes_supplement.txt</code>, all trips using that route would not be associated with a valid route and would thus be ignored <em>UNLESS</em> the <code>route_id</code> on the affected trips is updated via the <code>trips_supplement.txt</code> file.</li>
+</ul>
+</li>
+<li>After modifying static GTFS content to incorporate the TODS Supplement modifications, the resulting data (&ldquo;TODS-Supplemented GTFS&rdquo;) should form a valid GTFS dataset, with the limited exception of missing data that should be ignored per the above.</li>
+</ul>
+<h3 id="tods-specific-fields">TODS-Specific Fields<a class="headerlink" href="#tods-specific-fields" title="Permanent link"> ¶</a></h3>
+<p>In addition to the fields defined in GTFS, specific fields for use within TODS are denoted by a <code>TODS_</code> field prefix.</p>
+<table>
+<thead>
+<tr>
+<th><strong>File</strong></th>
+<th><strong>Field Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Any Supplement file</td>
+<td><code>TODS_delete</code></td>
+<td>Enum</td>
+<td>Optional</td>
+<td>(blank) - Update other fields; do not delete.<br><code>1</code> - Deletes the GTFS row in the corresponding file whose Primary Key matches the value in the Supplement file&rsquo;s row.</td>
+</tr>
+<tr>
+<td><code>trips_supplement.txt</code></td>
+<td><code>TODS_trip_type</code></td>
+<td>Text</td>
+<td>Optional</td>
+<td>Defines the type of the trip if distinct from a standard revenue trip.</td>
+</tr>
+<tr>
+<td><code>stops_supplement.txt</code></td>
+<td><code>TODS_location_type</code></td>
+<td>Text</td>
+<td>Optional</td>
+<td>Defines the type of the location if distinct from a standard GTFS location type. Where defined, the GTFS <code>location_type</code> shall be ignored.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tods-specific-file-definitions">TODS-Specific File Definitions<a class="headerlink" href="#tods-specific-file-definitions" title="Permanent link"> ¶</a></h2>
+<h3 id="run_eventstxt"><code>run_events.txt</code><a class="headerlink" href="#run_eventstxt" title="Permanent link"> ¶</a></h3>
+<p>Primary Key: (<code>service_id</code>, <code>run_id</code>, <code>event_sequence</code>)</p>
+<table>
+<thead>
+<tr>
+<th><strong>Field Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>service_id</code></td>
+<td>ID referencing <code>calendar.service_id</code> or <code>calendar_dates.service_id</code></td>
+<td>Required</td>
+<td>Identifies a set of dates when the run is scheduled to take place.</td>
+</tr>
+<tr>
+<td><code>run_id</code></td>
+<td>ID</td>
+<td>Required</td>
+<td>A run is uniquely determined by a <code>service_id</code>, <code>run_id</code> pair. Runs with the same <code>run_id</code> on different <code>service_id</code>s are considered different runs.</td>
+</tr>
+<tr>
+<td><code>event_sequence</code></td>
+<td>Non-negative integer</td>
+<td>Required</td>
+<td>The order of this event within a run. Must be unique within one (<code>service_id</code>, <code>run_id</code>). See <a href="#event_sequence-and-event-times">more detail below</a> about how order is defined.</td>
+</tr>
+<tr>
+<td><code>piece_id</code></td>
+<td>ID</td>
+<td>Optional</td>
+<td>Identifies the piece within the run that the event takes place.<br /><br />May be blank if the event takes place out of a piece, like a break, or if the agency does not use piece IDs.</td>
+</tr>
+<tr>
+<td><code>block_id</code></td>
+<td>ID referencing <code>trips.block_id</code></td>
+<td>Optional</td>
+<td>Identifies the block to which the run event belongs.<br /><br />This field is always optional. May exist even if <code>trip_id</code> does not (e.g. if an event represents a run-as-directed block with no scheduled trips). May exist even if <code>trip_id</code> exists and the associated trip in <code>trips.txt</code> doesn&rsquo;t have a <code>block_id</code>. May be omitted even if <code>trip_id</code> exists and the associated trip in <code>trips.txt</code> has a <code>block_id</code>.<br /><br />If <code>block_id</code> is set, <code>trip_id</code> is set, and the associated trip in <code>trips.txt</code> has a <code>block_id</code>, then the two <code>block_id</code>s must not be different.</td>
+</tr>
+<tr>
+<td><code>job_type</code></td>
+<td>Text</td>
+<td>Optional</td>
+<td>The type of job that the employee is doing, in a human-readable format. e.g. &ldquo;Assistant Conductor&rdquo;. Producers may use any values, but should be consistent.<br /><br />A single run may include more than one <code>job_type</code> throughout the day if the employee has multiple responsibilities, e.g. an &ldquo;Operator&rdquo; in the morning and a &ldquo;Shifter&rdquo; in the afternoon.</td>
+</tr>
+<tr>
+<td><code>event_type</code></td>
+<td>Text</td>
+<td>Required</td>
+<td>The type of event that the employee is doing, in a human-readable format. e.g. &ldquo;Sign-in&rdquo;. Producers may use any values, but should be consistent. Consumers may ignore events with an <code>event_type</code> that they don&rsquo;t recognize.</td>
+</tr>
+<tr>
+<td><code>trip_id</code></td>
+<td>ID referencing <code>trips.trip_id</code></td>
+<td>Optional</td>
+<td>If this run event corresponds to working on a trip, identifies that trip.</td>
+</tr>
+<tr>
+<td><code>start_location</code></td>
+<td>ID referencing <code>stops.stop_id</code></td>
+<td>Required</td>
+<td>Identifies where the employee starts working this event.<br /><br />If <code>trip_id</code> is set (and <code>mid_trip_start</code> is not <code>1</code>), this should be the <code>stop_id</code> of the first stop of the trip in <code>stop_times.txt</code> (after applying any trip supplement). If <code>start_mid_trip</code> is <code>1</code>, this should be the location where the employee starts working, matching a <code>stop_id</code> in the middle of the supplemented trip.</td>
+</tr>
+<tr>
+<td><code>start_time</code></td>
+<td>Time</td>
+<td>Required</td>
+<td>Identifies the time when the employee starts working this event.<br /><br />If <code>trip_id</code> is set (and <code>mid_trip_start</code> is not <code>1</code>), this corresponds to the time of the first stop of the trip in <code>stop_times.txt</code> (after applying any trip supplement). If <code>start_mid_trip</code> is <code>1</code>, this time corresponds to a stop time in the middle of the supplemented trip, when the employee starts working on the trip. Note that this time may not exactly match <code>stop_times.txt</code> <code>arrival_time</code> or <code>departure_time</code> if the employee is considered to be working for a couple minutes before the trip departs. This field is about when the employee is working, and consumers who care about the the trip times should check <code>stop_times.txt</code> instead.</td>
+</tr>
+<tr>
+<td><code>start_mid_trip</code></td>
+<td>Enum</td>
+<td>Optional</td>
+<td>Indicates whether the event begins at the start of the trip or in the middle of the trip (after applying any trip supplement).<br /><br /><code>0</code> (or blank) - Run event is not associated with a trip, or no information about whether the run event starts mid-trip<br /><code>1</code> - Run event starts mid-trip<br /><code>2</code> - Run event does not start mid-trip</td>
+</tr>
+<tr>
+<td><code>end_location</code></td>
+<td>ID referencing <code>stops.stop_id</code></td>
+<td>Required</td>
+<td>Identifies where the employee stops working this event.<br /><br />If <code>trip_id</code> is set (and <code>mid_trip_end</code> is not <code>1</code>), this should be the <code>stop_id</code> of the last stop of the trip in <code>stop_times.txt</code> (after applying any trip supplement). If <code>end_mid_trip</code> is <code>1</code>, this should be the location where the employee stops working, matching a <code>stop_id</code> in the middle of the supplemented trip.</td>
+</tr>
+<tr>
+<td><code>end_time</code></td>
+<td>Time</td>
+<td>Required</td>
+<td>Identifies the time when the employee stops working this event.<br /><br />If <code>trip_id</code> is set (and <code>mid_trip_end</code> is not <code>1</code>), this corresponds to the time of the last stop of the trip in <code>stop_times.txt</code> (after applying any trip supplement). If <code>end_mid_trip</code> is <code>1</code>, this time corresponds to a stop time in the middle of the supplemented trip, when the employee stops working on the trip. Note that this time may not exactly match <code>stop_times.txt</code> <code>arrival_time</code> or <code>departure_time</code> if the employee is considered to be working for a couple minutes after the trip finishes. This field is about when the employee is working, and consumers who care about the the trip times should check <code>stop_times.txt</code> instead.</td>
+</tr>
+<tr>
+<td><code>end_mid_trip</code></td>
+<td>Enum</td>
+<td>Optional</td>
+<td>Indicates whether the event ends at the end of the trip or in the middle of the trip (after applying any trip supplement).<br /><br /><code>0</code> (or blank) - Run event is not associated with a trip, or no information about whether the run event ends mid-trip<br /><code>1</code> - Run event ends mid-trip<br /><code>2</code> - Run event does not end mid-trip</td>
+</tr>
+</tbody>
+</table>
+<h4 id="event_sequence-and-event-times"><code>event_sequence</code> and Event Times<a class="headerlink" href="#event_sequence-and-event-times" title="Permanent link"> ¶</a></h4>
+<p><code>event_sequence</code> is required and unique within a run so it can be used in the Primary Key to uniquely identify events.</p>
+<p>Within one run, <code>event_sequence</code> values should increase throughout the day but do not have to be consecutive.</p>
+<p>Within one run, if two events both have <code>trip_id</code> set, they must not overlap in time (based on <code>start_time</code> and <code>end_time</code>). Employees cannot be on two trips at once, or have multiple duties on the same trip at the same time. Having a zero-minute overlap is allowed, to allow consecutive trips without layovers, and to allow trips with 0-minute durations, which some agencies use for bookkeeping reasons.</p>
+<p>Events that don&rsquo;t have <code>trip_id</code> set may overlap in time with any other events. This is to allow events that represent a large portion of a day (such as time that an employee is available to work), regardless of what other duties or trips they have during that time.</p>
+<p>Because some events may overlap in time, it may not be possible to choose a single order for events within a run that&rsquo;s correct for all uses. Producers should use <code>event_sequence</code> to define a reasonable order. If a consumer cares about exactly how overlapping events are ordered, they should sort based on the time fields and <code>event_type</code> instead.</p>
+<h4 id="run-id-uniqueness">Run ID Uniqueness<a class="headerlink" href="#run-id-uniqueness" title="Permanent link"> ¶</a></h4>
+<p>Run IDs may be non-unique. E.g. E.g. there may be a &ldquo;Run 100&rdquo; on both Weekday and Weekend service. There may even be a Run 100 on both <code>garage1-weekday</code> and <code>garage2-weekday</code> services, happening on the same day. Runs are uniquely referred to by a <code>(service_id, run_id)</code> pair. This is why the service ID is required on this file and other files that refer to run IDs.</p>
+<h4 id="run_events-notes"><code>run_events</code> Notes<a class="headerlink" href="#run_events-notes" title="Permanent link"> ¶</a></h4>
+<ul>
+<li>Multiple <code>run_event</code>s may refer to the same <code>trip_id</code>, if multiple employees work on that trip.</li>
+<li>Events may have gaps between the end time of one event and the start time of the next. e.g. if an operator&rsquo;s layovers aren&rsquo;t represented by an event.</li>
+<li><code>start_time</code> may equal <code>end_time</code> for an event that&rsquo;s a single point in time (such as a report time) without any duration.</li>
+<li>Recommended sort order: <code>service_id</code>, <code>run_id</code>, <code>event_sequence</code>.</li>
+</ul>
+<h3 id="employee_run_datestxt"><code>employee_run_dates.txt</code><a class="headerlink" href="#employee_run_datestxt" title="Permanent link"> ¶</a></h3>
+<p>Describes which employees are scheduled to which runs on which dates.</p>
+<p>This file should represent the schedule after holidays, vacations, and other scheduled exceptions have been applied.</p>
+<p>Each run and date combination may appear 0 times in this file (if there&rsquo;s no assigned employee), 1 time, or multiple times (if multiple employees are assigned to the same run on the same date).</p>
+<p>Primary Key: <code>*</code></p>
+<table>
+<thead>
+<tr>
+<th><strong>Field Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date</code></td>
+<td>Date</td>
+<td>Required</td>
+<td>Service date.</td>
+</tr>
+<tr>
+<td><code>service_id</code></td>
+<td>ID referencing <a href="#run_eventstxt"><code>run_events.txt</code></a></td>
+<td>Required</td>
+<td>Part of the Run ID, which is refered to as <code>(service_id, run_id)</code>. See <a href="#run-id-uniqueness">Run ID Uniqueness</a>.</td>
+</tr>
+<tr>
+<td><code>run_id</code></td>
+<td>ID referencing <a href="#run_eventstxt"><code>run_events.txt</code></a></td>
+<td>Required</td>
+<td>The run that&rsquo;s added to this employee&rsquo;s schedule.</td>
+</tr>
+<tr>
+<td><code>employee_id</code></td>
+<td>ID</td>
+<td>Required</td>
+<td>References an agency&rsquo;s external systems. Employee IDs are not used elsewhere in TODS.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/cal-itp/operational-data-standard">TODS Project</a> by <span property="cc:attributionName">TODS Board of Directors</span> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.tabs", "toc.integrate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
