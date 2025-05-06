@@ -23,9 +23,9 @@ All files are optional.
 | stop_times_supplement.txt | Supplement | Supplements and modifies GTFS [stop_times.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) with non-public times at which trips stop at locations, `stop_times` entries for non-public trips, and related information. |
 | routes_supplement.txt | Supplement | Supplements and modifies GTFS [routes.txt](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt) with internal route identifiers and other non-public route identification. |
 | run_events.txt | TODS-Specific | Lists all trips and other scheduled activities to be performed by a member of personnel during a run. |
+| employee_run_dates.txt | TODS-Specific | Assigns employees to runs. |
 | vehicles.txt | TODS-Specific | Lists fleet vehicles with attributes for reference in `vehicle_assignments.txt` |
 | vehicle_assignments.txt | TODS-Specific | Assign vehicles to trips by `service_id` and `block_id`. |
-| employee_run_dates.txt | TODS-Specific | Assigns employees to runs. |
 
 _The use of the Supplement standard to modify other GTFS files is not yet formally adopted into the specification and remains subject to change. Other files may be formally adopted in the future._
 
