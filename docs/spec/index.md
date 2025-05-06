@@ -157,6 +157,13 @@ This file should represent the schedule after holidays, vacations, and other sch
 
 Each run and date combination may appear 0 times in this file (if there's no assigned employee), 1 time, or multiple times (if multiple employees are assigned to the same run on the same date).
 
+| **Field Name** | **Type** | **Required** | **Description** |
+| --- | --- | --- | --- |
+| `date` | Date | Required | Service date. |
+| `service_id` | ID referencing [`run_events.txt`](#run_eventstxt) | Required | Part of the Run ID, which is refered to as `(service_id, run_id)`. See [Run ID Uniqueness](#run-id-uniqueness). |
+| `run_id` | ID referencing [`run_events.txt`](#run_eventstxt) | Required | The run that's added to this employee's schedule. |
+| `employee_id` | ID | Required | References an agency's external systems. Employee IDs are not used elsewhere in TODS. |
+
 ### `vehicles.txt`
 
 Primary Key: `vehicle_id`
