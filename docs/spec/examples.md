@@ -1,7 +1,7 @@
 # Examples
 
-The following sections provide examples of how ODS can represent specific use cases. The inclusion of these examples should not
-be as an indication that this is the only way to represent these use cases with ODS. If you have questions about a use case not
+The following sections provide examples of how TODS can represent specific use cases. The inclusion of these examples should not
+be as an indication that this is the only way to represent these use cases with TODS. If you have questions about a use case not
 represented here, please feel free to [create an issue in GitHub](https://github.com/cal-itp/operational-data-standard/issues/new).
 
 ## Single Run with Pull-Out and Lunch Break
@@ -169,7 +169,9 @@ weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00:00,stop-1,12:00:00
 weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 ```
 
-## Vehicle assignments by service date
+## Vehicle Assignments
+
+Vehicles are assigned by service date. In this example, vehicle assignments are provided for 3 consecutive days from February 5 through 7.
 
 ### `vehicles.txt`
 
@@ -181,11 +183,58 @@ bus-2,Buster,OR-E251432
 
 ### `vehicle_assignments.txt`
 
-In this example, vehicle assignments are provided for 3 consecutive days from February 5 through 7.
-
 ```csv
 date,service_id,block_id,vehicle_id
 20250205,daily,BLOCK-A,bus-1
 20250206,daily,BLOCK-A,bus-2
 20250207,daily,BLOCK-A,bus-1
+
+## Employee Assignments
+
+This example uses [`employee_run_dates.txt`](/spec#employee_run_datestxt) to assign employees to runs (and trips).
+
+In this example, `A` and `B` work Monday-Wednesday and Sunday. `C` and `D` work Thursday-Saturday.
+
+On Wedneday, July 3, `A` has scheduled vacation, so a substitute is assigned instead.
+
+**[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
+
+```csv
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+weekday,1,1,1,1,1,0,0,20240701,20240707
+weekend,0,0,0,0,0,1,1,20240701,20240707
+```
+
+July 1, 2024 was a Monday.
+
+**[`run_events.txt`](/spec#run_eventstxt)**
+
+For this example, the purpose of this file is just to show which runs exist. Real runs would have more interesting data.
+
+```csv
+service_id,run_id,event_sequence,event_type,trip_id,start_location,start_time,end_location,end_time
+weekday,101,1,work,trip1,station,09:00:00,station,17:00:00
+weekday,102,1,work,trip2,station,09:00:00,station,17:00:00
+weekend,103,1,work,trip3,station,09:00:00,station,17:00:00
+weekend,104,1,work,trip4,station,09:00:00,station,17:00:00
+```
+
+**[`employee_run_dates.txt`](/spec#employee_run_datestxt)**
+
+```csv
+date,service_id,run_id,employee_id
+20240701,weekday,101,A
+20240701,weekday,102,B
+20240702,weekday,101,A
+20240702,weekday,102,B
+20240703,weekday,101,A
+20240703,weekday,102,B
+20240704,weekday,101,C
+20240704,weekday,102,D
+20240705,weekday,101,C
+20240705,weekday,102,D
+20240706,weekend,103,C
+20240706,weekend,104,D
+20240707,weekend,103,A
+20240707,weekend,104,B
 ```
