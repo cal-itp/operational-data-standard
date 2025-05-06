@@ -41,11 +41,11 @@ This change-making process covers [all normative content changes](#normative-con
 | Stage | When | Who (led by) |
 |-----|-----|-----|
 | Need Identification | Anytime | Anyone |
-| Need Prioritization | Quarterly | Contributors ([TODS Manager][manager]) |
-| Initial Proposal Development  | Prioritized quarter | Issue Working Group ([TODS Manager][manager]r) |
+| Need Prioritization | At least annually | Contributors ([TODS Manager][manager]) |
+| Initial Proposal Development  | Prioritized quarter | Issue Working Group ([TODS Manager][manager]) |
 | Contributor Review + Adoption | Pull request for proposed change submitted after consensus in the Working Group | Issue Working Group ([TODS Manager][manager]) |
 | Implementation | When decision made to consensus achieved on proposal | Issue Working Group ([TODS Manager][manager]) |
-| Released | Next quarterly release | [TODS Manager][manager] |
+| Released | Next release | [TODS Manager][manager] |
 
 Each of these stages is discussed in more detail below.
 
@@ -59,7 +59,7 @@ Actions:
 * An [TODS Manager][manager] triages issue and asks for more detail from the Contributor if needed.
 * An [TODS Manager][manager] determines if issue resolution would require a normative change.
 
-Resolution: [TODS Manager][manager] puts issue into consideration for next quarterly issue prioritization
+Resolution: [TODS Manager][manager] puts issue into consideration for next issue prioritization
 
 ### Prioritization
 
@@ -102,7 +102,7 @@ Actions:
 * If 100% of reviewers accept, the proposal is adopted without need for further discussion.
 * If any reviewer accepts with minor changes, the suggested change must be considered by the Working Group.
 * If the Working Group decides to incorporate the edited proposal will be re-circulated for some period time greater than 72 hours and previous reviewers notified. If nobody objects to the change in that time, it is adopted.
-* If the Working Group does not agree with the suggested change, they may appeal to the [TODS Board][board]to make a final decision about its necessity.
+* If the Working Group does not agree with the suggested change, they may appeal to the [TODS Board][board] to make a final decision about its necessity.
 * If any reviewer requests substantial changes, they must also agree to work with the working group on developing an alternative solution to the need.
 * If the working group believes the substantial change request is invalid or without merit, they may appeal to the [TODS Board][board] to make a final decision about if revisions are necessary.
 
@@ -110,7 +110,7 @@ Resolution: Change as represented in the pull request from the feature branch is
 
 ### Full Implementation
 
-Initiated [for each need] when: Final change proposal is approved - although initial work can begin ahead of this.
+Initiated [for each need](#need-identification) when: Final change proposal is approved - although initial work can begin ahead of this.
 
 Actions:
 
@@ -125,7 +125,7 @@ Resolution: Requirements for [release](#releases) are met.
 
 ### Release
 
-Initiated: On a quarterly schedule maintained by the [TODS Manager][manager].
+Initiated: On a schedule maintained by the [TODS Manager][manager], at least annually.
 
 Actions:  See [Release Management](#releases).
 
@@ -137,7 +137,7 @@ This section outlines an expedited process for implementing changes in response 
 
 1. **Identification**: Stakeholders SHOULD promptly report urgent needs to the [TODS Manager][manager], detailing the problem and its potential impact.
 2. **Rapid Evaluation**: The [TODS Manager][manager] MUST convene a group of at least 2 TODS Contributors of their choosing to swiftly assess the issue's urgency and validity.
-    * If it meets their threshold for an urgent need, they forward a list of their proposed Urgent Working Group Members to the  [TODS Board][board].
+    * If it meets their threshold for an urgent need, they forward a list of their proposed Urgent Working Group Members to the [TODS Board][board].
     * The Urgent Working Group Members SHOULD contain representatives of TODS Contributors affected stakeholder groups.
     * The Urgent Working Group size SHOULD be at least three and reflect the scale of the problem and also need for agile decision making.  
     * The [TODS Board][board] MAY object to their characterization of the need as urgent.
@@ -154,10 +154,10 @@ This section outlines an expedited process for implementing changes in response 
 Each change to normative content in the main branch of the TODS Repository MUST be considered a new release and assigned a version number.
 
 * Each release MUST contain one or more changes to normative content which have been approved through the change-making process.
-* Each release MUST be reviewed and approved in the TODS Repository by 2+ members of the [TODS Board][board]  – or their designees – for accuracy and consistency with the intent of the change.
+* Each release MUST be reviewed and approved in the TODS Repository by 2+ members of the [TODS Board][board], or their designees, for accuracy and consistency with the intent of the change.
 * Each release MUST be tagged with its version number.
 * Each release MUST have documentation available.
-* Each release MUST have an entry in `CHANGELOG.md``.
+* Each release MUST have an entry in `CHANGELOG.md`.
 * Each release MUST be specified as a release on Github.
 * Each release MUST be noticed to any TODS mailing lists or discussion groups.
 * Each release SHOULD have sample datasets (real or exemplary) which cover the normative changes in the release.
@@ -166,15 +166,14 @@ Each change to normative content in the main branch of the TODS Repository MUST 
 
 Each approved change to normative content in the develop branch of the TODS Repository MAY be considered a pre-release and assigned a pre-release version number.
 
-Pre-releases MAY be made in order to evaluate and work on incrementally-approved changes.
-
+* Pre-releases MAY be made in order to evaluate and work on incrementally-approved changes.
 * Each pre-release MUST contain one or more changes to normative content which have been approved through the change-making process.
-* Each pre-release MUST be reviewed and approved in GitHub by 1+ members of the [TODS Board][board] – or their designees – for accuracy and consistency with the changes’ intent.
+* Each pre-release MUST be reviewed and approved in GitHub by 1+ members of the [TODS Board][board], or their designees, for accuracy and consistency with the changes’ intent.
 * Pre-releases MUST be tagged with an appropriate pre-release version number:
-* Pre-releases that have incorporated all the normative changes for the target-release MUST have a beta version number;
-* otherwise, they MUST receive an alpha version number.
+   * Pre-releases that have incorporated all the normative changes for the target-release MUST have a beta version number;
+   * otherwise, they MUST receive an alpha version number.
 * Each pre-release MUST have documentation available.
-* Each pre-release MUST have an entry in `CHANGELOG.md``.
+* Each pre-release MUST have an entry in `CHANGELOG.md`.
 * Each pre-release MAY be specified as a pre-release on Github.
 
 ### Release Schedule
@@ -182,15 +181,15 @@ Pre-releases MAY be made in order to evaluate and work on incrementally-approved
 Barring significant unexpected events:
 
 * Major releases SHOULD be limited to no more than once per year;
-* Minor releases MAY be expected approximately quarterl .
+* Minor releases MAY be expected at least annually.
 
 ### Version Numbering
 
 TODS Releases MUST be reflected by an incremental version number based on a semantic versioning policy as detailed below.
 
 * Release versions MUST be named with incremental increases to the format `<MAJOR>.<MINOR>` where:
-* Major versions reflect backwards-incompatible changes
-* Minor versions change the normative content in a way that is backwards-compatible
+   * Major versions reflect backwards-incompatible changes
+   * Minor versions change the normative content in a way that is backwards-compatible
 
 Pre-release versions MUST be named with the `<MAJOR>.<MINOR>` of their target release name and appended with either:
 `-alpha.<NUMBER>` where NUMBER starts at 1 and increases by 1 for each alpha release of that target release.
