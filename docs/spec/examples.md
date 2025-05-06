@@ -188,6 +188,7 @@ date,service_id,block_id,vehicle_id
 20250205,daily,BLOCK-A,bus-1
 20250206,daily,BLOCK-A,bus-2
 20250207,daily,BLOCK-A,bus-1
+```
 
 ## Employee Assignments
 
