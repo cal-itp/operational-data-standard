@@ -169,6 +169,7 @@ weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00:00,stop-1,12:00:00
 weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 ```
 
+
 ## Jobs of entirely nonrevenue operations
 
 A track inspection train operates once per week, with a separate crew. It's scheduled and operated separately from other service, so is given its own service ID separate from any trips in the public GTFS file. In this example, the route and stops are assumed to be defined in the public GTFS.
@@ -311,3 +312,54 @@ fall   ,2 ,30 ,B ,drive ,102 ,eastland ,10:45:00 ,westcity ,12:15:00
 ```
 
 (In this example, block IDs are listed in `run_events.txt` but not `trips.txt` because the blocks would also change with the schedule change.)
+
+
+## Employee Assignments
+
+This example uses [`employee_run_dates.txt`](/spec#employee_run_datestxt) to assign employees to runs (and trips).
+
+In this example, `A` and `B` work Monday-Wednesday and Sunday. `C` and `D` work Thursday-Saturday.
+
+On Wedneday, July 3, `A` has scheduled vacation, so a substitute is assigned instead.
+
+**[`calendar.txt`](https://gtfs.org/documentation/schedule/reference/#calendartxt)**
+
+```csv
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+weekday,1,1,1,1,1,0,0,20240701,20240707
+weekend,0,0,0,0,0,1,1,20240701,20240707
+```
+
+July 1, 2024 was a Monday.
+
+**[`run_events.txt`](/spec#run_eventstxt)**
+
+For this example, the purpose of this file is just to show which runs exist. Real runs would have more interesting data.
+
+```csv
+service_id,run_id,event_sequence,event_type,trip_id,start_location,start_time,end_location,end_time
+weekday,101,1,work,trip1,station,09:00:00,station,17:00:00
+weekday,102,1,work,trip2,station,09:00:00,station,17:00:00
+weekend,103,1,work,trip3,station,09:00:00,station,17:00:00
+weekend,104,1,work,trip4,station,09:00:00,station,17:00:00
+```
+
+**[`employee_run_dates.txt`](/spec#employee_run_datestxt)**
+
+```csv
+date,service_id,run_id,employee_id
+20240701,weekday,101,A
+20240701,weekday,102,B
+20240702,weekday,101,A
+20240702,weekday,102,B
+20240703,weekday,101,A
+20240703,weekday,102,B
+20240704,weekday,101,C
+20240704,weekday,102,D
+20240705,weekday,101,C
+20240705,weekday,102,D
+20240706,weekend,103,C
+20240706,weekend,104,D
+20240707,weekend,103,A
+20240707,weekend,104,B
+```
