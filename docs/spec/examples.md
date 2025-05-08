@@ -169,7 +169,6 @@ weekday,10000,30,BLOCK-A,run-as-directed,,stop-1,09:00:00,stop-1,12:00:00
 weekday,10000,30,BLOCK-A,deadhead       ,,stop-1,12:00:00,garage,12:10:00
 ```
 
-
 ## Jobs of entirely nonrevenue operations
 
 A track inspection train operates once per week, with a separate crew. It's scheduled and operated separately from other service, so is given its own service ID separate from any trips in the public GTFS file. In this example, the route and stops are assumed to be defined in the public GTFS.
@@ -312,7 +311,6 @@ fall   ,2 ,30 ,B ,drive ,102 ,eastland ,10:45:00 ,westcity ,12:15:00
 ```
 
 (In this example, block IDs are listed in `run_events.txt` but not `trips.txt` because the blocks would also change with the schedule change.)
-
 
 ## Employee Assignments
 
